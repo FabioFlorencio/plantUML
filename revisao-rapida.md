@@ -11,12 +11,12 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
     - [Caracteres Especiais](#caracteres-especiais)
     - [Funções](#funções)
     - [Tipos de Linhas gerais](#tipos-de-linhas-gerais)
+      - [Linha sem estilo](#linha-sem-estilo)
+      - [Linha com estilo](#linha-com-estilo)
+      - [Exemplo](#exemplo)
+        - [Código](#código)
+        - [Diagrama](#diagrama)
   - [📚 Class](#-class)
-    - [if](#if)
-    - [Tipos de Linhas gerais](#tipos-de-linhas-gerais-1)
-  - [📝 Note](#-note)
-    - [if](#if-1)
-    - [Tipos note](#tipos-note)
     
 
 
@@ -26,9 +26,9 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 
 | Estilo de texto |  Tags                        |
 |:----------------|:-----------------------------|
-|`Negrito`        | <b>texto</b>                 |
-|`Sublinhado`     | <u>texto sublinhado</u>      |
-|`Tachado`        | <s>texto tachado<s/>         |
+|`Negrito`        | `<b>texto</b>`               |
+|`Sublinhado`     | `<u>texto sublinhado</u>`    |
+|`Tachado`        | `<s>texto tachado</s>`       |
 
 ### Sintaxe Markdown
 
@@ -64,46 +64,55 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 
 ### Tipos de Linhas gerais
 
+#### Linha sem estilo
+
 | Linhas                          |  Sintaxe                       |
 |:--------------------------------|:-------------------------------|
-|`Linha simples`                  | - ou --                        |
-|`Linha pontilhada`               | . ou ..                        |
-|`Linha negrito`                  | = ou ==                        |
-|`Linha com seta`                 | <-- ou -->                     |
-|`Linha com seta vazia`           | <|-- ou --|>                   |
-|`Esconde a Linha`                | -[hidden]-                     |
-|`Defini o tamnho da Linha`       | -[thickness=4]-                |
+|`Linha simples`                  | `- ou --`                      |
+|`Linha tracejada`                | `. ou ..`                      |
+|`Linha negrito`                  | `= ou ==`                      |
+|`Linha com seta`                 | `<-- ou -->`                   |
+|`Linha com seta vazia`           | `<|-- ou --|>`                 |
+|`Esconde a Linha`                | `-[hidden]-`                   |
+|`Defini a largura da Linha`      | `-[thickness=4]-`              |
+
+---
+
+#### Linha com estilo
+
+Tipos de linhas: `bold, dashed e dotted`.
+
+| Linhas                          |  Sintaxe                       |
+|:--------------------------------|:-------------------------------|
+|`Linha bold`                     | `-[#green,bold]-`              |
+|`Linha dashed`                   | `-[#red,dashed]-`              |
+|`Linha dotted`                   | `-[#blue,dotted]-`             |
+|`Linha bold com seta`            | `<-[#blue,bold]->`             |
+|`Linha bold com seta vazia`      | `<|-[#blue,bold]-|>`           |
 
 
+#### Exemplo 
+
+##### Código 
+
+```
+@startuml
+
+title Exemplo de diagrama com linha estilizada
+
+rectangle restaurante as rt
+rectangle cliente as cl
+
+rt <|-[#blue,dashed,thickness=5]--|> cl
+
+@enduml
+```
+##### Diagrama
+![Exemplo de diagrama com linha estilizada](https://www.planttext.com/api/plantuml/png/JOwn3i8m34JtV8KbrcPa0zI5hq0C9hOQ2oT5ZYDLg1zFX1XOtztJtTmSpNlH45nS6QuRbvUkG0mak1WMXBGMKAaPWPkBoXi9Gp1EZdKPZWsCtR0w0pOm_ykI2lzu6YFcSDhZxV3GpXDXoqoJPqdFogsTZ_SOzyktE7EbSUi3)
+
+
+---
 
 ## 📚 Class
 
-### if
 
-### Tipos de Linhas gerais
-
-| Linhas                          |  Sintaxe                       |
-|:--------------------------------|:-------------------------------|
-|`Linha simples`                  | - ou --                        |
-|`Linha pontilhada`               | . ou ..                        |
-|`Linha negrito`                  | = ou ==                        |
-|`Linha com seta`                 | <-- ou -->                     |
-|`Linha com seta vazia`           | <|-- ou --|>                   |
-|`Esconde a Linha`                | -[hidden]-                     |
-|`Defini o tamnho da Linha`       | -[thickness=4]-                |
-
-## 📝 Note
-
-### if
-
-### Tipos note
-
-| Linhas                          |  Sintaxe                       |
-|:--------------------------------|:-------------------------------|
-|`Linha simples`                  | - ou --                        |
-|`Linha pontilhada`               | . ou ..                        |
-|`Linha negrito`                  | = ou ==                        |
-|`Linha com seta`                 | <-- ou -->                     |
-|`Linha com seta vazia`           | <|-- ou --|>                   |
-|`Esconde a Linha`                | -[hidden]-                     |
-|`Defini o tamnho da Linha`       | -[thickness=4]-                |
