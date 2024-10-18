@@ -7,6 +7,7 @@ PlantUML é uma ferramenta que permite criar diagramas UML de forma textual. Com
   - [Integração com IDEs](#integração-com-ides)
   - [PlantUML Online (Versão Web)](#plantuml-online-versão-web)
   - [PlantText: plataforma alternativa](#planttext-plataforma-alternativa)
+- [🌍 Real World PlantUML](#-real-world-plantuml)
 
 
 
@@ -25,4 +26,9 @@ Acesse o PlantUML Web: Você pode acessar a versão online através do link ofic
 
 ## PlantText: plataforma alternativa
 
-PlantText é outra ferramenta online que permite criar e visualizar diagramas UML de forma rápida e simples. Ele utiliza a mesma sintaxe do PlantUML e é uma excelente opção para quem deseja uma interface amigável e focada exclusivamente em diagramas UML sem ter que fazer nenhuma instalação .
+[PlantText](https://www.planttext.com/) é outra ferramenta online que permite criar e visualizar diagramas UML de forma rápida e simples. Ele utiliza a mesma sintaxe do PlantUML e é uma excelente opção para quem deseja uma interface amigável e focada exclusivamente em diagramas UML sem ter que fazer nenhuma instalação .
+
+
+# 🌍 Real World PlantUML 
+
+O site [Real World PlantUML](https://real-world-plantuml.com/) dedicado a fornecer exemplos práticos de diagramas UML feitos com PlantUML. Se você está procurando inspiração ou exemplos prontos para usar em seus projetos, o Real World PlantUML é um excelente alternativa.
