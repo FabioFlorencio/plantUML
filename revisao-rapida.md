@@ -5,8 +5,8 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 
 - [📋 Tabela de revisão rápida ⚡](#-tabela-de-revisão-rápida-)
   - [🌐 Comandos gerais](#-comandos-gerais)
-    - [Sintaxe HTML](#sintaxe-html)
-    - [Sintaxe Markdown](#sintaxe-markdown)
+    - [HTML](#html)
+    - [Markdown](#markdown)
     - [Comentários](#comentários)
     - [Caracteres Especiais](#caracteres-especiais)
     - [Funções](#funções)
@@ -22,7 +22,7 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 
 
 ## 🌐 Comandos gerais
-### Sintaxe HTML
+### HTML
 
 | Estilo de texto |  Tags                        |
 |:----------------|:-----------------------------|
@@ -30,7 +30,7 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 |`Sublinhado`     | `<u>texto sublinhado</u>`    |
 |`Tachado`        | `<s>texto tachado</s>`       |
 
-### Sintaxe Markdown
+### Markdown
 
 | Estilo de texto |  Sintaxe                       |
 |:----------------|:-------------------------------|
@@ -45,7 +45,7 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 | Tipo de comentário |  Sintaxe                       |
 |:-------------------|:-------------------------------|
 |`Linha única`       |' Comentário                    |
-|`Múltiplas linhas`  |/' Comentário '/                |
+|`Múltiplas linhas`  |/' Comentários '/               |
 
 ### Caracteres Especiais
 

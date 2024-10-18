@@ -1,0 +1,29 @@
+@startuml
+
+
+skinparam BackgroundColor #cdcdcd
+skinparam Shadowing true
+
+left to right direction
+
+rectangle "8010, Mercenário 2, 2012" as filmeMercenario #orange/white;line.bold
+rectangle "8011, Titanic, 1997" as filmeTitanic #orange/white;line.bold
+rectangle "8012, Divergent, 2014" as filmeDivergent #orange/white;line.bold
+
+rectangle "1001, Jean-Claude Van Damme" as artistaJean #green/white;line.bold
+rectangle "1002, Leonardo DiCaprio" as artistaLeonardo #green/white;line.bold
+rectangle "1003, Kate Winslet" as artistaKate #green/white;line.bold
+rectangle "1004, Sylvester Stallone" as artistaSylvester #green/white;line.bold
+
+
+''=========================  RELACOES  ==================================
+
+filmeMercenario -[#black,bold]- artistaJean
+filmeMercenario -[#black,bold]- artistaSylvester
+
+filmeTitanic -[#black,bold]- artistaKate : \t\t
+filmeTitanic -[#black,bold]- artistaLeonardo
+filmeDivergent -[#black,bold]- artistaKate
+
+
+@enduml
