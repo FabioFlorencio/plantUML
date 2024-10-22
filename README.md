@@ -1,5 +1,6 @@
 # ❓ O que é o PlantUML?
-  
+  <br>
+<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmViMzg5cnhpZXVremhnMmpxcjJhcmZrdjg4NnF1cjU0ZjM5NmltbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GZd8nPH3TcNSU/giphy.gif" alt="python" width="500" height="300"/><br>
 PlantUML é uma ferramenta que permite criar diagramas UML de forma textual. Com uma sintaxe simples e poderosa, é possível gerar diagramas de classes, sequência, atividades, componentes, entre outros.
 
 - [❓ O que é o PlantUML?](#-o-que-é-o-plantuml)
