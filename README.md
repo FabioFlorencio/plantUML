@@ -9,7 +9,7 @@ PlantUML é uma ferramenta que permite criar diagramas UML de forma textual. Com
   - [🛠️ Ferramenta web](#️-ferramenta-web)
     - [PlantUML Online (Versão Web)](#plantuml-online-versão-web)
     - [PlantText: plataforma alternativa](#planttext-plataforma-alternativa)
-  - [📝 Exemplos](#-exemplos)
+  - [📝 Exemplos da web](#-exemplos-da-web)
     - [Real World PlantUML](#real-world-plantuml)
   - [📁 Revisão rápida](#-revisão-rápida)
 
@@ -40,7 +40,7 @@ Acesse o PlantUML Web: Você pode acessar a versão online através do link ofic
 
 ![video de apresentaçao do planttext](img/gif-planttext.gif)
 
-## 📝 Exemplos  
+## 📝 Exemplos da web 
 
 ### Real World PlantUML 
 
@@ -50,5 +50,7 @@ O site [Real World PlantUML](https://real-world-plantuml.com/) dedicado a fornec
 
 
 ## 📁 Revisão rápida
+
+Nesse diretório possui uma tabela de revisão sobre as principais sintaxes do plantUML.
 
 [Revisão rápida](https://github.com/FabioFlorencio/plantUML/tree/master/revisao-rapida)
