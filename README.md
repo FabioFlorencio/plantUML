@@ -37,6 +37,7 @@ Acesse o PlantUML Web: Você pode acessar a versão online através do link ofic
 
 [PlantText](https://www.planttext.com/) é outra ferramenta online que permite criar e visualizar diagramas UML de forma rápida e simples. Ele utiliza a mesma sintaxe do PlantUML e é uma excelente opção para quem deseja uma interface amigável e focada exclusivamente em diagramas UML sem ter que fazer nenhuma instalação .
 
+![video de apresentaçao do planttext](img/video-planttext.mp4)
 
 ## 📝 Exemplos  
 
