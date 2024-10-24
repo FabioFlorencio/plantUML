@@ -1,46 +1,46 @@
-@startuml
+  @startuml
 
-title Caixa Eletrônico Simplificado - UML 1
+  title Caixa Eletrônico Simplificado - UML 1
 
-skin rose
-skinparam componentstyle UML1
+  skin rose
+  skinparam componentstyle UML1
 
-left to right direction
+  left to right direction
 
-interface ISacar
-interface IConsultar
-interface ITransferir
-
-
-node "<<device>>\n\n**Caixa**\n\n**Eletrônico**\n\n" as cx #red/white;text:yellow   {
-  node [**Gerenciador**\n**de** **caixa**\n**eletrônico**] as gerenciador
-}
-
-[**Transferir**] <<interface>> as interfaceTransf
-[**Consulta**] <<interface>> as interfaceConsulta
-[**Saque**] <<interface>> as interfaceSaque
-
-node [Sacar Dinheiro] as Sacar
-node [Consultar Saldo] as consultSaldo
-node [Transferir Dinheiro] as transfDinheiro
-node [Contagem de Células] as contCelulas
-footer //**Relacionamento entre componentes por meio de Interfaces. Exemplo UML 1**//
-
-'=========================  RELACOES  ==================================
-
-cx ..> ISacar : <<TC/IP>>
-cx ..> IConsultar : <<TC/IP>>
-cx ..> ITransferir : <<TC/IP>>
-
-ISacar -- Sacar
-Sacar ..> interfaceSaque 
-Sacar .r.> consultSaldo
-transfDinheiro .l.> consultSaldo
-Sacar ..> contCelulas : **IContagens**\n**de Celulas**
-IConsultar -- consultSaldo
-consultSaldo ..> interfaceConsulta
-ITransferir -- transfDinheiro
-transfDinheiro ..> interfaceTransf
+  interface ISacar
+  interface IConsultar
+  interface ITransferir
 
 
-@enduml
+  node "<<device>>\n\n**Caixa**\n\n**Eletrônico**\n\n" as cx #red/white;text:yellow   {
+    node [**Gerenciador**\n**de** **caixa**\n**eletrônico**] as gerenciador
+  }
+
+  [**Transferir**] <<interface>> as interfaceTransf
+  [**Consulta**] <<interface>> as interfaceConsulta
+  [**Saque**] <<interface>> as interfaceSaque
+
+  node [Sacar Dinheiro] as Sacar
+  node [Consultar Saldo] as consultSaldo
+  node [Transferir Dinheiro] as transfDinheiro
+  node [Contagem de Células] as contCelulas
+  footer //**Relacionamento entre componentes por meio de Interfaces. Exemplo UML 1**//
+
+  '=========================  RELACOES  ==================================
+
+  cx ..> ISacar : <<TC/IP>>
+  cx ..> IConsultar : <<TC/IP>>
+  cx ..> ITransferir : <<TC/IP>>
+
+  ISacar -- Sacar
+  Sacar ..> interfaceSaque 
+  Sacar .r.> consultSaldo
+  transfDinheiro .l.> consultSaldo
+  Sacar ..> contCelulas : **IContagens**\n**de Celulas**
+  IConsultar -- consultSaldo
+  consultSaldo ..> interfaceConsulta
+  ITransferir -- transfDinheiro
+  transfDinheiro ..> interfaceTransf
+
+
+  @enduml
