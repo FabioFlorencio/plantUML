@@ -1,5 +1,7 @@
 # 📋 Tabela de revisão rápida ⚡
 
+![](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGUwY281MXptb3h5Y2lnaXVlZmxjdHByYjBlcjZ1Mmlhd3NleXp3cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/W8OfQ8S1PXWKY/giphy.gif)
+
 Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 
 
