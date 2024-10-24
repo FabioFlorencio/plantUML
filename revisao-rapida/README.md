@@ -16,12 +16,12 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
       - [Exemplo](#exemplo)
         - [Código](#código)
         - [Diagrama](#diagrama)
+    - [🧭 Direção dos elementos](#-direção-dos-elementos)
   - [📚 Class](#-class)
     
 
-
-
 ## 🌐 Comandos gerais
+
 ### HTML
 
 | Estilo de texto |  Tags                        |
@@ -112,6 +112,17 @@ rt <|-[#blue,dashed,thickness=5]--|> cl
 
 
 ---
+
+### 🧭 Direção dos elementos
+
+Representa o eixo conforme a escolha.
+
+
+| Direção                                         |  Sintaxe                       |
+|:------------------------------------------------|:-------------------------------|
+|`Elementos alinhados da esquerda para direita`   | `left to right direction`      |
+|`Elementos alinhados de cima para baixo`         | `top to bottom direction`      |
+
 
 ## 📚 Class
 
