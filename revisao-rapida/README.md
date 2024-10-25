@@ -19,10 +19,18 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
         - [Código](#código)
         - [Diagrama](#diagrama)
     - [🧭 Direção dos elementos](#-direção-dos-elementos)
-  - [📚 Class](#-class)
+    - [🖌️ Design](#️-design)
+      - [Cores](#cores)
+      - [Exemplo de aplicação de cores](#exemplo-de-aplicação-de-cores)
+        - [Código](#código-1)
+        - [Diagrama](#diagrama-1)
+      - [Skinparam](#skinparam)
+  - [🗂️ Diagramas](#️-diagramas)
+    - [📚 Class](#-class)
+    - [🔲 Retângulo](#-retângulo)
     
 
-## 🌐 Comandos gerais
+## 🌐 Comandos gerais 
 
 ### HTML
 
@@ -125,7 +133,30 @@ Representa o eixo conforme a escolha.
 |`Elementos alinhados da esquerda para direita`   | `left to right direction`      |
 |`Elementos alinhados de cima para baixo`         | `top to bottom direction`      |
 
+### 🖌️ Design
 
-## 📚 Class
+#### Cores
+
+As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) ou utilizando códigos hexadecimais (como #FF5733).
+
+- [Link com mais opções de cores](https://www.w3schools.com/colors/colors_names.asp)
+
+![Imagem cores](../img-geral/img-revisao-rapida/img-cores.png)
+
+#### Exemplo de aplicação de cores
+##### Código
+##### Diagrama
+
+####  Skinparam
+
+É um comando utilizado para personalizar a aparência de elementos no diagrama, permitindo ajustes em cores, fontes, tamanhos, estilos de borda e outras propriedades visuais.
+
+- [Link do skinparam](https://plantuml-documentation.readthedocs.io/en/latest/diagrams/index.html)
+---
+
+
+## 🗂️ Diagramas
+### 📚 Class
+### 🔲 Retângulo
 
 

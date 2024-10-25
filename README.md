@@ -41,7 +41,7 @@ Acesse o PlantUML Web: Você pode acessar a versão online através do link ofic
 
 [PlantText](https://www.planttext.com/) é outra ferramenta online que permite criar e visualizar diagramas UML de forma rápida e simples. Ele utiliza a mesma sintaxe do PlantUML e é uma excelente opção para quem deseja uma interface amigável e focada exclusivamente em diagramas UML sem ter que fazer nenhuma instalação .
 
-![video de apresentaçao do planttext](img/gif-planttext.gif)
+![video de apresentaçao do planttext](./img-geral/img-readme-principal/gif-planttext.gif)
 
 ## 📝 Exemplos da web 
 
@@ -49,7 +49,7 @@ Acesse o PlantUML Web: Você pode acessar a versão online através do link ofic
 
 O site [Real World PlantUML](https://real-world-plantuml.com/) dedicado a fornecer exemplos práticos de diagramas UML feitos com PlantUML. Se você está procurando inspiração ou exemplos prontos para usar em seus projetos, o Real World PlantUML é um excelente alternativa.
 
-![](img/gif-exemplos-de-uso.gif)
+![](./img-geral/img-readme-principal/gif-exemplos-de-uso.gif)
 
 ## 📊 Exemplos de diagramas
 
@@ -60,7 +60,7 @@ Nesse diretório possui diagramas de alguns estudos.
 
 ## 📑 Documentação PlantUML
 
-- [Documentação](https://plantuml.com/)
+- [Site oficial](https://plantuml.com/)
 - [PDF](https://plantuml.com/guide)
 - [Repositório oficial PlantUML](https://github.com/plantuml/plantuml-stdlib)
 
