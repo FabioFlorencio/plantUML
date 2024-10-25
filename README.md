@@ -13,6 +13,7 @@ PlantUML é uma ferramenta que permite criar diagramas UML de forma textual. Com
   - [📝 Exemplos da web](#-exemplos-da-web)
     - [Real World PlantUML](#real-world-plantuml)
   - [📊 Exemplos de diagramas](#-exemplos-de-diagramas)
+  - [📑 Documentação PlantUML](#-documentação-plantuml)
   - [📁 Revisão rápida](#-revisão-rápida)
 
 
@@ -54,8 +55,14 @@ O site [Real World PlantUML](https://real-world-plantuml.com/) dedicado a fornec
 
 Nesse diretório possui diagramas de alguns estudos.
 
-[Exemplos](https://github.com/FabioFlorencio/plantUML/tree/master/exemplos)
+- [Exemplos](https://github.com/FabioFlorencio/plantUML/tree/master/exemplos)
 
+
+## 📑 Documentação PlantUML
+
+- [Documentação](https://plantuml.com/)
+- [PDF](https://plantuml.com/guide)
+- [Repositório oficial PlantUML](https://github.com/plantuml/plantuml-stdlib)
 
 ## 📁 Revisão rápida
 
