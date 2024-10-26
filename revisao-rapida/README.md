@@ -28,17 +28,19 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
   - [🗂️ Diagramas](#️-diagramas)
     - [📚 Class](#-class)
     - [🔲 Retângulo](#-retângulo)
+  - [⏰ Dicas de produtividade](#-dicas-de-produtividade)
     
 
 ## 🌐 Comandos gerais 
 
 ### HTML
 
-| Estilo de texto |  Tags                        |
-|:----------------|:-----------------------------|
-|`Negrito`        | `<b>texto</b>`               |
-|`Sublinhado`     | `<u>texto sublinhado</u>`    |
-|`Tachado`        | `<s>texto tachado</s>`       |
+| Estilo de texto |  Tags                                        |
+|:----------------|:---------------------------------------------|
+|`Negrito`        | `<b>texto</b>`                               |
+|`Sublinhado`     | `<u>texto sublinhado</u>`                    |
+|`Tachado`        | `<s>texto tachado</s>`                       |
+|`size`           | `<size:20>Aumenta tamanho da fonte</size:20>`|
 
 ### Markdown
 
@@ -139,9 +141,10 @@ Representa o eixo conforme a escolha.
 
 As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) ou utilizando códigos hexadecimais (como #FF5733).
 
-- [Link com mais opções de cores](https://www.w3schools.com/colors/colors_names.asp)
+- [Cores com códigos hexadecimais ](https://www.w3schools.com/colors/colors_names.asp)
 
 ![Imagem cores](../img-geral/img-revisao-rapida/img-cores.png)
+
 
 #### Exemplo de aplicação de cores
 ##### Código
@@ -158,5 +161,11 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 ## 🗂️ Diagramas
 ### 📚 Class
 ### 🔲 Retângulo
+
+
+## ⏰ Dicas de produtividade
+
+- Crie primeiramente os objetos e depois faça as relações.
+- Deixe a estilização por úlitmo ou utilize Skinparam que tem opções prontas a sua escolha.
 
 

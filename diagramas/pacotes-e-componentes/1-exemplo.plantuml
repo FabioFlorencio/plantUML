@@ -1,0 +1,102 @@
+@startuml
+
+title <color:white><size:20>Exemplo de Diagrama de Pacotes Com Componentes</size></color>
+
+skinparam backgroundColor #246eb9
+
+scale 0.9
+
+skin rose
+
+package Visão #4cb944{
+  
+  component "<<boundary>>\nVisãoAutoAtendimento" as visaoAutoAtendimento{
+    portout p1
+  }
+  component "<<boundary>>\nVisãoGerenciamentoContas" as visaoGerenciamentoContas{
+    portout p2
+  }
+  component "<<executable>>\nFirewall" as visaoFirewall{
+    portout p3
+    portout p33
+  }
+}
+
+package Controle #f06543{
+  component "<<executable>>\nControleAutoAtendimento" as controleAutoAtendimento{
+    portout p4
+    portout p44
+  }
+  component "<<executable>>\nControleGerenciamentoContas" as controleGerenciamentoContas{
+    portout p5 
+    portout p55 
+  }
+}
+
+package Modelo #f5ee9e{
+  component "<<executable>>\nGerenciadorAutoAtendimento" as modeloGerenciadorAutoAtendimento{
+    portout p6
+    portout p66
+  }
+  component "<<executable>>\nGerenciadorContas" as modeloGerenciadorContas{
+    portout p7
+    portout p77
+  }
+}
+
+package Persistência #e4ffd6{
+  component "<<persistent>>\nGerenciadorPersistência" as gerenciadorPersistencia{
+    portout p8
+    portout p88
+  }
+  component "<<persistent>>\nGerenciadorSGBD" as gerenciadorSGBD{
+    portout p9
+  }
+}
+
+
+'=============================  RELACOES  ===========================================
+
+Visão --[hidden]r-- Controle
+Controle --[hidden]u-- Modelo
+controleGerenciamentoContas -[hidden]d-- controleAutoAtendimento
+Modelo -[hidden]-- Persistência
+modeloGerenciadorAutoAtendimento -[hidden]u-- modeloGerenciadorContas
+gerenciadorPersistencia -[hidden]d-- gerenciadorSGBD
+visaoFirewall -[hidden]u- visaoGerenciamentoContas
+
+'=========================  PORTS==================================
+
+/'
+  p1 = visaoAutoAtendimento
+  p2 = visaoGerenciamentoContas
+  p3 = visaoFirewall
+  p33
+  p4 = controleAutoAtendimento
+  p44
+  p5 = controleGerenciamentoContas
+  p55
+  p6 = modeloGerenciadorAutoAtendimento
+  p66
+  p7 = modeloGerenciadorContas
+  p77
+  p8 = gerenciadorPersistencia
+  p88
+  p9 = gerenciadorSGBD 
+'/
+
+p3 -0)- p1 #black;line.bold /'p3--visaoFirewall -- p1--visaoAutoAtendimento'/
+p3 -0)- p2 #black;line.bold/'p3--visaoFirewall -- p2--visaoGerenciamentoContas'/
+
+p33 -(0- p4 #black;line.bold /'p33-visaoFirewall -- p4--controleAutoAtendimentoVisaoGerenciamentoContas'/
+p33 -(0- p5 #black;line.bold /'p33-visaoFirewall -- p5--controleGerenciamentoContas'/
+
+p44 -(0- p6 #black;line.bold/'p44--controleAutoAtendimento -- p6--modeloGerenciadorAutoAtendimento'/
+p55 -(0- p7 #black;line.bold/'p55--controleAutoAtendimento -- p7--modeloGerenciadorContas'/
+
+p66 -(0- p8 #black;line.bold/'p66--modeloGerenciadorAutoAtendimento -- p8--gerenciadorPersistencia'/
+p77 -(0- p8 #black;line.bold/'p77--modeloGerenciadorContas -- p8--gerenciadorPersistencia'/
+
+p88 -(0- p9 #black;line.bold/'p8--gerenciadorPersistencia -- p9--gerenciadorSGBD'/
+
+@enduml

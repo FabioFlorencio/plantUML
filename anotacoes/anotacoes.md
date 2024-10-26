@@ -13,3 +13,7 @@
 - [x] Incluir imagens
 - [ ] 
 
+## README REVISÃO RÁPIDA
+
+- [ ] Incluir videos de demonstração das dicas de produtividade
+- [ ] Fazer exemplos com (class, rectangle)
