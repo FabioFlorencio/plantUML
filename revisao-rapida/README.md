@@ -25,6 +25,8 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
         - [Código](#código-1)
         - [Diagrama](#diagrama-1)
       - [Skinparam](#skinparam)
+      - [Skinparam nativo](#skinparam-nativo)
+      - [Themes](#themes)
   - [🗂️ Diagramas](#️-diagramas)
     - [📚 Class](#-class)
     - [🔲 Retângulo](#-retângulo)
@@ -35,12 +37,12 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 
 ### HTML
 
-| Estilo de texto |  Tags                                        |
-|:----------------|:---------------------------------------------|
-|`Negrito`        | `<b>texto</b>`                               |
-|`Sublinhado`     | `<u>texto sublinhado</u>`                    |
-|`Tachado`        | `<s>texto tachado</s>`                       |
-|`size`           | `<size:20>Aumenta tamanho da fonte</size:20>`|
+| Estilo de texto |  Tags                                          |
+|:----------------|:-----------------------------------------------|
+|`Negrito`        | `<b>texto</b>`                                 |
+|`Sublinhado`     | `<u>texto sublinhado</u>`                      |
+|`Tachado`        | `<s>texto tachado</s>`                         |
+|`size`           | `<size:20>Aumenta o tamanho da fonte</size:20>`|
 
 ### Markdown
 
@@ -155,6 +157,29 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 É um comando utilizado para personalizar a aparência de elementos no diagrama, permitindo ajustes em cores, fontes, tamanhos, estilos de borda e outras propriedades visuais.
 
 - [Link do skinparam](https://plantuml-documentation.readthedocs.io/en/latest/diagrams/index.html)
+
+####  Skinparam nativo
+
+| Temas                           |  Sintaxe                       |
+|:--------------------------------|:-------------------------------|
+|`skin rose`                      | `rose`                         |
+|`skinparam handwritten true`     | `handwritten true`             |
+|`skinparam shadowing true`       | `sombra`                       |
+|`skinparam shadowing false`      | `sombra`                       |
+
+####  Themes
+
+- [Temas](https://the-lum.github.io/puml-themes-gallery/)
+
+
+| Temas                           |  Sintaxe                       |
+|:--------------------------------|:-------------------------------|
+|`!theme handwritten true`        | `handwritten true`             |
+|`!theme crt-amber`               | `-[#red,dashed]-`              |
+|`!theme sketchy`                 | `-[#blue,dotted]-`             |
+|`!theme crt-green`               | `<-[#blue,bold]->`             |
+|`!theme cyborg-outline`          | `<|-[#blue,bold]-|>`           |
+
 ---
 
 

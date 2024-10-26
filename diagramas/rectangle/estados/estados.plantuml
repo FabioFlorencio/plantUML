@@ -1,0 +1,25 @@
+@startuml
+
+left to right direction
+
+skinparam shadowing true
+
+rectangle "Brasil" as br <<styleBrasil>> #line.bold 
+rectangle "Minas Gerais" as mg #chocolate;line.bold 
+rectangle "Rio de Janeiro" as rj #lightblue;line.bold 
+rectangle "São Paulo" as sp #gold;line.bold 
+
+' Estilos individuais
+skinparam rectangle<<styleBrasil>>{
+  BackgroundColor #green
+  BorderColor yellow  
+}
+
+hide stereotype  
+
+''=========================  RELACOES  ==================================
+br -- mg
+br -- rj
+br -- sp
+
+@enduml
