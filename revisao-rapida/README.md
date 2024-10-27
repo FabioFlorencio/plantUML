@@ -30,6 +30,7 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
   - [🗂️ Diagramas](#️-diagramas)
     - [📚 Class](#-class)
     - [🔲 Retângulo](#-retângulo)
+      - [Retângulo: Principais sintaxes](#retângulo-principais-sintaxes)
   - [⏰ Dicas de produtividade](#-dicas-de-produtividade)
     
 
@@ -43,6 +44,7 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 |`Sublinhado`     | `<u>texto sublinhado</u>`                      |
 |`Tachado`        | `<s>texto tachado</s>`                         |
 |`size`           | `<size:20>Aumenta o tamanho da fonte</size:20>`|
+|`font`           | `<font color=red>Warning:</font>`              |
 
 ### Markdown
 
@@ -186,6 +188,45 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 ## 🗂️ Diagramas
 ### 📚 Class
 ### 🔲 Retângulo
+
+#### Retângulo: Principais sintaxes
+
+```
+@startuml
+
+skinparam backgroundcolor #cdcdcd
+
+caption \n\nFigure 1 - Retangle
+
+rectangle Restaurante #gold
+
+' rectangle simples sem STEREOTYPE
+rectangle cliente
+
+' rectangle Usando alias
+rectangle restaurante <<BR>> as br #green/yellow
+
+' rectangle sem alias
+rectangle restaurante <<USA>> #red/white;text:white
+
+rectangle "<:hotdog:> comida americana" as comidaAmericana#white
+
+
+''=========================  RELACOES  ==================================
+
+Restaurante .. restaurante
+Restaurante .. br :\t\t\t
+restaurante --> comidaAmericana : **serve**
+comidaAmericana  <-right- cliente : **escolhe**
+
+
+@enduml
+
+```
+
+Figure 1 - Retangle
+
+![rectangle-principais-sintaxes](../img-geral/img-revisao-rapida/rectangle-principais-sintaxes.png)
 
 
 ## ⏰ Dicas de produtividade
