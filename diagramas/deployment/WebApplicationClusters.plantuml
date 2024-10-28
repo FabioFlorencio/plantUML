@@ -1,0 +1,128 @@
+@startuml
+
+
+title Exemplo Load Balanced and clustered deployment of j2EE web application
+
+skin rose
+scale 0.7
+
+skinparam backgroundcolor #cdcdcd
+left to right direction
+
+caption Exemplo original [[https://www.uml-diagrams.org/web-application-clusters-uml-deployment-diagram-example.html?context=depl-examples{uml-diagrams} Fonte:uml-diagrams.org]]
+
+!include <office/Concepts/settings.puml>
+!include <office/Concepts/application_web.puml>
+
+''=========================  ICONS  ==================================
+
+sprite $osa_server_web [64x62/16z] {
+vTA7chKs38HXQsOasUpzts-4OV-GFR37wUrxwF3Ispyxt6JhFCPTNEK-QA_5wWcqgTsL0okS8rhxxIV0oFQGBPp0UhTlTWvxuxFuSzRZZH_UlilpZUzgzjoQ
+1-_3efVVnsNFkzQz_kNUTTUof-x3cWVieKLFtST5_pkV7nBl-lzulstPF_PxFVvIpz_u_qrAWFuR_pzuHB3yR_r-qJ-wBtjuHaG6xTFdzZ5YqIk4WY0ZtGuV
+Oqk7VkbrvvcodJUIagU6Dq0HJl3z_oSte3nO2OROTWyI5IjSigzUCWB53c8qyrp_V-YDQ3O3IEqhuSi-sXvmUckjF5ABtZ4vJr-yCZ3NlCNai1dCH5ZvrnlW
+hISll1X1TncWF1716Z27Ln_pPkqCrexrCfqhtfiauC8h2E6x9o_3lJST_qTfV7fpCePsRpy6tNbBCuhyt7DaykZT3w-9fzUBRocd0Cva1pUeZw6ltkwzimWr
+C-mh1SlpqqkxzullzhEFu77BUn79dSVMfzU3Xvr-9ySo9e-K5HjRJ-o-qPlKdAry3J-y7HxfYJQREdk0z6qC_-BZwedJj_9XnvaYY_SavVFsbpowzu1POqu-
+ilWOGstFzi5gE1UFhhv5H1V0ijKONHvR7o8Uouitz4W7OanTXVV-yR5juxd4nMkawEEiNFQjHxYUuy4FNpQL9oxUnvRk8fupQnSlxwDdzb7rqZrA4_ROvDSJ
+A0uygga1QyiPI7b4zip25xsQ6S0phEEV
+}
+
+sprite $osa_server_database [64x64/16z] {
+vTE73kiW38LXx6E3dV7-htkXL0rLdOIxrozhLbyMRlgpuo2QvzcZCClLGP_bsGl88YcgECzmU4xfso_0Nj99D741CgEB7vrkV36wl7g-yQxfAYqttYJHUNEU
+4SUJNZGEqnvHyrx-SgyIDUqXSJpdcUcaIG-9mwJ_plTd4KJzFrx3flrft-lvbtfyw_ur2cReD-uVQyuPrN_h-PLbDVqUlwsUfpqn82s0kNbaNugol7i9F45o
+EJ8hLaGWEIiOT_j7MjwoPqK5N4EDX-ZTIuZDtQt8_Vv8O2lkcTnvEiU-B5vmus6nhRZcDk53t3CVF4A_nhXpMwKvrE4-7txVVD3Ba9jl-xtVztMnsiYzNNFP
+zdqJGlSuzxLjNNpyYijQyVxqpv7O3ssz_QXvUU27by27nPw-qOiqhuCtclIQOiyqvVVgDOaaHQg-pilt2yYDpuVFemS_FF5soTTCLvw8onNVCeWejKbzUeD7
+sSwvgGZuit8yFw2-dl1rRRiSLVZfYI6IYo_lQ_VOvr9oLfKeTDul057DfPZxwy_JQAuKu31gVBn2kyGhRNLCSOsFLs00SWIWtsGw8k8ZglHNz0K
+}
+
+
+''=============================CODIGO======================================
+
+node "Personal Computer\n\n" <<device>> as personalComputer #skyblue{
+  node "\n" <<web browser>> as webBrowser{
+  }
+}
+
+node "__1-wsrv-03: Sun Fire X4170 Server__  <$osa_server_web>\n\n" as wsrv03 <<device>> #skyblue{
+  node "SUSE Linux Ent 10\n" <<OS>> as suse1 #pink{
+    rectangle "static content" as st
+    
+    node "__Apache HTTP Server 2.2__" <<Web server>> as apacheServerA #white{
+      rectangle "mod_jk\n<$settings>" as mod
+      rectangle "mod_proxy_balancer\n<$settings>" as modProxy
+      
+      /'======== RELACOES  ========='/
+
+      mod -[hidden]- modProxy
+      modProxy -[hidden]- st
+      
+    }
+  }
+}
+
+together{
+  node "__2-psrv-01: Sun Fire X4150 Server__  <$osa_server_web>\n\n" <<device>> as psrv01 #skyblue{
+    node "SUSE Linux Ent 10\n" <<OS>> as suse2 #pink{
+      
+      node "<<JSP server>> pTom10:\n__Apache Tomcat Server 5.5__" as apacheServerB #white{
+          rectangle "<$application_web>" as webB <<web application>>
+      }
+      node "<<JSP server>> pTom11:\n__Apache Tomcat Server 5.5__" as apacheServerC #white{
+          rectangle "<$application_web>" as webC <<web application>>
+      }
+      
+      /'======== RELACOES  ========='/
+
+      apacheServerB -r[hidden]- apacheServerC
+    }
+  }
+  
+  node "__3-psrv-02: Sun Fire X4150 Server__  <$osa_server_web>\n\n" <<device>> as psrv02 #skyblue{
+    node "SUSE Linux Ent 10\n" <<OS>> as suse3 #pink{
+      
+      node "<<JSP server>> pTom20:\n__Apache Tomcat Server 5.5__" as apacheServerD #white{
+          rectangle "<$application_web>" as webD <<web application>>
+      }
+      node "<<JSP server>> pTom21:\n__Apache Tomcat Server 5.5__" as apacheServerE #white{
+          rectangle "<$application_web>" as webE <<web application>>
+      }
+      
+      /'======== RELACOES  ========='/
+
+      apacheServerD -r[hidden]- apacheServerE
+    }
+  }
+}
+node "__4-dbsrv-14: Sun SPARC Server__  <$osa_server_database>\n\n" as dbsrv14 <<device>> #skyblue{
+  node "Sun Solaris 10\n" <<OS>> as solaris #pink{
+    
+    node "Oracle 11g" <<database system>> as databaseOracle #white{
+      rectangle "Users" <<schema>> as users
+      rectangle "Orders" <<schema>> as orders
+      
+      /'======== RELACOES  ========='/
+      
+      users -[hidden]- orders
+    }
+  }
+}
+
+''=========================  RELACOES  ==================================
+
+personalComputer -r[hidden]- wsrv03
+webBrowser -- apacheServerA : <<protocol>>\n HTTP
+
+psrv01 -r[hidden]-- psrv02
+
+apacheServerA -- apacheServerB : "<<protocol>>\n ajp 13:8009\n"
+apacheServerA - apacheServerC : "<<protocol>>\n ajp 13:8019\n\n"
+apacheServerA - apacheServerD : "<<protocol>>\n ajp 13:8029"
+apacheServerA - apacheServerE : "<<protocol>>\n ajp 13:8039"
+
+psrv02 -r[hidden]- dbsrv14 
+
+apacheServerB -- databaseOracle : "<<protocol>>\nTCP/IP"  
+apacheServerC -- databaseOracle : "<<protocol>>\nTCP/IP"
+apacheServerD -- databaseOracle : "<<protocol>>\nTCP/IP"
+apacheServerE -- databaseOracle : "<<protocol>>\nTCP/IP"
+
+@enduml

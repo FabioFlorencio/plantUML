@@ -12,9 +12,9 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
     - [Comentários](#comentários)
     - [Caracteres Especiais](#caracteres-especiais)
     - [Funções](#funções)
-    - [Tipos de Linhas gerais](#tipos-de-linhas-gerais)
-      - [Linha sem estilo](#linha-sem-estilo)
-      - [Linha com estilo](#linha-com-estilo)
+    - [Tipos de Linhas\\Setas gerais](#tipos-de-linhassetas-gerais)
+      - [Linha\\Setas sem estilo](#linhasetas-sem-estilo)
+      - [Linha\\Setas com estilo](#linhasetas-com-estilo)
       - [Exemplo](#exemplo)
         - [Código](#código)
         - [Diagrama](#diagrama)
@@ -25,12 +25,19 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
         - [Código](#código-1)
         - [Diagrama](#diagrama-1)
       - [Skinparam](#skinparam)
+      - [Skinparam UML](#skinparam-uml)
+        - [UML 1 E 2](#uml-1-e-2)
       - [Skinparam nativo](#skinparam-nativo)
       - [Themes](#themes)
+      - [Icons](#icons)
+        - [Logos](#logos)
   - [🗂️ Diagramas](#️-diagramas)
     - [📚 Class](#-class)
     - [🔲 Retângulo](#-retângulo)
       - [Retângulo: Principais sintaxes](#retângulo-principais-sintaxes)
+    - [📦 Component](#-component)
+      - [Component: Principais sintaxes](#component-principais-sintaxes)
+      - [Linhas | Setas](#linhas--setas)
   - [⏰ Dicas de produtividade](#-dicas-de-produtividade)
     
 
@@ -78,11 +85,11 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 |`Formato de data`                | %date("dd/mm/yyyy HH:mm")      |
 |`Aumenta o tamanho do diagrama`  | scale 1.5                      |
 
-### Tipos de Linhas gerais
+### Tipos de Linhas\Setas gerais
 
-#### Linha sem estilo
+#### Linha\Setas sem estilo
 
-| Linhas                          |  Sintaxe                       |
+| Linhas \ Setas                  |  Sintaxe                       |
 |:--------------------------------|:-------------------------------|
 |`Linha simples`                  | `- ou --`                      |
 |`Linha tracejada`                | `. ou ..`                      |
@@ -94,11 +101,11 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 
 ---
 
-#### Linha com estilo
+#### Linha\Setas com estilo
 
 Tipos de linhas: `bold, dashed e dotted`.
 
-| Linhas                          |  Sintaxe                       |
+| Linhas \ Setas                  |  Sintaxe                       |
 |:--------------------------------|:-------------------------------|
 |`Linha bold`                     | `-[#green,bold]-`              |
 |`Linha dashed`                   | `-[#red,dashed]-`              |
@@ -160,6 +167,15 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 - [Link do skinparam](https://plantuml-documentation.readthedocs.io/en/latest/diagrams/index.html)
 
+####  Skinparam UML
+
+##### UML 1 E 2
+
+| Temas                           |  Sintaxe                       |
+|:--------------------------------|:-------------------------------|
+|`skinparam componentStyle uml1`  | `xxx`                          |
+|`skinparam componentStyle uml2`  | `xxx`                          |
+
 ####  Skinparam nativo
 
 | Temas                           |  Sintaxe                       |
@@ -176,11 +192,23 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 | Temas                           |  Sintaxe                       |
 |:--------------------------------|:-------------------------------|
-|`!theme handwritten true`        | `handwritten true`             |
 |`!theme crt-amber`               | `-[#red,dashed]-`              |
 |`!theme sketchy`                 | `-[#blue,dotted]-`             |
 |`!theme crt-green`               | `<-[#blue,bold]->`             |
 |`!theme cyborg-outline`          | `<|-[#blue,bold]-|>`           |
+
+####  Icons 
+
+#####  Logos
+
+- [Logos](https://github.com/plantuml/plantuml-stdlib/tree/master/logos)
+
+
+| Logos                                   |  Sintaxe                       |
+|:----------------------------------------|:-------------------------------|
+|`!include <logos/django.puml>`           | `-[#red,dashed]-`              |
+|`!include <logos/android-vertical.puml>` | `-[#blue,dotted]-`             |
+|`!include <logos/java.puml>`             | `<-[#blue,bold]->`             |
 
 ---
 
@@ -227,6 +255,24 @@ comidaAmericana  <-right- cliente : **escolhe**
 Figure 1 - Retangle
 
 ![rectangle-principais-sintaxes](../img-geral/img-revisao-rapida/rectangle-principais-sintaxes.png)
+
+### 📦 Component
+
+
+#### Component: Principais sintaxes
+
+#### Linhas | Setas
+
+| Linhas \ Setas                  |  Sintaxe                       |
+|:--------------------------------|:-------------------------------|
+|`Linha simples`                  | `- ou --`                      |
+|`Linha tracejada`                | `. ou ..`                      |
+|`interface fornecida`            | `-0)-`                         |
+|`interface requerida`            | `-(0-`                         |
+|`Dependência`                    | `<-- ou -->`                   |
+|`Realização \ seta vazia`        | `<|-- ou --|>`                 | 
+|`Esconde a Linha`                | `-[hidden]-`                   |
+|`Defini a largura da Linha`      | `-[thickness=4]-`              |
 
 
 ## ⏰ Dicas de produtividade
