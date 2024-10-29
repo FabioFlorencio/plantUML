@@ -6,6 +6,7 @@ title Exemplo Load Balanced and clustered deployment of j2EE web application
 skin rose
 scale 0.7
 
+
 skinparam backgroundcolor #cdcdcd
 left to right direction
 
@@ -44,7 +45,7 @@ node "Personal Computer\n\n" <<device>> as personalComputer #skyblue{
 
 node "__1-wsrv-03: Sun Fire X4170 Server__  <$osa_server_web>\n\n" as wsrv03 <<device>> #skyblue{
   node "SUSE Linux Ent 10\n" <<OS>> as suse1 #pink{
-    rectangle "static content" as st
+    artifact "  static content \n\n\n" as staticContent
     
     node "__Apache HTTP Server 2.2__" <<Web server>> as apacheServerA #white{
       rectangle "mod_jk\n<$settings>" as mod
@@ -53,7 +54,7 @@ node "__1-wsrv-03: Sun Fire X4170 Server__  <$osa_server_web>\n\n" as wsrv03 <<d
       /'======== RELACOES  ========='/
 
       mod -[hidden]- modProxy
-      modProxy -[hidden]- st
+      modProxy -[hidden]- staticContent
       
     }
   }

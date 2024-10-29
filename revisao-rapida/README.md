@@ -204,11 +204,60 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 - [Logos](https://github.com/plantuml/plantuml-stdlib/tree/master/logos)
 
 
-| Logos                                   |  Sintaxe                       |
+| Include                                 |  Sintaxe                       |
 |:----------------------------------------|:-------------------------------|
-|`!include <logos/django.puml>`           | `-[#red,dashed]-`              |
-|`!include <logos/android-vertical.puml>` | `-[#blue,dotted]-`             |
-|`!include <logos/java.puml>`             | `<-[#blue,bold]->`             |
+|`!include <logos/django.puml>`           | `<$django>`                     |
+|`!include <logos/android-vertical.puml>` | `<$android-vertical>`          |
+|`!include <logos/java.puml>`             | `<$java>`                      |
+|`!include <logos/archlinux.puml>`        | `<$archlinux>`                 |
+|`!include <logos/adobe-photoshop.puml>`  | `<$adobe-photoshop>`           |
+|`!include <logos/angular.puml>`          | `<$angular>`                   |
+|`!include <logos/apache.puml>`           | `<$apache>`                    |
+|`!include <logos/apple.puml>`            | `<$apple>`                     |
+|`!include <logos/arduino.puml>`          | `<$arduino>`                   |
+|`!include <logos/aws-ec2.puml>`          | `<$aws-ec2>`                   |
+|`!include <logos/aws-route53.puml>`      | `<$aws-route53>`               |
+|`!include <logos/aws.puml>`              | `<$aws>`                       |
+|`!include <logos/azure.puml>`            | `<$azure>`                     |
+|`!include <logos/bash-icon.puml>`        | `<$bash-icon>`                 |
+|`!include <logos/bash.puml>`             | `<$bash>`                      |
+|`!include <logos/batch.puml>`            | `<$batch>`                     |
+|`!include <logos/behance.puml>`          | `<$behance>`                   |
+|`!include <logos/bitcoin.puml>`          | `<$bitcoin>`                   |
+|`!include <logos/bluetooth.puml>`        | `<$bluetooth>`                 |
+|`!include <logos/bootstrap.puml>`        | `<$bootstrap>`                 |
+|`!include <logos/bun.puml>`              | `<$bun>`                       |
+|`!include <logos/c-plusplus.puml>`       | `<$c-plusplus>`                |
+|`!include <logos/c-sharp.puml>`          | `<$c-sharp>`                   |
+|`!include <logos/c.puml>`                | `<$c>`                         |
+|`!include <logos/chrome.puml>`           | `<$chrome>`                    |
+|`!include <logos/composer.puml>`         | `<$composer>`                  |
+|`!include <logos/deno.puml>`             | `<$deno>`                      |
+|`!include <logos/docker.puml>`           | `<$docker>`                    |
+|`!include <logos/eclipse-icon.puml>`     | `<$eclipse-icon>`              |
+|`!include <logos/eclipse.puml>`          | `<$eclipse>`                   |
+|`!include <logos/expo-icon.puml>`        | `<$expo-icon>`                 |
+|`!include <logos/expo.puml>`             | `<$expo>`                      |
+|`!include <logos/express.puml>`          | `<$express>`                   |
+|`!include <logos/figma.puml>`            | `<$figma>`                     |
+|`!include <logos/firebase.puml>`         | `<$firebase>`                  |
+|`!include <logos/flask.puml>`            | `<$flask>`                     |
+|`!include <logos/framer.puml>`           | `<$framer>`                    |
+|`!include <logos/github-icon.puml>`      | `<$github-icon>`               |
+|`!include <logos/github-octocat.puml>`   | `<$github-octocat>`            |
+|`!include <logos/github.puml>`           | `<$github>`                    |
+|`!include <logos/google-drive.puml>`     | `<$google-drive>`              |
+|`!include <logos/google-2014.puml>`      | `<$google-2014>`               |
+|`!include <logos/google>`                | `<$google>`                    |
+|`!include <logos/hadoop.puml>`           | `<$hadoop>`                    |
+|`!include <logos/heroku.puml>`           | `<$heroku>`                    |
+|`!include <logos/hotjar.puml>`           | `<$hotjar>`                    |
+|`!include <logos/javascript>`            | `<$javascript>`                |
+|`!include <logos/jcb.puml>`              | `<$jcb>`                       |
+|`!include <logos/jquery.puml>`           | `<$jquery>`                    |
+|`!include <logos/json.puml>`             | `<$json>`                      |
+|`!include <logos/kotlin.puml>`           | `<$kotlin>`                    |
+|`!include <logos/laravel.puml>`          | `<$laravel>`                   |
 
 ---
 
