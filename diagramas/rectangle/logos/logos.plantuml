@@ -1,0 +1,233 @@
+@startuml
+'-------Inclusão dos logos-----
+!include <logos/django.puml>
+!include <logos/android-vertical.puml>
+!include <logos/java.puml>
+!include <logos/archlinux.puml>
+!include <logos/adobe-photoshop.puml>
+!include <logos/angular.puml>
+!include <logos/apple.puml>
+!include <logos/arduino.puml>
+!include <logos/aws.puml>
+!include <logos/azure.puml>
+!include <logos/bash.puml>
+!include <logos/batch.puml>
+!include <logos/behance.puml>
+!include <logos/bluetooth.puml>
+!include <logos/bootstrap.puml>
+!include <logos/bun.puml>
+!include <logos/c-sharp.puml>
+!include <logos/c.puml>
+!include <logos/chrome.puml>
+!include <logos/deno.puml>
+!include <logos/docker.puml>
+!include <logos/eclipse-icon.puml>
+!include <logos/eclipse.puml>
+!include <logos/expo.puml>
+!include <logos/express.puml>
+!include <logos/figma.puml>
+!include <logos/firebase.puml>
+!include <logos/flask.puml>
+!include <logos/framer.puml>
+!include <logos/github.puml>
+!include <logos/heroku.puml>
+!include <logos/hotjar.puml>
+!include <logos/javascript.puml>
+!include <logos/jquery.puml>
+!include <logos/kotlin.puml>
+!include <logos/laravel.puml>
+!include <tupadr3/devicons/python.puml>
+!include <tupadr3/devicons/php.puml>
+!include <tupadr3/devicons/sass.puml>
+!include <tupadr3/devicons/netbeans.puml>
+!include <tupadr3/devicons/mysql.puml>
+!include <tupadr3/devicons/react.puml>
+!include <tupadr3/devicons/swift.puml>
+!include <tupadr3/devicons/linux.puml>
+!include <tupadr3/devicons/windows.puml>
+!include <tupadr3/devicons/sqllite.puml>
+!include <tupadr3/font-awesome-5/kaaba.puml>
+
+
+' Elemento central com o título "PlantUML"
+rectangle "PlantUML" as plantUML #green;text:white
+
+' Definindo categorias
+rectangle "Backend" as backend #d0e7ff
+rectangle "Frontend" as frontend #ffd1dc
+rectangle "Infraestrutura" as infraestrutura #d1ffd1
+rectangle "DevOps" as devops #fff3d0
+rectangle "Design e Prototipagem" as design #d6c1ff
+rectangle "Mobile" as mobile #c1ffff
+rectangle "Embarcados" as embarcados #ffe4d0
+rectangle "experiência do usuário" as expUsuario #ffe4d0
+rectangle "Framework" as framework #ffe4d0
+rectangle "Linguagens" as linguagens #ffe4d0
+rectangle "Sistema operacional" as so #ffe4d0
+rectangle "banco de dados" as bd #ffe4d0
+rectangle "agile" as agile #ffe4d0
+rectangle "scripts" as scripts #ffe4d0
+
+'----------Backend---------------
+rectangle "<$django>" as django #092e20;text:white
+rectangle "<$python>" as python #yellow/gold;text:blue
+rectangle "<$java>" as java #lightSkyBlue/cornflowerblue;text:black
+rectangle "<$express>" as express #darkSlateGray;text:white
+rectangle "<$firebase>" as firebase #ffca28
+rectangle "<$flask>" as flask #white;text:black
+rectangle "<$laravel>" as laravel #tomato;text:white
+rectangle "<$php>" as php #blue;text:white
+rectangle "<$javascript>" as jsBackend #lightgreen;text:white
+rectangle "<$netbeans>" as netbeans #blue;text:white
+
+'----------Frontend---------------
+rectangle "<$angular>" as angular #dd1b16
+rectangle "<$bootstrap>" as bootstrap #563d7c;text:white
+rectangle "<$jquery>" as jquery #0769ad;text:honeyDew
+rectangle "<$javascript>" as javascript #f7df1e;text:black
+rectangle "<$sass>" as sass #lightpink;text:black
+rectangle "<$react>" as react #lightpink;text:black
+
+'----------Infraestrutura---------------
+rectangle "<$aws>" as aws #f7a80d
+rectangle "<$azure>" as azure #007fff
+rectangle "<$heroku>" as heroku #430098
+rectangle "<$docker>" as docker #2496ed
+
+'----------DevOps---------------
+rectangle "<$github>" as github #white;text:black
+rectangle "<$bash>" as bash #4eaa25
+rectangle "<$batch>" as batch #4eaa25
+rectangle "<$deno>" as deno #white;text:black
+rectangle "<$eclipse>" as eclipse #2c2255;text:white
+rectangle "<$bun>" as bun #000000;text:white
+rectangle "<$c-sharp>" as csharp #9b4f96;text:white
+
+'----------Design e Prototipagem---------------
+rectangle "<$adobe-photoshop>" as photoshop #001e36;text:gold
+rectangle "<$behance>" as behance #1769ff
+rectangle "<$figma>" as figma #0acf83
+rectangle "<$expo>" as expo #000020;text:white
+rectangle "<$framer>" as framer #ffffff;text:0055ff
+rectangle "<$hotjar>" as hotjar #1c1c1c;text:white
+
+'----------Mobile---------------
+rectangle "<$android-vertical>" as android #3ddc84
+rectangle "<$apple>" as apple #white
+rectangle "<$kotlin>" as kotlin #0095d5
+rectangle "<$swift>" as swift #00cdcd
+
+'----------Sistemas embarcados---------------
+rectangle "<$arduino>" as arduino #00979d;text:white
+rectangle "<$c>" as c #white;text:blue
+
+'----------Sistema operacional---------------
+rectangle "<$archlinux>" as archlinux #1793d1
+rectangle "<$linux>" as linux #red/yellow;text:black
+rectangle "<$windows>" as windows #lightblue;text:black
+
+
+'----------banco de dados---------------
+rectangle "<$mysql>" as mySql #dodgerBlue;text:white
+rectangle "<$sqllite>" as sqllite #green;text:white
+
+'----------agile----------
+rectangle "<$kaaba>" as kaaba #lightblue;text:black
+
+
+''=========================  RELACOES  ==================================
+
+
+''=============NO RAIZ=============
+plantUML ---> backend
+plantUML -r--> agile
+plantUML --> embarcados
+plantUML -l-> expUsuario
+plantUML -u-> infraestrutura
+plantUML --> so
+plantUML ---> bd
+plantUML -u-> devops
+plantUML -l-> design
+plantUML --> mobile
+
+agile -r--> kaaba
+
+backend ---> linguagens
+linguagens --> java
+linguagens --> python
+linguagens --> php
+linguagens --> jsBackend 
+linguagens --> csharp
+
+php --> framework
+python --> framework
+java --> framework
+jsBackend --> framework
+
+''=============FRAMEWORK=============
+
+framework --> eclipse
+framework --> django
+framework --> flask
+framework --> express
+framework --> laravel
+framework --> deno
+framework --> bun
+framework --> netbeans
+
+''=============FRONTEND=============
+
+plantUML -u-> frontend
+frontend -l-> angular
+frontend -l-> bootstrap
+frontend -l-> jquery
+frontend -l-> javascript
+frontend -l-> sass
+frontend -l-> react
+
+''=====EXPERIENCIA DO USUARIO========
+
+expUsuario -d-> hotjar
+
+''=========INFRAESTRUTURA===========
+
+
+infraestrutura -r-> azure
+infraestrutura -r-> heroku
+infraestrutura -r-> docker
+infraestrutura -r-> firebase
+infraestrutura -r-> aws
+
+''=========BANCO DE DADOS===========
+bd --> mySql
+bd --> sqllite
+
+''=========SISTEMA OPERACIONAL===========
+so --> linux
+so --> windows
+so --> archlinux
+linux --> scripts
+windows --> scripts
+archlinux --> scripts
+scripts --> bash
+scripts --> batch
+
+''=========DEVOPS===========
+devops -u-> github
+
+''=========DESIGN===========
+design --> photoshop
+design --> behance
+design --> figma
+design --> framer
+
+mobile --> android
+mobile --> expo
+android --> kotlin
+mobile --> apple
+apple --> swift
+
+embarcados --> arduino
+embarcados --> c
+
+@enduml
