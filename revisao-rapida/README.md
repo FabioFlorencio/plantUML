@@ -31,6 +31,9 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
       - [Themes](#themes)
       - [Icons](#icons)
         - [Logos](#logos)
+        - [Tupadr3/devicons](#tupadr3devicons)
+        - [Office](#office)
+        - [Devices](#devices)
   - [🗂️ Diagramas](#️-diagramas)
     - [📚 Class](#-class)
     - [🔲 Retângulo](#-retângulo)
@@ -261,8 +264,9 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
          
 ---
 
-- [Logos](https://github.com/plantuml/plantuml-stdlib/tree/master/tupadr3/devicons)
+#####  Tupadr3/devicons
 
+- [tupadr3/devicons](https://github.com/plantuml/plantuml-stdlib/tree/master/tupadr3/devicons)
 
 | Include                                       |  Sintaxe                       |         Sugestão de Cor         |
 |:----------------------------------------------|:-------------------------------|---------------------------------|
@@ -277,7 +281,31 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 |`!include <tupadr3/devicons/mysql.puml>`       | `<$mysql>`                     |                                 |
 |`!include <tupadr3/devicons/linux.puml>`       | `<$linux>`                     |                                 |
 |`!include <tupadr3/devicons/windows.puml>`     | `<$windows>`                   |                                 |
-|`!include <tupadr3/devicons/sqllite.puml>`     | `<sqllite>`                    |                                 |
+|`!include <tupadr3/devicons/sqllite.puml>`     | `<$sqllite>`                   |                                 |
+
+
+#####  Office 
+
+- [office](https://github.com/plantuml/plantuml-stdlib/tree/master/office)
+
+| Include                                            |  Sintaxe                       |         Sugestão de Cor         |
+|:---------------------------------------------------|:-------------------------------|---------------------------------|
+|`!include <office/Databases/database.puml>`         | `<$database>`                  |                                 |                   
+|`!include <office/Databases/database_cube.puml>`    | `<$database_cube>`             | #yellow/gold;text:blue          |                   
+
+#####  Devices
+
+- [office](https://github.com/plantuml/plantuml-stdlib/tree/master/office)
+
+| Include                                               |  Sintaxe                        |         Sugestão de Cor         |
+|:------------------------------------------------------|:--------------------------------|---------------------------------|
+|`!include <office/Devices/cell_phone_generic.puml>`    | `<$database>`                   |                                 |                   
+|`!include <office/Databases/database_cube.puml>`       | `<$database_cube>`              | #yellow/gold;text:blue          |                   
+|`!include <office/Devices/device_headset.puml>`        | `<$device_headset.puml>`        | #yellow/gold;text:blue          |                   
+|`!include <office/Devices/device_laptop.puml>`         | `<$device_laptop.puml>`         | #yellow/gold;text:blue          |                   
+|`!include <office/Devices/device_tablet_android.puml>` | `<$device_tablet_android.puml>` | #yellow/gold;text:blue          |                   
+
+
 
          
 ---

@@ -1,5 +1,7 @@
 @startuml
+
 '-------Inclusão dos logos-----
+
 !include <logos/django.puml>
 !include <logos/android-vertical.puml>
 !include <logos/java.puml>
@@ -18,10 +20,8 @@
 !include <logos/bun.puml>
 !include <logos/c-sharp.puml>
 !include <logos/c.puml>
-!include <logos/chrome.puml>
 !include <logos/deno.puml>
 !include <logos/docker.puml>
-!include <logos/eclipse-icon.puml>
 !include <logos/eclipse.puml>
 !include <logos/expo.puml>
 !include <logos/express.puml>
@@ -47,66 +47,70 @@
 !include <tupadr3/devicons/windows.puml>
 !include <tupadr3/devicons/sqllite.puml>
 !include <tupadr3/font-awesome-5/kaaba.puml>
+!include <office/Concepts/windows_powershell.puml>
 
+'-------Escala------
+scale 0.71
 
 ' Elemento central com o título "PlantUML"
 rectangle "PlantUML" as plantUML #green;text:white
 
 ' Definindo categorias
-rectangle "Backend" as backend #d0e7ff
-rectangle "Frontend" as frontend #ffd1dc
-rectangle "Infraestrutura" as infraestrutura #d1ffd1
-rectangle "DevOps" as devops #fff3d0
+rectangle "Backend" as backend #d6c1ff
+rectangle "Frontend" as frontend #d6c1ff
+rectangle "Infraestrutura" as infraestrutura #d6c1ff
+rectangle "DevOps" as devops #d6c1ff
 rectangle "Design e Prototipagem" as design #d6c1ff
-rectangle "Mobile" as mobile #c1ffff
-rectangle "Embarcados" as embarcados #ffe4d0
-rectangle "experiência do usuário" as expUsuario #ffe4d0
-rectangle "Framework" as framework #ffe4d0
-rectangle "Linguagens" as linguagens #ffe4d0
-rectangle "Sistema operacional" as so #ffe4d0
-rectangle "banco de dados" as bd #ffe4d0
-rectangle "agile" as agile #ffe4d0
-rectangle "scripts" as scripts #ffe4d0
+rectangle "Mobile" as mobile #d6c1ff
+rectangle "Embarcados" as embarcados #d6c1ff
+rectangle "Experiência do usuário" as expUsuario #d6c1ff
+rectangle "Framework" as framework #d6c1ff
+rectangle "Linguagens" as linguagens #d6c1ff
+rectangle "Sistema operacional" as so #d6c1ff
+rectangle "banco de dados" as bd #d6c1ff
+rectangle "agile" as agile #d6c1ff
+rectangle "scripts" as scripts #d6c1ff
 
 '----------Backend---------------
 rectangle "<$django>" as django #092e20;text:white
 rectangle "<$python>" as python #yellow/gold;text:blue
 rectangle "<$java>" as java #lightSkyBlue/cornflowerblue;text:black
 rectangle "<$express>" as express #darkSlateGray;text:white
-rectangle "<$firebase>" as firebase #ffca28
+rectangle "<$firebase>" as firebase #ffca28/gold;text:red
 rectangle "<$flask>" as flask #white;text:black
 rectangle "<$laravel>" as laravel #tomato;text:white
-rectangle "<$php>" as php #blue;text:white
-rectangle "<$javascript>" as jsBackend #lightgreen;text:white
+rectangle "<$php>" as php #7A86B8;text:white
+rectangle "<$javascript>" as jsBackend #lightgreen;text:black
 rectangle "<$netbeans>" as netbeans #blue;text:white
 
 '----------Frontend---------------
-rectangle "<$angular>" as angular #dd1b16
+rectangle "<$angular>" as angular #dd1b16;text:white
 rectangle "<$bootstrap>" as bootstrap #563d7c;text:white
 rectangle "<$jquery>" as jquery #0769ad;text:honeyDew
 rectangle "<$javascript>" as javascript #f7df1e;text:black
 rectangle "<$sass>" as sass #lightpink;text:black
-rectangle "<$react>" as react #lightpink;text:black
+rectangle "<$react>" as react #ffffff;text:mediumTurquoise
 
 '----------Infraestrutura---------------
 rectangle "<$aws>" as aws #f7a80d
-rectangle "<$azure>" as azure #007fff
-rectangle "<$heroku>" as heroku #430098
-rectangle "<$docker>" as docker #2496ed
+rectangle "<$azure>" as azure #014086;text:white
+rectangle "<$heroku>" as heroku #FFFFFF;text:mediumPurple
+rectangle "<$docker>" as docker #1D63ED;text:white
 
 '----------DevOps---------------
 rectangle "<$github>" as github #white;text:black
 rectangle "<$bash>" as bash #4eaa25
 rectangle "<$batch>" as batch #4eaa25
+rectangle "<$windows_powershell>" as powershell #blue;text:white
 rectangle "<$deno>" as deno #white;text:black
 rectangle "<$eclipse>" as eclipse #2c2255;text:white
 rectangle "<$bun>" as bun #000000;text:white
 rectangle "<$c-sharp>" as csharp #9b4f96;text:white
 
 '----------Design e Prototipagem---------------
-rectangle "<$adobe-photoshop>" as photoshop #001e36;text:gold
-rectangle "<$behance>" as behance #1769ff
-rectangle "<$figma>" as figma #0acf83
+rectangle "<$adobe-photoshop>" as photoshop #darkblue;text:lightskyblue
+rectangle "<$behance>" as behance #000;text:white
+rectangle "<$figma>" as figma #f00/fff;text:black
 rectangle "<$expo>" as expo #000020;text:white
 rectangle "<$framer>" as framer #ffffff;text:0055ff
 rectangle "<$hotjar>" as hotjar #1c1c1c;text:white
@@ -114,7 +118,7 @@ rectangle "<$hotjar>" as hotjar #1c1c1c;text:white
 '----------Mobile---------------
 rectangle "<$android-vertical>" as android #3ddc84
 rectangle "<$apple>" as apple #white
-rectangle "<$kotlin>" as kotlin #0095d5
+rectangle "<$kotlin>" as kotlin #slateBlue/white;text:black
 rectangle "<$swift>" as swift #00cdcd
 
 '----------Sistemas embarcados---------------
@@ -123,9 +127,8 @@ rectangle "<$c>" as c #white;text:blue
 
 '----------Sistema operacional---------------
 rectangle "<$archlinux>" as archlinux #1793d1
-rectangle "<$linux>" as linux #red/yellow;text:black
+rectangle "<$linux>" as linux #cdcdcd;text:black
 rectangle "<$windows>" as windows #lightblue;text:black
-
 
 '----------banco de dados---------------
 rectangle "<$mysql>" as mySql #dodgerBlue;text:white
@@ -137,97 +140,97 @@ rectangle "<$kaaba>" as kaaba #lightblue;text:black
 
 ''=========================  RELACOES  ==================================
 
-
 ''=============NO RAIZ=============
-plantUML ---> backend
-plantUML -r--> agile
-plantUML --> embarcados
-plantUML -l-> expUsuario
-plantUML -u-> infraestrutura
-plantUML --> so
-plantUML ---> bd
-plantUML -u-> devops
-plantUML -l-> design
-plantUML --> mobile
+plantUML ...> backend
+plantUML .r..> agile
+plantUML ...> embarcados
+plantUML .l.> expUsuario
+plantUML .u.> infraestrutura
+plantUML ...> so
+plantUML ...> bd
+plantUML .r.> devops
+plantUML .l.> design
+plantUML ...> mobile
+plantUML .u.> frontend
 
-agile -r--> kaaba
+''=============AGILE=============
+agile .d.> kaaba
 
-backend ---> linguagens
-linguagens --> java
-linguagens --> python
-linguagens --> php
-linguagens --> jsBackend 
-linguagens --> csharp
+''=============LINGUAGENS=============
+backend ...> linguagens
+linguagens ..> java
+linguagens ..> python
+linguagens ..> php
+linguagens ..> jsBackend 
+linguagens ..> csharp
 
-php --> framework
-python --> framework
-java --> framework
-jsBackend --> framework
+php ..> framework
+python ..> framework
+java ..> framework
+jsBackend ..> framework
 
 ''=============FRAMEWORK=============
-
-framework --> eclipse
-framework --> django
-framework --> flask
-framework --> express
-framework --> laravel
-framework --> deno
-framework --> bun
-framework --> netbeans
+framework ..> eclipse
+framework ..> django
+framework ..> flask
+framework ..> express
+framework ..> laravel
+framework ..> deno
+framework ..> bun
+framework ..> netbeans
 
 ''=============FRONTEND=============
-
-plantUML -u-> frontend
-frontend -l-> angular
-frontend -l-> bootstrap
-frontend -l-> jquery
-frontend -l-> javascript
-frontend -l-> sass
-frontend -l-> react
+frontend .l.> angular
+frontend .u.> bootstrap
+frontend .l.> jquery
+frontend .r.> javascript
+frontend .u.> sass
+frontend .r.> react
 
 ''=====EXPERIENCIA DO USUARIO========
-
-expUsuario -d-> hotjar
+expUsuario .d.> hotjar
 
 ''=========INFRAESTRUTURA===========
-
-
-infraestrutura -r-> azure
-infraestrutura -r-> heroku
-infraestrutura -r-> docker
-infraestrutura -r-> firebase
-infraestrutura -r-> aws
+infraestrutura .u.> azure
+infraestrutura .u.> aws
+infraestrutura .l.> heroku
+infraestrutura .u.> docker
+infraestrutura .r.> firebase
 
 ''=========BANCO DE DADOS===========
-bd --> mySql
-bd --> sqllite
+bd ..> mySql
+bd ..> sqllite
 
 ''=========SISTEMA OPERACIONAL===========
-so --> linux
-so --> windows
-so --> archlinux
-linux --> scripts
-windows --> scripts
-archlinux --> scripts
-scripts --> bash
-scripts --> batch
+so ..> linux
+so ..> windows
+so ..> archlinux
+linux ..> scripts
+windows ..> scripts
+archlinux ..> scripts
+scripts ..> bash
+scripts ..> powershell
+scripts ..> batch
+batch .r[hidden].> bash
 
 ''=========DEVOPS===========
-devops -u-> github
+devops .d.> github
 
 ''=========DESIGN===========
-design --> photoshop
-design --> behance
-design --> figma
-design --> framer
+design ..> photoshop
+design ..> behance
+design ..> figma
+design ..> framer
 
-mobile --> android
-mobile --> expo
-android --> kotlin
-mobile --> apple
-apple --> swift
+''=========MOBILE===========
+mobile ..> android
+mobile ..> expo
+android ..> kotlin
+mobile ..> apple
+apple ..> swift
 
-embarcados --> arduino
-embarcados --> c
+''=========EMBARCADOS===========
+embarcados ..> arduino
+embarcados ..> c
 
 @enduml
