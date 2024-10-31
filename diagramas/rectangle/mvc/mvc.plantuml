@@ -1,0 +1,54 @@
+@startuml
+
+caption Figure MVC
+
+rectangle {
+
+    title MVC
+
+    rectangle "Model" as md <<styleMd>> #yellow;line.bold 
+    rectangle "Controller" as ctr<<styleCtr>> #lightblue;line.bold 
+    rectangle "View" as vw <<styleVw>> #lightGreen;line.bold 
+}
+
+rectangle "Saída" as sd<<styleSd>> #white;line.bold 
+
+note bottom of ctr{
+  Comportamento e definição
+  dos includes
+}
+note top of md{
+  Classes, Objetos e
+  Funções ...
+  Conexão com o banco
+}
+note top of vw{
+  html, javascript,
+  css xml etc..
+}
+note top of sd{
+  index.php
+}
+
+' Definições globais para os retângulos
+skinparam rectangle {
+  Shadowing true
+}
+' Estilos individuais
+skinparam rectangle {
+  BorderColor<<styleMd>> gold 
+  BorderColor<<styleVw>> teal
+  BorderColor<<styleCtr>> blue
+  BorderColor<<styleSd>> black
+}
+
+hide stereotype  
+
+''=========================  RELACOES  ==================================
+
+ctr -r-> vw : \t\t
+ctr -l-> md : \t\t
+md -r-> ctr : \t\t
+vw .r. sd :\t\t
+
+@enduml

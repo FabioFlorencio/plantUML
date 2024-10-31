@@ -67,9 +67,9 @@ rectangle "Experiência do usuário" as expUsuario #d6c1ff
 rectangle "Framework" as framework #d6c1ff
 rectangle "Linguagens" as linguagens #d6c1ff
 rectangle "Sistema operacional" as so #d6c1ff
-rectangle "banco de dados" as bd #d6c1ff
-rectangle "agile" as agile #d6c1ff
-rectangle "scripts" as scripts #d6c1ff
+rectangle "Banco de dados" as bd #d6c1ff
+rectangle "Agile" as agile #d6c1ff
+rectangle "Scripts" as scripts #d6c1ff
 
 '----------Backend---------------
 rectangle "<$django>" as django #092e20;text:white

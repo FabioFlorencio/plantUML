@@ -295,7 +295,8 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 #####  Devices
 
-- [office](https://github.com/plantuml/plantuml-stdlib/tree/master/office)
+- [Devices](https://github.com/plantuml/plantuml-stdlib/tree/master/office/Devices)
+  
 
 | Include                                               |  Sintaxe                        |         Sugestão de Cor         |
 |:------------------------------------------------------|:--------------------------------|---------------------------------|
@@ -305,9 +306,7 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 |`!include <office/Devices/device_laptop.puml>`         | `<$device_laptop.puml>`         | #yellow/gold;text:blue          |                   
 |`!include <office/Devices/device_tablet_android.puml>` | `<$device_tablet_android.puml>` | #yellow/gold;text:blue          |                   
 
-
-
-         
+        
 ---
 
 
