@@ -34,6 +34,7 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
         - [Tupadr3/devicons](#tupadr3devicons)
         - [Office](#office)
         - [Devices](#devices)
+        - [Material](#material)
   - [🗂️ Diagramas](#️-diagramas)
     - [📚 Class](#-class)
     - [🔲 Retângulo](#-retângulo)
@@ -208,7 +209,7 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 
 | Include                                 |  Sintaxe                       |     Sugestão de Cor       |
-|:----------------------------------------|:-------------------------------|---------------------------|
+|:----------------------------------------|:-------------------------------|:--------------------------|
 |`!include <logos/django.puml>`           | `<$django>`                    | #0C4B33;text:PaleGreen    |                   
 |`!include <logos/android-vertical.puml>` | `<$android-vertical>`          |                           |
 |`!include <logos/java.puml>`             | `<$java>`                      |                           |
@@ -268,30 +269,30 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 - [tupadr3/devicons](https://github.com/plantuml/plantuml-stdlib/tree/master/tupadr3/devicons)
 
-| Include                                       |  Sintaxe                       |         Sugestão de Cor         |
-|:----------------------------------------------|:-------------------------------|---------------------------------|
-|`!include <tupadr3/devicons/python.puml>`      | `<$python>`                    | #yellow/gold;text:blue          |                   
-|`!include <tupadr3/devicons/php.puml>`         | `<$php>`                       | #yellow/gold;text:blue          |                   
-|`!include <logos/android-vertical.puml>`       | `<$android-vertical>`          |                                 |
-|`!include <logos/java.puml>`                   | `<$java>`                      |                                 |
-|`!include <logos/archlinux.puml>`              | `<$archlinux>`                 |                                 |
-|`!include <tupadr3/devicons/sass.puml>`        | `<$sass>`                      |                                 |
-|`!include <tupadr3/devicons/netbeans.puml>`    | `<$netbeans>`                  |                                 |
-|`!include <tupadr3/devicons/react.puml>`       | `<$react>`                     |                                 |
-|`!include <tupadr3/devicons/mysql.puml>`       | `<$mysql>`                     |                                 |
-|`!include <tupadr3/devicons/linux.puml>`       | `<$linux>`                     |                                 |
-|`!include <tupadr3/devicons/windows.puml>`     | `<$windows>`                   |                                 |
-|`!include <tupadr3/devicons/sqllite.puml>`     | `<$sqllite>`                   |                                 |
+| Include                                          |  Sintaxe                       |         Sugestão de Cor         |
+|:-------------------------------------------------|:-------------------------------|:--------------------------------|
+|`!include <tupadr3/devicons/python.puml>`         | `<$python>`                    | #yellow/gold;text:blue          |                   
+|`!include <tupadr3/devicons/php.puml>`            | `<$php>`                       | #yellow/gold;text:blue          |                   
+|`!include <logos/android-vertical.puml>`          | `<$android-vertical>`          |                                 |
+|`!include <logos/java.puml>`                      | `<$java>`                      |                                 |
+|`!include <logos/archlinux.puml>`                 | `<$archlinux>`                 |                                 |
+|`!include <tupadr3/devicons/sass.puml>`           | `<$sass>`                      |                                 |
+|`!include <tupadr3/devicons/netbeans.puml>`       | `<$netbeans>`                  |                                 |
+|`!include <tupadr3/devicons/react.puml>`          | `<$react>`                     |                                 |
+|`!include <tupadr3/devicons/mysql.puml>`          | `<$mysql>`                     |                                 |
+|`!include <tupadr3/devicons/linux.puml>`          | `<$linux>`                     |                                 |
+|`!include <tupadr3/devicons/windows.puml>`        | `<$windows>`                   |                                 |
+|`!include <tupadr3/devicons/sqllite.puml>`        | `<$sqllite>`                   |                                 |
 
 
 #####  Office 
 
 - [office](https://github.com/plantuml/plantuml-stdlib/tree/master/office)
 
-| Include                                            |  Sintaxe                       |         Sugestão de Cor         |
-|:---------------------------------------------------|:-------------------------------|---------------------------------|
-|`!include <office/Databases/database.puml>`         | `<$database>`                  |                                 |                   
-|`!include <office/Databases/database_cube.puml>`    | `<$database_cube>`             | #yellow/gold;text:blue          |                   
+| Include                                            |  Sintaxe                  |         Sugestão de Cor         |
+|:---------------------------------------------------|:--------------------------|:--------------------------------|
+|`!include <office/Databases/database.puml>`         | `<$database>`             |                                 |                   
+|`!include <office/Databases/database_cube.puml>`    | `<$database_cube>`        | #yellow/gold;text:blue          |                   
 
 #####  Devices
 
@@ -299,13 +300,26 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
   
 
 | Include                                               |  Sintaxe                        |         Sugestão de Cor         |
-|:------------------------------------------------------|:--------------------------------|---------------------------------|
+|:------------------------------------------------------|:--------------------------------|:--------------------------------|
 |`!include <office/Devices/cell_phone_generic.puml>`    | `<$database>`                   |                                 |                   
 |`!include <office/Databases/database_cube.puml>`       | `<$database_cube>`              | #yellow/gold;text:blue          |                   
 |`!include <office/Devices/device_headset.puml>`        | `<$device_headset.puml>`        | #yellow/gold;text:blue          |                   
-|`!include <office/Devices/device_laptop.puml>`         | `<$device_laptop.puml>`         | #yellow/gold;text:blue          |                   
+|`!include <office/Devices/device_laptop.puml>`         | `<$device_laptop.puml>`         | #f7a80d;text:black              |                   
 |`!include <office/Devices/device_tablet_android.puml>` | `<$device_tablet_android.puml>` | #yellow/gold;text:blue          |                   
+|`!include <office/Devices/cell_phone_generic.puml>`    | `<$cell_phone_generic>`         | #tomato;text:black              |                   
 
+#####  Material
+
+- [Material](https://github.com/plantuml/plantuml-stdlib/tree/master/material)
+  
+
+| Include                                            |  Sintaxe                    |         Sugestão de Cor         |
+|:---------------------------------------------------|:----------------------------|:--------------------------------|
+|`!include <material/flashlight.puml`                | `<$flashlight.puml>`        | #green;text:gold                |                   
+|`!include <material/flashlight_off.puml>`           | `<$flashlight_off.puml>`    | #yellow/gold;text:blue          | 
+|`!include <material/bluetooth.puml>`                | `<$ma_bluetooth>`           | #lightblue;text:blue            | 
+|`!include <material/access_point_network.puml>`     | `<$ma_access_point_network>`| #lightblue;text:blue            | 
+|`!include <tupadr3/font-awesome-5/lightbulb.puml`   | `<$lightbulb>`              | #green;text:gold                |
         
 ---
 

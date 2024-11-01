@@ -1,0 +1,28 @@
+title Serial Bluetooth Terminal
+
+!include <office/Devices/device_laptop.puml>
+!include <office/Devices/cell_phone_generic.puml>
+!include <material/flashlight.puml>
+!include <material/flashlight_off.puml>
+!include <material/bluetooth.puml>
+!include <tupadr3/font-awesome-5/lightbulb.puml>
+
+
+rectangle "<$device_laptop>\nLaptop" as laptop #f7a80d;text:black
+rectangle "      <$cell_phone_generic>\nSmatphone" as smartphone #tomato;text:black
+rectangle " <$lightbulb>\n   Led" as ligarLed #green;text:gold
+rectangle " <$lightbulb>\n   Led" as desligarLed #red;text:white
+rectangle "esp32" as esp #white;text:black
+rectangle "   <$ma_bluetooth>\n Bluetooth" as bluetooh #lightblue;text:blue
+
+
+''=========================  RELACOES  ==================================
+
+laptop <-r-> esp : transmissão cabo
+esp <.r.> bluetooh : transmissão 
+bluetooh <.r.> smartphone : transmissão 
+esp <--> ligarLed : ligar
+esp <--> desligarLed : desligar
+
+
+
