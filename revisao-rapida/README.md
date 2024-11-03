@@ -35,6 +35,15 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
         - [Office](#office)
         - [Devices](#devices)
         - [Material](#material)
+        - [AWS](#aws)
+          - [Geral](#geral)
+          - [Verde - aws.cost](#verde---awscost)
+          - [Azul - aws.database](#azul---awsdatabase)
+          - [Rosa - aws.management|aws.integration](#rosa---awsmanagementawsintegration)
+          - [Azul - aws.devtools](#azul---awsdevtools)
+          - [Laranja - aws.compute](#laranja---awscompute)
+          - [Roxo - aws.network|aws.analytics](#roxo---awsnetworkawsanalytics)
+          - [Container image](#container-image)
   - [🗂️ Diagramas](#️-diagramas)
     - [📚 Class](#-class)
     - [🔲 Retângulo](#-retângulo)
@@ -315,12 +324,83 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 | Include                                            |  Sintaxe                    |         Sugestão de Cor         |
 |:---------------------------------------------------|:----------------------------|:--------------------------------|
-|`!include <material/flashlight.puml`                | `<$flashlight.puml>`        | #green;text:gold                |                   
-|`!include <material/flashlight_off.puml>`           | `<$flashlight_off.puml>`    | #yellow/gold;text:blue          | 
-|`!include <material/bluetooth.puml>`                | `<$ma_bluetooth>`           | #lightblue;text:blue            | 
-|`!include <material/access_point_network.puml>`     | `<$ma_access_point_network>`| #lightblue;text:blue            | 
+|`!include <material/flashlight.puml`                | `<$flashlight.puml>`        | #green;text:gold                |
+|`!include <material/flashlight_off.puml>`           | `<$flashlight_off.puml>`    | #yellow/gold;text:blue          |
+|`!include <material/bluetooth.puml>`                | `<$ma_bluetooth>`           | #lightblue;text:blue            |
+|`!include <material/access_point_network.puml>`     | `<$ma_access_point_network>`| #lightblue;text:blue            |
 |`!include <tupadr3/font-awesome-5/lightbulb.puml`   | `<$lightbulb>`              | #green;text:gold                |
-        
+
+#####  AWS
+
+- [AWS](https://github.com/plantuml/plantuml-stdlib/tree/master/awslib14)
+  
+###### Geral
+
+| Include                                                     |  Sintaxe                    |         Sugestão de Cor         |
+|:------------------------------------------------------------|:----------------------------|:--------------------------------|
+|`!include <aws/General/users/users.puml>`                    | `<$Users>`                  |                                 |
+|`!include <awslib14/GroupIcons/Region.puml>`                 | `<$Region>`                 |                                 |
+|`!include <awslib14/GroupIcons/VPCSubnetPublic.puml>`        | `<$VPCSubnetPublic>`        |                                 |
+|`!include <awslib14/GroupIcons/VirtualPrivateCloudVPC.puml>` | `<$VirtualPrivateCloudVPC>` |                                 |
+|`!include <awslib14/GroupIcons/VPCSubnetPrivate.puml>`       | `<$VPCSubnetPrivate>`       |#E8F0F7;text:blue                |
+
+###### Verde - aws.cost
+
+| Include                                            |  Sintaxe                    |         Sugestão de Cor                |
+|:---------------------------------------------------|:----------------------------|:---------------------------------------|
+|`!include <awslib14/Storage/SimpleStorageServiceS3Standard.puml>` | `<$SimpleStorageServiceS3Standard>` |#4C912B;text:white|
+|`!include <awslib14/CloudFinancialManagement/CostandUsageReport.puml>` | `<$CostandUsageReport>`    |                      |
+
+###### Azul - aws.database
+
+| Include                                            |  Sintaxe                    |         Sugestão de Cor         |
+|:---------------------------------------------------|:----------------------------|:--------------------------------|
+|`!include <awslib14/Database/DynamoDB.puml>`        | `<$DynamoDB>`               |#455EE0;text:white               |
+|`!include <awslib14/Database/Neptune.puml>`         | `<$Neptune>`                |#455EE0;text:white               |
+
+###### Rosa - aws.management|aws.integration
+
+| Include                                                  |  Sintaxe                    |         Sugestão de Cor         |
+|:---------------------------------------------------------|:----------------------------|:--------------------------------|
+|`!include <awslib14/ManagementGovernance/Config.puml>`    | `<$Config>`                 |#D82C6C;text:white               |
+|`!include <awslib14/ApplicationIntegration/AppSync.puml>` | `<$AppSync>`                |#D82C6C;text:white               |
+
+
+###### Azul - aws.devtools
+
+| Include                                            |  Sintaxe                    |         Sugestão de Cor         |
+|:---------------------------------------------------|:----------------------------|:--------------------------------|
+|`!include <!include <awslib14/Containers/Containers.puml>` | `<$Containers>`      |#4C912B;text:white               |
+|`!include <awslib14/Storage/SimpleStorageServiceS3Standard.puml>` | `<$Users>`    |                                 |
+|`!include <awslib14/General/SDK.puml>`              | `<$SDK>`                    |#4763E5;text:white               |
+
+###### Laranja - aws.compute
+
+| Include                                            |  Sintaxe                     |         Sugestão de Cor         |
+|:---------------------------------------------------|:-----------------------------|:--------------------------------|
+|`!include <awslib14/Containers/ElasticContainerRegistry.puml>`   | `<$ElasticContainerRegistry>`| #E3740E;text:white |
+|`!include <awslib14/Containers/ElasticContainerService.puml>`    | `<$ElasticContainerService>` | #E3740E;text:white |
+|`!include <awslib14/Compute/Fargate2.puml>`         | `<$Fargate2>`                | #E3740E;text:white              |
+|`!include <awslib14/Compute/EC2.puml>`              | `<$EC2>`                     | #E3740E;text:white              |
+|`!include <awslib14/Compute/LambdaLambdaFunction.puml>` | `<$LambdaLambdaFunction>`| #E3740E;text:white              |
+|`!include <awslib14/Compute/Lambda.puml>`           | `<$Lambda>`                  | #E3740E;text:white              |
+
+###### Roxo - aws.network|aws.analytics
+
+| Include                                              |  Sintaxe                    |         Sugestão de Cor         |
+|:-----------------------------------------------------|:----------------------------|:--------------------------------|
+|`!include <aws/ApplicationServices/AmazonAPIGateway/AmazonAPIGateway.puml>`| `<$APIGateway>`| #8954E6;text:white      |
+|`!include <awslib14/Analytics/Athena.puml>`           | `<$Athena>`                 | #8954E6;text:white              |
+|`!include <awslib14/Analytics/OpenSearchService.puml>`| `<$OpenSearchService>`      | #8954E6;text:white              |
+|`!include <awslib14/NetworkingContentDelivery/CloudFront.puml>`| `<$CloudFront>`    | #8954E6;text:white              |
+
+
+###### Container image
+
+| Include                                            |  Sintaxe                    |         Sugestão de Cor         |
+|:---------------------------------------------------|:----------------------------|:--------------------------------|
+|`!include <awslib14/Containers/ElasticContainerRegistryImage.puml>`|`<$ElasticContainerRegistryImage>`                  |                                 |
+
 ---
 
 

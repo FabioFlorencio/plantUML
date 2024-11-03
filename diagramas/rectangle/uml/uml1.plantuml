@@ -14,30 +14,30 @@ rectangle "Diagrama de Comportamentos" as diagrComportamentos
 
 
 ''============== ESTAO JUNTOS ==================================
-
-rectangle "Diagrama de Classes" as diagrClasses
-rectangle "Diagrama de Componentes" as diagrComponentes
-rectangle "Diagrama de Objetos" as diagrObjetos
-rectangle "Diagrama de Perfil" as diagrPerfil
-rectangle "Diagrama de Estruturas Compostas" as diagrEstruturaCompostas
-rectangle "Diagrama de Implantação" as diagrImplantacao
-rectangle "Diagrama de Pacotes" as diagrPacotes
-
+rectangle #cdcdcd;line.dashed{
+  rectangle "Diagrama de Classes" as diagrClasses
+  rectangle "Diagrama de Componentes" as diagrComponentes
+  rectangle "Diagrama de Objetos" as diagrObjetos
+  rectangle "Diagrama de Perfil" as diagrPerfil
+  rectangle "Diagrama de Estruturas Compostas" as diagrEstruturaCompostas
+  rectangle "Diagrama de Implantação" as diagrImplantacao
+  rectangle "Diagrama de Pacotes" as diagrPacotes
+}
 
 ''============== ESTAO JUNTOS   ==================================
+rectangle #cdcdcd;line.dashed{
+  rectangle "Diagrama de Atividades" as diagrAtividades
+  rectangle "Diagrama de Casos de Uso" as diagrCasoDeUso
+  rectangle "Diagrama de Máquina de Estados" as diagrMaquina
+  rectangle "Diagrama de Interação" as diagrInteracao
+}
 
-rectangle "Diagrama de Atividades" as diagrAtividades
-rectangle "Diagrama de Casos de Uso" as diagrCasoDeUso
-rectangle "Diagrama de Máquina de Estados" as diagrMaquina
-
-
-rectangle "Diagrama de Interação" as diagrInteracao
-
-rectangle "Diagrama de Sequência" as diagrSequencia
-rectangle "Diagrama de Comunicação" as diagrcomunicacao
-rectangle "Diagrama de Visão Geral de Interação" as diagrVisaoGeralDeInteracao
-rectangle "Diagrama de Tempo" as diagrDeTempo
-
+rectangle #line.dashed{
+  rectangle "Diagrama de Sequência" as diagrSequencia
+  rectangle "Diagrama de Comunicação" as diagrcomunicacao
+  rectangle "Diagrama de Visão Geral de Interação" as diagrVisaoGeralDeInteracao
+  rectangle "Diagrama de Tempo" as diagrDeTempo
+}
 
 ''=========================  RELACOES  ==================================
 
@@ -58,9 +58,9 @@ diagrComportamentos <|-- diagrMaquina
 
 diagrComportamentos <|-- diagrInteracao
 
-diagrInteracao <|-- diagrSequencia
-diagrInteracao <|-- diagrcomunicacao
-diagrInteracao <|-- diagrVisaoGeralDeInteracao
-diagrInteracao <|-- diagrDeTempo  
+diagrInteracao <|--- diagrSequencia
+diagrInteracao <|--- diagrcomunicacao
+diagrInteracao <|--- diagrVisaoGeralDeInteracao
+diagrInteracao <|--- diagrDeTempo  
 
   @enduml
