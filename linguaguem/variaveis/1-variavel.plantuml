@@ -1,0 +1,12 @@
+@startuml
+
+!$a = 42
+!$b = 10
+!$c = $a + $b
+
+rectangle "Total: $a + $b = $c" as va #cdcdcd
+
+note top : Somar
+
+
+@enduml

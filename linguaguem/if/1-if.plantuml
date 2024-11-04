@@ -1,0 +1,22 @@
+@startuml
+
+!$a = 42
+!$b = 10
+!$result ?= ""
+
+!if ($a > 10)
+    $result = $a
+!elseif ($b > $a)
+    $result = $a
+!else
+    $result = "nenhum"
+!endif
+
+
+
+rectangle "Resultado:$result" as va #cdcdcd
+
+note top : Somar
+
+
+@enduml

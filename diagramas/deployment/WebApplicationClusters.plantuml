@@ -4,18 +4,21 @@
 title Exemplo Load Balanced and clustered deployment of j2EE web application
 
 skin rose
-scale 0.7
+scale 0.6
 
 
 skinparam backgroundcolor #cdcdcd
 left to right direction
 
-caption Exemplo original [[https://www.uml-diagrams.org/web-application-clusters-uml-deployment-diagram-example.html?context=depl-examples{uml-diagrams} Fonte:uml-diagrams.org]]
+caption Exemplo original [[https://www.uml-diagrams.org/web-application-clusters-uml-deployment-diagram-example.html?context=depl-examples{uml-diagrams} Fonte:<$copyright>uml-diagrams.org]]
 
 !include <office/Concepts/settings.puml>
 !include <office/Concepts/application_web.puml>
+!include <tupadr3/devicons/linux.puml>
+!include <tupadr3/devicons/mysql.puml>
 
-''=========================  ICONS  ==================================
+
+''=========================  SPRITES  ==================================
 
 sprite $osa_server_web [64x62/16z] {
 vTA7chKs38HXQsOasUpzts-4OV-GFR37wUrxwF3Ispyxt6JhFCPTNEK-QA_5wWcqgTsL0okS8rhxxIV0oFQGBPp0UhTlTWvxuxFuSzRZZH_UlilpZUzgzjoQ
@@ -44,7 +47,7 @@ node "Personal Computer\n\n" <<device>> as personalComputer #skyblue{
 }
 
 node "__1-wsrv-03: Sun Fire X4170 Server__  <$osa_server_web>\n\n" as wsrv03 <<device>> #skyblue{
-  node "SUSE Linux Ent 10\n" <<OS>> as suse1 #pink{
+  node "SUSE Linux Ent 10 <$linux>\n" <<OS>> as suse1 #pink{
     artifact "  static content \n\n\n" as staticContent
     
     node "__Apache HTTP Server 2.2__" <<Web server>> as apacheServerA #white{
@@ -62,7 +65,7 @@ node "__1-wsrv-03: Sun Fire X4170 Server__  <$osa_server_web>\n\n" as wsrv03 <<d
 
 together{
   node "__2-psrv-01: Sun Fire X4150 Server__  <$osa_server_web>\n\n" <<device>> as psrv01 #skyblue{
-    node "SUSE Linux Ent 10\n" <<OS>> as suse2 #pink{
+    node "SUSE Linux Ent 10 <$linux>\n" <<OS>> as suse2 #pink{
       
       node "<<JSP server>> pTom10:\n__Apache Tomcat Server 5.5__" as apacheServerB #white{
           rectangle "<$application_web>" as webB <<web application>>
@@ -78,7 +81,7 @@ together{
   }
   
   node "__3-psrv-02: Sun Fire X4150 Server__  <$osa_server_web>\n\n" <<device>> as psrv02 #skyblue{
-    node "SUSE Linux Ent 10\n" <<OS>> as suse3 #pink{
+    node "SUSE Linux Ent 10 <$linux>\n" <<OS>> as suse3 #pink{
       
       node "<<JSP server>> pTom20:\n__Apache Tomcat Server 5.5__" as apacheServerD #white{
           rectangle "<$application_web>" as webD <<web application>>
@@ -96,13 +99,18 @@ together{
 node "__4-dbsrv-14: Sun SPARC Server__  <$osa_server_database>\n\n" as dbsrv14 <<device>> #skyblue{
   node "Sun Solaris 10\n" <<OS>> as solaris #pink{
     
-    node "Oracle 11g" <<database system>> as databaseOracle #white{
-      rectangle "Users" <<schema>> as users
-      rectangle "Orders" <<schema>> as orders
+    node "Oracle 11g <$mysql>" <<database system>> as databaseOracle #white{
+      
+      rectangle "<<schema>>" as schema1 {
+        entity Users as users
+      }     
+      rectangle "<<schema>>" as schema2 {
+        entity Orders as Orders
+      }
       
       /'======== RELACOES  ========='/
       
-      users -[hidden]- orders
+      schema1 -r[hidden]- schema2
     }
   }
 }

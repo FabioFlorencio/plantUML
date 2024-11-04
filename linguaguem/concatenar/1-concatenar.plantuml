@@ -1,0 +1,13 @@
+@startuml
+
+!$a = 42
+!$b = 10
+!$c = $a + $b
+
+!$text = "Total: " + $a + " + " + $b + " = " + $c
+
+rectangle "$text" as va #cdcdcd
+
+note top : Somar
+
+@enduml
