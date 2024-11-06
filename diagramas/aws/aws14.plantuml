@@ -1,0 +1,181 @@
+@startuml
+
+!include <aws/General/AWScloud/AWScloud-sprite.puml>
+!include <aws/ApplicationServices/AmazonAPIGateway/AmazonAPIGateway.puml>
+!include <awslib10/AWSCommon.puml>
+!include <awslib14/AWSCommon.puml>
+!include <awslib14/ApplicationIntegration/AppSync.puml>
+!include <awslib14/Containers/ElasticContainerRegistry.puml>
+!include <awslib14/ApplicationIntegration/APIGateway.puml>
+!include <awslib14/Analytics/Athena.puml>
+!include <awslib14/Analytics/OpenSearchService.puml>
+!include <awslib14/Compute/Fargate2.puml>
+!include <awslib14/Compute/LambdaLambdaFunction.puml>
+!include <awslib14/Database/Neptune.puml>
+!include <awslib14/Database/DynamoDB.puml>
+!include <awslib14/DeveloperTools/CodeBuild.puml>
+!include <awslib14/DeveloperTools/CodePipeline.puml>
+!include <awslib14/FrontEndWebMobile/Amplify.puml>
+!include <awslib14/General/Users.puml>
+!include <awslib14/General/SDK.puml>
+!include <awslib14/ManagementGovernance/Config.puml>
+!include <awslib14/Groups/VPC.puml>
+!include <awslib14/NetworkingContentDelivery/CloudFront.puml>
+!include <awslib14/SecurityIdentityCompliance/Cognito.puml>
+!include <awslib14/Storage/SimpleStorageServiceS3Standard.puml>
+!include <awslib10/Storage/Backup.puml>
+!include <awslib14/CloudFinancialManagement/CostandUsageReport.puml>
+!include <awslib14/Containers/ElasticContainerRegistryImage.puml>
+!include <awslib14/Containers/ElasticContainerService.puml>
+!include <awslib14/GroupIcons/VPCSubnetPrivate.puml>
+!define AWS_COLOR_GREEN #3F8624
+!define AWS_COLOR_BLUE #3A47CB
+!define teste blue
+
+scale 0.5
+
+left to right direction
+
+' link do diagrama https://www.youtube.com/watch?v=WIozLc8w8bM&t=149s
+
+''============== ESTAO JUNTOS   ==================================
+rectangle "<color:red><$AWScloud>\tAWS CLOUD" as cloud1 {
+  
+  together{
+    rectangle "<$SDK>\nSDK" as SDK #4763E5;text:white
+    rectangle "<$Config>\nConfig" as Config #D82C6C;text:white
+    rectangle "<$APIGateway>\nAPIGateway" as APIGateway1 #8954E6;text:white
+    
+  }
+  
+  /'============== web UI component =================================='/
+    
+  rectangle "web UI component" as webUIComponent #line.dashed;text:silver {
+    rectangle "<$CloudFront>\nCloudFront" as CloudFront #8954E6;text:white
+    rectangle "<$Cognito>\nCognito" as Cognito #E9393E;text:white
+    rectangle "<$LambdaLambdaFunction>\nLambda\nSettings\nFunction" as LambdaLambdaFunction1 #white;text:orange
+    rectangle "<$DynamoDB>\nDynamoDB\nSettings table" as db #455EE0;text:white
+    rectangle "<$SimpleStorageServiceS3Standard>\nS3 Bucket\nWebUIBucket" as SimpleStorageServiceS3Standard1 AWS_COLOR_GREEN;text:teste
+    
+    
+    rectangle "\t\t\tClient API" as ClientAPI #snow {
+      rectangle "<$APIGateway>\nAPIGateway" as APIGateway2 #8954E6;text:white
+      rectangle "<$AppSync>\nAppSync" as AppSync #D82C6C;text:white
+    }
+  }
+
+  rectangle "     Storage management component" as storageManagement #line.dashed {
+    rectangle "<$SimpleStorageServiceS3Standard>\nS3 Bucket\nAmplifyStorageBucket" as SimpleStorageServiceS3Standard2 #4C912B;text:white
+    rectangle "<$Amplify>\nAmplify" as Amplify #EC3D41;text:white
+  }
+      
+        
+  rectangle "<$VPC>\nvpc" as VPC #text:green {
+  
+    rectangle "<$VPCSubnetPrivate>\nPrivate\nsubnet" as VPCSubnetPrivate #E8F0F7;text:blue {
+    
+      /'============== Data Component ==============='/
+    
+      rectangle "Data Component" as DataComponent #line.dashed {
+        rectangle "<$LambdaLambdaFunction>\nLambda\nGremlin\nFunction" as LambdaLambdaFunction2 #white;text:orange
+        rectangle "<$LambdaLambdaFunction>\nLambda\nSearch\nFunction" as LambdaLambdaFunction3 #white;text:orange
+        rectangle "<$OpenSearchService>\nOpen\nSearch\nService" as OpenSearchService #8954E6;text:white
+        rectangle "<$Neptune>\nNeptune" as Neptune #4866E8;text:white
+      }
+      
+      /'============== Discovery component ==============='/
+      
+      rectangle "Discovery component" as DiscoveryComponent #line.dashed {
+        rectangle "<$Fargate2>\nAWS\nFargate" as Fargate #E3740E;text:white
+        rectangle "<$ElasticContainerRegistry>\nElastic\nContainer\nRegistry" as ElasticConatainerRegistry #E3740E;text:white
+        rectangle "<$ElasticContainerService>\nElastic\nContainer\nService" as ElasticContainerService #E3740E;text:white
+        component cx1 
+      }
+    }  
+  }
+   
+   
+    /'============== Cost component ==============='/
+    
+  rectangle "Cost component" as CostComponent #line.dashed;text:blue {
+    rectangle "<$LambdaLambdaFunction>\nLambda\nCost\nFunction" as LambdaLambdaFunction4 #white;text:orange
+    rectangle "<$Athena>\nAthena" as Athena  #8954E6;text:white
+    rectangle "<$SimpleStorageServiceS3Standard>\nS3 Bucket\nCURBucket" as SimpleStorageServiceS3Standard3 #4C912B;text:white
+    rectangle "<$SimpleStorageServiceS3Standard>\nS3 Bucket\nAmplifyStorageBucket" as SimpleStorageServiceS3Standard4 #4C912B;text:white
+    rectangle "<$CostandUsageReport>\nCost\nUsage Report(CUR)" as CostandUsageReport #4C912B;text:white
+  }
+      
+      
+  rectangle "Image deployment\ncomponent" as ImageDeployment #line.dashed;text:blue {
+    rectangle "<$CodePipeline>\nCodePipeline" as CodePipeline #4763E5;text:white
+    rectangle "<$CodeBuild>\nCodeBuild" as CodeBuild #4763E5;text:white
+    rectangle "<$SimpleStorageServiceS3Standard>\nS3 Bucket\nDiscoveryBucket" as SimpleStorageServiceS3Standard5 #4C912B;text:white
+    rectangle "<color:orange><$ElasticContainerRegistryImage>\nContainer\nImage" as ContainerImage #white;text:black
+  }    
+}
+
+rectangle "<$Users>\nUsers1" as Users1 #text:black
+
+''=========================  RELACOES  ==================================
+
+APIGateway2 -d- CostComponent
+DataComponent -r- DiscoveryComponent
+ElasticConatainerRegistry -d- ContainerImage
+VPC -r-- CostComponent
+SimpleStorageServiceS3Standard2 -d- SDK
+AppSync -d- LambdaLambdaFunction4
+
+
+''==================== web UI component =====================
+  
+ 
+CloudFront <-- SimpleStorageServiceS3Standard1
+CloudFront -u- Users1
+APIGateway2 -u- SimpleStorageServiceS3Standard1
+APIGateway2 -d- AppSync
+APIGateway2 -l- LambdaLambdaFunction1
+LambdaLambdaFunction1 -u- Cognito
+db -l- LambdaLambdaFunction1
+SimpleStorageServiceS3Standard1 -r---> Cognito
+ClientAPI -l-- LambdaLambdaFunction1
+
+
+''------------- Data Component --------------------
+
+LambdaLambdaFunction2 <--> Neptune 
+LambdaLambdaFunction3 <--> OpenSearchService 
+
+
+''------------- Discoveryr Component --------------
+
+ 
+Fargate -d[hidden]- cx1 
+cx1 -d[hidden]- ElasticConatainerRegistry
+ElasticContainerService -l[hidden]- cx1 
+Fargate -- ElasticContainerService
+ElasticContainerService -- ElasticConatainerRegistry
+
+''================= Image deployment component ==================
+
+SimpleStorageServiceS3Standard5 -l- CodePipeline
+CodePipeline -l- CodeBuild
+CodeBuild -l- ContainerImage
+
+''================= Cost component ==============================
+
+LambdaLambdaFunction4 -d-> Athena
+Athena -d-> SimpleStorageServiceS3Standard3
+SimpleStorageServiceS3Standard3 <-d- CostandUsageReport
+CostandUsageReport -d[hidden]-> SimpleStorageServiceS3Standard4
+
+
+''================= storageManagement ==================
+
+Amplify -- SimpleStorageServiceS3Standard2
+
+
+hide cx1
+
+
+
+@enduml

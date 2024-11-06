@@ -214,7 +214,7 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 #####  Logos
 
-- [Logos](https://github.com/plantuml/plantuml-stdlib/tree/master/logos)
+- [Logos](https://github.com/plantuml/plantuml-stdlib/tree/master/stdlib/logos)
 
 
 | Include                                 |  Sintaxe                       |     Sugestão de Cor       |
@@ -241,7 +241,7 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 |`!include <logos/bootstrap.puml>`        | `<$bootstrap>`                 |                           |
 |`!include <logos/bun.puml>`              | `<$bun>`                       |                           |
 |`!include <logos/c-plusplus.puml>`       | `<$c-plusplus>`                |                           |
-|`!include <logos/c-sharp.puml>`          | `<$c-sharp>`                   |                           |
+|`!include <logos/c-sharp.puml>`          | `<$c_sharp>`                   |                           |
 |`!include <logos/c.puml>`                | `<$c>`                         |                           |
 |`!include <logos/chrome.puml>`           | `<$chrome>`                    |                           |
 |`!include <logos/composer.puml>`         | `<$composer>`                  |                           |
@@ -276,12 +276,12 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 #####  Tupadr3/devicons
 
-- [tupadr3/devicons](https://github.com/plantuml/plantuml-stdlib/tree/master/tupadr3/devicons)
+- [tupadr3/devicons](https://github.com/plantuml/plantuml-stdlib/tree/master/stdlib/tupadr3)
 
 | Include                                          |  Sintaxe                       |         Sugestão de Cor         |
 |:-------------------------------------------------|:-------------------------------|:--------------------------------|
-|`!include <tupadr3/devicons/python.puml>`         | `<$python>`                    | #yellow/gold;text:blue          |                   
-|`!include <tupadr3/devicons/php.puml>`            | `<$php>`                       | #yellow/gold;text:blue          |                   
+|`!include <tupadr3/devicons/python.puml>`         | `<$python>`                    | #yellow/gold;text:blue          |
+|`!include <tupadr3/devicons/php.puml>`            | `<$php>`                       | #yellow/gold;text:blue          |
 |`!include <logos/android-vertical.puml>`          | `<$android-vertical>`          |                                 |
 |`!include <logos/java.puml>`                      | `<$java>`                      |                                 |
 |`!include <logos/archlinux.puml>`                 | `<$archlinux>`                 |                                 |
@@ -292,11 +292,13 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 |`!include <tupadr3/devicons/linux.puml>`          | `<$linux>`                     |                                 |
 |`!include <tupadr3/devicons/windows.puml>`        | `<$windows>`                   |                                 |
 |`!include <tupadr3/devicons/sqllite.puml>`        | `<$sqllite>`                   |                                 |
+|`!include <tupadr3/devicons/github_badge.puml>`   | `<$github_badge>`              |                                 |
+|`!include <tupadr3/devicons/w3c.puml>`            | `<$w3c>`                       |                                 |
 
 
 #####  Office 
 
-- [office](https://github.com/plantuml/plantuml-stdlib/tree/master/office)
+- [office](https://github.com/plantuml/plantuml-stdlib/tree/master/stdlib/office)
 
 | Include                                            |  Sintaxe                  |         Sugestão de Cor         |
 |:---------------------------------------------------|:--------------------------|:--------------------------------|
@@ -305,7 +307,7 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 #####  Devices
 
-- [Devices](https://github.com/plantuml/plantuml-stdlib/tree/master/office/Devices)
+- [Devices](https://github.com/plantuml/plantuml-stdlib/tree/master/stdlib/office/Devices)
   
 
 | Include                                               |  Sintaxe                        |         Sugestão de Cor         |
@@ -332,7 +334,7 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 #####  AWS
 
-- [AWS](https://github.com/plantuml/plantuml-stdlib/tree/master/awslib14)
+- [AWS](https://github.com/plantuml/plantuml-stdlib/tree/master/stdlib/awslib14)
   
 ###### Geral
 
