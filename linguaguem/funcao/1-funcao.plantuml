@@ -1,0 +1,14 @@
+@startuml
+
+!function $somar($a, $b)
+  !return $a + $b
+!endfunction
+
+!$a = 48
+!$b = 2
+!$c = $somar(11, 33)
+
+rectangle "Resultado\n $c" as result
+note left : $somar($a,$b)
+
+@enduml
