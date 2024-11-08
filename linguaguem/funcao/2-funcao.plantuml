@@ -1,0 +1,19 @@
+@startuml
+
+!function $teste($a)
+  !$alias = ["curso", "turma", "matricula", "aluno", "avaliacao"]
+  !if ($alias[0] == "curso")
+    !$resultado = "ok"
+  !else
+    !$resultado = "não ok"
+  !endif
+  !return $resultado
+!endfunction
+
+
+!$a ?= ""
+!$b = $teste($a)
+
+rectangle "Teste\n $b" as result
+
+@enduml
