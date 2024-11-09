@@ -1,0 +1,10 @@
+@startuml
+
+!$classeCurso = ["Curso"]
+!$teste = $classeCurso
+
+!foreach $item in $teste
+  rectangle "$item" 
+!endfor
+
+@enduml

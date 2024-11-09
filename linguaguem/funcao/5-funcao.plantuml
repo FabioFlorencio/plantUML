@@ -1,0 +1,32 @@
+@startuml
+
+!$atributosCurso = ["nomes", "cargaHoraria", "valor"]
+!$atributosTurma = ["numeroTurma", "dataInicio", "numeroVagas"]
+!$dadosCurso = ["String", "integer", "Double"]
+
+!$lista = ["atributosCurso", "atributosTurma", "atributosMatricula"]
+
+!function $teste($a)
+  
+  !if (atributosCurso == $a)
+    !$resultado = $atributosCurso
+  !elseif (atributosTurma == $a)
+    !$resultado = $atributosTurma
+  !else
+    !$resultado = "Nenhum resultado válido!"
+  !endif
+  !return $resultado
+  
+!endfunction
+
+
+!$a = 0
+
+!$b = $teste($lista[1])
+
+!foreach $item in $b
+  rectangle "$item"
+!endfor
+
+
+@enduml

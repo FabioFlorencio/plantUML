@@ -1,0 +1,16 @@
+@startuml
+
+!$classeCurso = ["Curso", "Turma", "Matricula"]
+!$alias = ["curso", "turma", "matricula"]
+
+!$i = 0
+!foreach $item in $classeCurso
+  rectangle "$item" as $alias[$i]
+  !$i = $i + 1
+!endfor
+
+
+curso -- turma
+curso -- matricula
+
+@enduml
