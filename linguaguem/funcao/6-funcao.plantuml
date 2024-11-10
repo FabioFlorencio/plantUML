@@ -1,0 +1,43 @@
+@startuml
+
+!$ltAllClass = ["ltClass1","ltClass2"]
+
+!$ltClass1 = ["l1", "l2"]
+!$ltClass2 = ["l3", "l4"]
+
+
+!function $contAllLt($ltAllClass)    
+
+    !if (ltClass1 == $ltAllClass[$i])
+        !$result = $ltClass1
+        !global $y = 11 + 5
+    !elseif (ltClass2 == $ltAllClass[$i])    
+        !$result = $ltClass2
+        !global $z = 11 + 11
+    !else
+        !$result = "Deu ruim!"
+    !endif
+    !return $result 
+    
+!endfunction
+
+!global $i = 0
+
+!while ($i < %size($ltAllClass))
+
+  !$k = 0
+  !$returnLtClass = $contAllLt($ltAllClass)
+  
+  !while ($k < %size($returnLtClass))
+    rectangle "$returnLtClass[$k]"
+    !$k = $k + 1
+  !endwhile
+  
+  !$i = $i + 1
+!endwhile
+
+  
+note left : $i - $y - $z
+
+
+@endplantuml
