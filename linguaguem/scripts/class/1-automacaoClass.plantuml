@@ -1,0 +1,78 @@
+@startuml
+
+'============ CURSO
+!$elementCurso = class
+!$nCurso = "Curso"
+!$aliasCurso = "curso"
+!$idCurso = %random(30)
+!$incluiQualfdrsCurso = %true()
+!$listQualifsAtribsCurso = ["#", "#", "#", "+"]
+!$listAtribsCurso = ["nome", "cargaHoraria", "valor", "teste"]
+!$listDadosCurso = ["String", "integer", "Double", "Double"]
+!$listQualifsMetodosCurso = ["#", "#", "#", "-"]
+!$metodosCurso = ["obterNome()", "definirDuracao()", "listarTurmas()", "listarTurmas2()"]
+!$validacaoMetodosCurso = 1
+'============ TURMA
+!$elementTurma = abstract
+!$nTurma = "Turma"
+!$aliasTurma = "turma"
+!$idTurma = %random(30)
+!$incluiQualfdrsTurma = %false()
+!$listQualifsAtribsTurma = ["-", "~", "~", "#"]
+!$listAtribsTurma = ["numeroTurma", "dataInicio", "numeroVagas", "TesteTurma"]
+!$listDadosTurma = ["integer", "integer", "integer", "String"]
+!$listQualifsMetodosTurma = ["#", "#", "#", "-"]
+!$metodosTurma = ["adicionarAluno()", "removerAluno()", "listarAlunos()", "listarAlunos2()"]
+!$validacaoMetodosTurma = %true()
+
+
+
+' ----------  createClass  ---------------
+
+
+!procedure $createClass($incluiQualfdrs, $tipoElemento, $itemClass, $alias, $id, $arraytQualifsAtribs, $arrayAtribs, $arraytQualifsMetodos, $arrayDados, $validaMetodo, $arrayMetodos) 
+  !$j = 0
+  
+  'Inclui qualificadores'
+  !if ($incluiQualfdrs)    
+    $tipoElemento "$itemClass" as $alias 
+      $alias : <<oid>> id : $id
+      !while ($j < %size($arrayAtribs))
+        $alias : $arraytQualifsAtribs[$j] $arrayAtribs[$j] : $arrayDados[$j]
+        !$j = $j + 1
+      !endwhile
+      
+      !if ($validaMetodo)
+        !$k = 0
+        !while ($k < %size($arrayMetodos))
+          $alias : $arraytQualifsMetodos[$k] $arrayMetodos[$k]  
+        !$k = $k + 1
+        !endwhile
+      !endif
+  'Sem qualificadores'    
+  !else 
+    $tipoElemento "$itemClass" as $alias 
+      $alias : <<oid>> id : $id
+      !while ($j < %size($arrayAtribs))
+        $alias : $arrayAtribs[$j] : $arrayDados[$j]
+        !$j = $j + 1
+      !endwhile
+      
+      !if ($validaMetodo)
+        !$k = 0
+        !while ($k < %size($arrayMetodos))
+          $alias : $arrayMetodos[$k]  
+        !$k = $k + 1
+        !endwhile
+      !endif
+  !endif  
+      
+  
+!endprocedure
+
+$createClass($incluiQualfdrsCurso, $elementCurso, $nCurso, $aliasCurso, $idCurso, $listQualifsAtribsCurso, $listAtribsCurso, $listQualifsMetodosCurso, $listDadosCurso, $validacaoMetodosCurso, $metodosCurso)
+$createClass($incluiQualfdrsTurma, $elementTurma, $nTurma, $aliasTurma, $idTurma, $listQualifsAtribsTurma, $listAtribsTurma, $listQualifsMetodosTurma, $listDadosTurma, $validacaoMetodosTurma, $metodosTurma)
+
+turma -- curso
+
+@enduml

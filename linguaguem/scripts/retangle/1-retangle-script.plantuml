@@ -1,0 +1,51 @@
+@startuml
+
+!include <tupadr3/devicons/python.puml>
+!include <tupadr3/devicons/php.puml>
+!include <tupadr3/devicons/mysql.puml>
+!include <logos/java.puml>
+!include <logos/arduino.puml>
+!include <logos/bun.puml>
+
+!$logoPy = $python
+!$logoPhp = $php
+!$logoMySql = $mysql
+!$logoJava = $java
+!$logoArduino = $arduino
+
+
+
+!$apelidos = ["py", "php", "MySql", "java", "arduino", "bun"]
+!$textos = ["Python", "PHP", "MySql", "Java \\n Incrível", "\\nArduino", "Bun"]
+!$logos = ["$python", "$php", "$mysql", "$java", "$arduino","$bun"]
+!$estilos = ["estilo1", "estilo2", "estilo1", "estilo2", "estilo1", "estilo2"]
+!$cores = ["white", "black", "blue", "orange", "gold"]
+
+
+!procedure $createRectangle($i, $logos, $textos, $apelidos, $estilos)
+  !while ($i < %size($apelidos))
+    rectangle "<$logos[$i]>\n $textos[$i]" as $apelidos[$i] <<$estilos[$i]>> 
+    !$i = $i + 1
+  !endwhile  
+!endprocedure 
+      
+!$cont = 0      
+$createRectangle($cont,$logos, $textos, $apelidos,$estilos)
+
+
+skinparam rectangle<<estilo1>> {
+  borderColor Red
+  backgroundColor LightSalmon
+  FontColor black
+}
+skinparam rectangle<<estilo2>> {
+  borderColor Red
+  backgroundColor teal
+  FontColor white
+}
+
+hide stereotype
+
+
+
+@enduml

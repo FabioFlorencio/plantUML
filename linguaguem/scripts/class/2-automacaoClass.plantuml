@@ -1,0 +1,284 @@
+@startuml
+''******************COMENTÁRIOS************************
+
+'lt \ l = list
+'Atrbs = Atributos
+'Dds = Dados
+'Mtds = metodos
+
+'============ Usuario
+!$clsUsuario = "Usuario"
+!$alsUsuario = "usuario"
+!$idUsuario = "1"
+!$ltQualifsAtrbsUsuario = ["+","+","+"]
+!$ltAtrbsUsuario = ["nome", "email", "senha"]
+!$ltDdsUsuario = ["String", "String", "String"]
+!$ltQualifsMtdsUsuario = ["+","+"]
+!$mtdsUsuario = ["login(): bool", "logout(): void"]
+!$validacaoMtdsUsuario = 1
+'============ Estudante
+!$clsEstudante = "Estudante"
+!$alsEstudante = "estudante"
+!$idEstudante = "2"
+!$ltQualifsAtrbsEstudante = ["+","+"]
+!$ltAtrbsEstudante = ["matricula", "curso"]
+!$ltDdsEstudante = ["String", "Curso"]
+!$ltQualifsMtdsEstudante = ["+","+"]
+!$mtdsEstudante = ["obterHistorico(): List<Disciplina>", "inscreverDisciplina(d: Disciplina): bool"]
+!$validacaoMtdsEstudante = 1
+'============ Professor
+!$clsProfessor = "Professor"
+!$alsProfessor = "professor"
+!$idProfessor = "3"
+!$ltQualifsAtrbsProfessor = ["+", "+"]
+!$ltAtrbsProfessor = ["areaEspecializacao", "departamento"]
+!$ltDdsProfessor = ["String", "Departamento"]
+!$ltQualifsMtdsProfessor = ["+"]
+!$mtdsProfessor = ["atribuirNota(e: Estudante, d: Disciplina, nota: float): void"]
+!$validacaoMtdsProfessor = 1
+'============ Disciplina
+!$clsDisciplina = "Disciplina"
+!$alsDisciplina = "disciplina"
+!$idDisciplina = "4"
+!$ltQualifsAtrbsDisciplina = ["+", "+", "+", "+"]
+!$ltAtrbsDisciplina = ["nome", "codigo", "cargaHoraria", "Professor"]
+!$ltDdsDisciplina = ["String", "String", "integer", "Professor"]
+!$ltQualifsMtdsDisciplina = ["+", "+"]
+!$mtdsDisciplina = ["listarEstudantes(): List<Estudante>", "adicionarEstudante(e: Estudante): bool"]
+!$validacaoMtdsDisciplina = 1
+'============ Curso
+!$clsCurso = "Curso"
+!$alsCurso = "curso"
+!$idCurso = "5"
+!$ltQualifsAtrbsCurso = ["+", "+", "+"]
+!$ltAtrbsCurso = ["nome", "codigo", "duracao"]
+!$ltDdsCurso = ["String", "String", "integer"]
+!$ltQualifsMtdsCurso = ["+", "+"]
+!$mtdsCurso = ["disciplinas: List<Disciplina>", "adicionarDisciplina(d: Disciplina): void"]
+!$validacaoMtdsCurso = 1
+'============ Departamento
+!$clsDepartamento = "Departamento"
+!$alsDepartamento = "departamento"
+!$idDepartamento = "6"
+!$ltQualifsAtrbsDepartamento = ["+", "+", "+"]
+!$ltAtrbsDepartamento = ["nome", "codigo", "chefia"]
+!$ltDdsDepartamento = ["String", "String", "Professor"]
+!$ltQualifsMtdsDepartamento = ["+"]
+!$mtdsDepartamento = ["listarProfessores(): List<Professor>"]
+!$validacaoMtdsDepartamento = 1
+'============ Avaliacao
+!$clsAvaliacao = "Avaliacao"
+!$alsAvaliacao = "avaliacao"
+!$idAvaliacao = "7"
+!$ltQualifsAtrbsAvaliacao = ["+", "+", "+", "+"]
+!$ltAtrbsAvaliacao = ["tipo", "nota", "disciplina", "estudante"]
+!$ltDdsAvaliacao = ["String", "float", "Disciplina", "Estudante"]
+!$ltQualifsMtdsAvaliacao = ["+"]
+!$mtdsAvaliacao = ["atribuirNota(n: float): void"]
+!$validacaoMtdsAvaliacao = 1
+'============ Turma
+!$clsTurma = "Turma"
+!$alsTurma = "turma"
+!$idTurma = "8"
+!$ltQualifsAtrbsTurma = ["+", "+", "+", "+", "+"]
+!$ltAtrbsTurma = ["codigo", "ano", "semestre", "disciplina", "professor"]
+!$ltDdsTurma = ["String", "integer", "integer", "Disciplina", "Professor"]
+!$ltQualifsMtdsTurma = ["+", "+"]
+!$mtdsTurma = ["adicionarEstudante(e: Estudante): void", "listarEstudantes(): List<Estudante>"]
+!$validacaoMtdsTurma = 1
+'============ SalaAula
+!$clsSalaAula = "SalaAula"
+!$alsSalaAula = "salaAula"
+!$idSalaAula = "9"
+!$ltQualifsAtrbsSalaAula = ["+", "+"]
+!$ltAtrbsSalaAula = ["numero", "capacidade"]
+!$ltDdsSalaAula = ["String", "integer"]
+!$ltQualifsMtdsSalaAula = ["+"]
+!$mtdsSalaAula = ["reservar(horario: String): bool"]
+!$validacaoMtdsSalaAula = 1
+'============ Biblioteca
+!$clsBiblioteca = "Biblioteca"
+!$alsBiblioteca = "biblioteca"
+!$idBiblioteca = "10"
+!$ltQualifsAtrbsBiblioteca = ["+", "+"]
+!$ltAtrbsBiblioteca = ["nome", "localizacao"]
+!$ltDdsBiblioteca = ["String", "String"]
+!$ltQualifsMtdsBiblioteca = ["+", "+"]
+!$mtdsBiblioteca = ["livros: List<Livro>", "adicionarLivro(l: Livro): void"]
+!$validacaoMtdsBiblioteca = 1
+'============ Livro
+!$clsLivro = "Livro"
+!$alsLivro = "livro"
+!$idLivro = "11"
+!$ltQualifsAtrbsLivro = ["+", "+", "+"]
+!$ltAtrbsLivro = ["titulo", "autor", "anoPublicacao"]
+!$ltDdsLivro = ["String", "String", "integer"]
+!$ltQualifsMtdsLivro = ["+", "+", "+"]
+!$mtdsLivro = ["emprestar(estudante: Estudante): bool", "devolver(): void"]
+!$validacaoMtdsLivro = 1
+'============ Emprestimo
+!$clsEmprestimo = "Emprestimo"
+!$alsEmprestimo = "emprestimo"
+!$idEmprestimo = "12"
+!$ltQualifsAtrbsEmprestimo = ["+", "+", "+", "+"]
+!$ltAtrbsEmprestimo = ["dataEmprestimo", "dataDevolucao", "estudante", "livro"]
+!$ltDdsEmprestimo = ["Date", "Date", "Estudante", "Livro"]
+!$ltQualifsMtdsEmprestimo = ["+", "+"]
+!$mtdsEmprestimo = ["realizarEmprestimo(): void", "finalizarEmprestimo(): void"]
+!$validacaoMtdsEmprestimo = 1
+'============ Pagamento
+!$clsPagamento = "Pagamento"
+!$alsPagamento = "pagamento"
+!$idPagamento = "13"
+!$ltQualifsAtrbsPagamento = ["+", "+", "+"]
+!$ltAtrbsPagamento = ["valor", "dataPagamento", "descricao"]
+!$ltDdsPagamento = ["float", "Date", "String"]
+!$ltQualifsMtdsPagamento = ["+", "+", "+"]
+!$mtdsPagamento = ["processarPagamento(): bool"]
+!$validacaoMtdsPagamento = 1
+'============ Mensalidade
+!$clsMensalidade = "Mensalidade"
+!$alsMensalidade = "mensalidade"
+!$idMensalidade = "14"
+!$ltQualifsAtrbsMensalidade = ["+", "+", "+"]
+!$ltAtrbsMensalidade = ["valor", "dataVencimento", "estudante"]
+!$ltDdsMensalidade = ["float", "Date", "Estudante"]
+!$ltQualifsMtdsMensalidade = ["+"]
+!$mtdsMensalidade = ["pagarMensalidade(): bool"]
+!$validacaoMtdsMensalidade = 1
+'============ Funcionario
+!$clsFuncionario = "Funcionario"
+!$alsFuncionario = "funcionario"
+!$idFuncionario = "15"
+!$ltQualifsAtrbsFuncionario = ["+", "+", "+"]
+!$ltAtrbsFuncionario = ["nome", "departamento", "salario"]
+!$ltDdsFuncionario = ["String", "Date", "float"]
+!$ltQualifsMtdsFuncionario = ["+"]
+!$mtdsFuncionario = ["realizarAtividade(atividade: String): void"]
+!$validacaoMtdsFuncionario = 1
+'============ Coordenador
+!$clsCoordenador = "Coordenador"
+!$alsCoordenador = "coordenador"
+!$idCoordenador = "16"
+!$ltQualifsAtrbsCoordenador = ["+", "+"]
+!$ltAtrbsCoordenador = ["nome", "curso"]
+!$ltDdsCoordenador = ["String", "Date"]
+!$ltQualifsMtdsCoordenador = ["+"]
+!$mtdsCoordenador = ["gerenciarCurso(): void"]
+!$validacaoMtdsCoordenador = 1
+'============ Secretaria
+!$clsSecretaria = "Secretaria"
+!$alsSecretaria = "secretaria"
+!$idSecretaria = "17"
+!$ltQualifsAtrbsSecretaria = ["+", "+"]
+!$ltAtrbsSecretaria = ["nome", "telefone"]
+!$ltDdsSecretaria = ["String", "String"]
+!$ltQualifsMtdsSecretaria = ["+"]
+!$mtdsSecretaria = ["agendarAtendimento(horario: String): bool"]
+!$validacaoMtdsSecretaria = 1
+'============ Refeitorio
+!$clsRefeitorio = "Refeitorio"
+!$alsRefeitorio = "refeitorio"
+!$idRefeitorio = "18"
+!$ltQualifsAtrbsRefeitorio = ["+", "+"]
+!$ltAtrbsRefeitorio = ["nome", "capacidade"]
+!$ltDdsRefeitorio = ["String", "integer"]
+!$ltQualifsMtdsRefeitorio = ["+"]
+!$mtdsRefeitorio = ["listarCardapio(): List<String>"]
+!$validacaoMtdsRefeitorio = 1
+'============ Cardapio
+!$clsCardapio = "Cardapio"
+!$alsCardapio = "cardapio"
+!$idCardapio = "19"
+!$ltQualifsAtrbsCardapio = ["+", "+"]
+!$ltAtrbsCardapio = ["data", "refeicoes"]
+!$ltDdsCardapio = ["Date", "List<String>"]
+!$ltQualifsMtdsCardapio = ["+"]
+!$mtdsCardapio = ["adicionarRefeicao(refeicao: String): void"]
+!$validacaoMtdsCardapio = 1
+'============ HorarioAula
+!$clsHorarioAula = "HorarioAula"
+!$alsHorarioAula = "horarioAula"
+!$idHorarioAula = "20"
+!$ltQualifsAtrbsHorarioAula = ["+", "+", "+", "+", "+"]
+!$ltAtrbsHorarioAula = ["diaSemana", "horarioInicio" , "horarioFim", "disciplina", "sala"]
+!$ltDdsHorarioAula = ["Date", "Time", "Time", "Disciplina", "SalaAula"]
+!$ltQualifsMtdsHorarioAula = ["+"]
+!$mtdsHorarioAula = ["()"]
+!$validacaoMtdsHorarioAula = 0
+
+
+
+'Escala da imagem'
+scale 0.8
+'Esconde o metodo da classe que não está em uso'
+hide empty methods
+
+
+' ----------  createClass  ---------------
+!procedure $createClass($itemClass, $als, $id, $arraytQualifsAtrbs, $arrayAtrbs, $arraytQualifsMtds, $arrayDds, $validaMetodo, $arrayMtds) 
+  !$j = 0
+  
+  'Inclui qualificadores'
+  !if (1)    
+    class "$itemClass" as $als 
+      $als : <<oid>> id : $id
+      !while ($j < %size($arrayAtrbs))
+        $als : $arraytQualifsAtrbs[$j] $arrayAtrbs[$j] : $arrayDds[$j]
+        !$j = $j + 1
+      !endwhile
+      
+      !if ($validaMetodo)
+        !$k = 0
+        !while ($k < %size($arrayMtds))
+          $als : $arraytQualifsMtds[$k] $arrayMtds[$k]  
+        !$k = $k + 1
+        !endwhile
+      !endif
+  'Sem qualificadores'    
+  !else 
+    class "$itemClass" as $als 
+      $als : <<oid>> id : $id
+      !while ($j < %size($arrayAtrbs))
+        $als : $arrayAtrbs[$j] : $arrayDds[$j]
+        !$j = $j + 1
+      !endwhile
+      
+      !if ($validaMetodo)
+        !$k = 0
+        !while ($k < %size($arrayMtds))
+          $als : $arrayMtds[$k]  
+        !$k = $k + 1
+        !endwhile
+      !endif
+  !endif  
+      
+  
+!endprocedure
+
+
+
+$createClass($clsUsuario, $alsUsuario, $idUsuario, $ltQualifsAtrbsUsuario, $ltAtrbsUsuario, $ltQualifsMtdsUsuario, $ltDdsUsuario, $validacaoMtdsUsuario, $mtdsUsuario)
+$createClass($clsEstudante, $alsEstudante, $idEstudante, $ltQualifsAtrbsEstudante, $ltAtrbsEstudante, $ltQualifsMtdsEstudante, $ltDdsEstudante, $validacaoMtdsEstudante, $mtdsEstudante)
+$createClass($clsProfessor, $alsProfessor, $idProfessor, $ltQualifsAtrbsProfessor, $ltAtrbsProfessor, $ltQualifsMtdsProfessor, $ltDdsProfessor, $validacaoMtdsProfessor, $mtdsProfessor)
+$createClass($clsDisciplina, $alsDisciplina, $idDisciplina, $ltQualifsAtrbsDisciplina, $ltAtrbsDisciplina, $ltQualifsMtdsDisciplina, $ltDdsDisciplina, $validacaoMtdsDisciplina, $mtdsDisciplina)
+$createClass($clsCurso, $alsCurso, $idCurso, $ltQualifsAtrbsCurso, $ltAtrbsCurso, $ltQualifsMtdsCurso, $ltDdsCurso, $validacaoMtdsCurso, $mtdsCurso)
+$createClass($clsDepartamento, $alsDepartamento, $idDepartamento, $ltQualifsAtrbsDepartamento, $ltAtrbsDepartamento, $ltQualifsMtdsDepartamento, $ltDdsDepartamento, $validacaoMtdsDepartamento, $mtdsDepartamento)
+$createClass($clsAvaliacao, $alsAvaliacao, $idAvaliacao, $ltQualifsAtrbsAvaliacao, $ltAtrbsAvaliacao, $ltQualifsMtdsAvaliacao, $ltDdsAvaliacao, $validacaoMtdsAvaliacao, $mtdsAvaliacao)
+$createClass($clsTurma, $alsTurma, $idTurma, $ltQualifsAtrbsTurma, $ltAtrbsTurma, $ltQualifsMtdsTurma, $ltDdsTurma, $validacaoMtdsTurma, $mtdsTurma)
+$createClass($clsSalaAula, $alsSalaAula, $idSalaAula, $ltQualifsAtrbsSalaAula, $ltAtrbsSalaAula, $ltQualifsMtdsSalaAula, $ltDdsSalaAula, $validacaoMtdsSalaAula, $mtdsSalaAula)
+$createClass($clsBiblioteca, $alsBiblioteca, $idBiblioteca, $ltQualifsAtrbsBiblioteca, $ltAtrbsBiblioteca, $ltQualifsMtdsBiblioteca, $ltDdsBiblioteca, $validacaoMtdsBiblioteca, $mtdsBiblioteca)
+$createClass($clsLivro, $alsLivro, $idLivro, $ltQualifsAtrbsLivro, $ltAtrbsLivro, $ltQualifsMtdsLivro, $ltDdsLivro, $validacaoMtdsLivro, $mtdsLivro)
+$createClass($clsEmprestimo, $alsEmprestimo, $idEmprestimo, $ltQualifsAtrbsEmprestimo, $ltAtrbsEmprestimo, $ltQualifsMtdsEmprestimo, $ltDdsEmprestimo, $validacaoMtdsEmprestimo, $mtdsEmprestimo)
+$createClass($clsPagamento, $alsPagamento, $idPagamento, $ltQualifsAtrbsPagamento, $ltAtrbsPagamento, $ltQualifsMtdsPagamento, $ltDdsPagamento, $validacaoMtdsPagamento, $mtdsPagamento)
+$createClass($clsMensalidade, $alsMensalidade, $idMensalidade, $ltQualifsAtrbsMensalidade, $ltAtrbsMensalidade, $ltQualifsMtdsMensalidade, $ltDdsMensalidade, $validacaoMtdsMensalidade, $mtdsMensalidade)
+$createClass($clsFuncionario, $alsFuncionario, $idFuncionario, $ltQualifsAtrbsFuncionario, $ltAtrbsFuncionario, $ltQualifsMtdsFuncionario, $ltDdsFuncionario, $validacaoMtdsFuncionario, $mtdsFuncionario)
+$createClass($clsCoordenador, $alsCoordenador, $idCoordenador, $ltQualifsAtrbsCoordenador, $ltAtrbsCoordenador, $ltQualifsMtdsCoordenador, $ltDdsCoordenador, $validacaoMtdsCoordenador, $mtdsCoordenador)
+$createClass($clsSecretaria, $alsSecretaria, $idSecretaria, $ltQualifsAtrbsSecretaria, $ltAtrbsSecretaria, $ltQualifsMtdsSecretaria, $ltDdsSecretaria, $validacaoMtdsSecretaria, $mtdsSecretaria)
+$createClass($clsRefeitorio, $alsRefeitorio, $idRefeitorio, $ltQualifsAtrbsRefeitorio, $ltAtrbsRefeitorio, $ltQualifsMtdsRefeitorio, $ltDdsRefeitorio, $validacaoMtdsRefeitorio, $mtdsRefeitorio)
+$createClass($clsCardapio, $alsCardapio, $idCardapio, $ltQualifsAtrbsCardapio, $ltAtrbsCardapio, $ltQualifsMtdsCardapio, $ltDdsCardapio, $validacaoMtdsCardapio, $mtdsCardapio)
+$createClass($clsHorarioAula, $alsHorarioAula, $idHorarioAula, $ltQualifsAtrbsHorarioAula, $ltAtrbsHorarioAula, $ltQualifsMtdsHorarioAula, $ltDdsHorarioAula, $validacaoMtdsHorarioAula, $mtdsHorarioAula)
+
+
+
+@enduml
