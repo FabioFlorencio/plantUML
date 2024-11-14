@@ -1,33 +1,25 @@
 @startuml
 
-!include <aws/General/AWScloud/AWScloud-sprite.puml>
-!include <aws/ApplicationServices/AmazonAPIGateway/AmazonAPIGateway.puml>
-!include <awslib10/AWSCommon.puml>
-!include <awslib14/AWSCommon.puml>
-!include <awslib14/ApplicationIntegration/AppSync.puml>
-!include <awslib14/Containers/ElasticContainerRegistry.puml>
-!include <awslib14/ApplicationIntegration/APIGateway.puml>
-!include <awslib14/Analytics/Athena.puml>
-!include <awslib14/Analytics/OpenSearchService.puml>
-!include <awslib14/Compute/Fargate2.puml>
-!include <awslib14/Compute/LambdaLambdaFunction.puml>
-!include <awslib14/Database/Neptune.puml>
-!include <awslib14/Database/DynamoDB.puml>
-!include <awslib14/DeveloperTools/CodeBuild.puml>
-!include <awslib14/DeveloperTools/CodePipeline.puml>
-!include <awslib14/FrontEndWebMobile/Amplify.puml>
-!include <awslib14/General/Users.puml>
-!include <awslib14/General/SDK.puml>
-!include <awslib14/ManagementGovernance/Config.puml>
-!include <awslib14/Groups/VPC.puml>
-!include <awslib14/NetworkingContentDelivery/CloudFront.puml>
-!include <awslib14/SecurityIdentityCompliance/Cognito.puml>
-!include <awslib14/Storage/SimpleStorageServiceS3Standard.puml>
-!include <awslib10/Storage/Backup.puml>
-!include <awslib14/CloudFinancialManagement/CostandUsageReport.puml>
-!include <awslib14/Containers/ElasticContainerRegistryImage.puml>
-!include <awslib14/Containers/ElasticContainerService.puml>
-!include <awslib14/GroupIcons/VPCSubnetPrivate.puml>
+!$iconPaths = [
+  "<aws/General/AWScloud/AWScloud-sprite>", "<aws/ApplicationServices/AmazonAPIGateway/AmazonAPIGateway>",
+  "<awslib10/AWSCommon>", "<awslib14/AWSCommon>", "<awslib14/ApplicationIntegration/AppSync>",
+  "<awslib14/Containers/ElasticContainerRegistry>", "<awslib14/ApplicationIntegration/APIGateway>",
+  "<awslib14/ApplicationIntegration/APIGateway>", "<awslib14/Analytics/Athena>", "<awslib14/Analytics/OpenSearchService>",
+  "<awslib14/Compute/Fargate2>", "<awslib14/Compute/LambdaLambdaFunction>", "<awslib14/Database/Neptune>",
+  "<awslib14/Database/DynamoDB>", "<awslib14/DeveloperTools/CodeBuild>", "<awslib14/DeveloperTools/CodePipeline>",
+  "<awslib14/FrontEndWebMobile/Amplify>", "<awslib14/General/Users>", "<awslib14/General/SDK>", "<awslib14/ManagementGovernance/Config>",
+  "<awslib14/Groups/VPC>", "<awslib14/NetworkingContentDelivery/CloudFront>", "<awslib14/NetworkingContentDelivery/CloudFront>",
+  "<awslib14/SecurityIdentityCompliance/Cognito>", "<awslib14/Storage/SimpleStorageServiceS3Standard>", "<awslib10/Storage/Backup>",
+  "<awslib14/CloudFinancialManagement/CostandUsageReport>", "<awslib14/Containers/ElasticContainerRegistryImage>", 
+  "<awslib14/Containers/ElasticContainerService>", "<awslib14/GroupIcons/VPCSubnetPrivate>", "<awslib14/GroupIcons/VPCSubnetPrivate>"  
+]
+
+!$i = 0
+!while ($i < %size($iconPaths))
+  !include $iconPaths[$i]
+  !$i = $i + 1
+!endwhile
+
 !define AWS_COLOR_GREEN #3F8624
 !define AWS_COLOR_BLUE #3A47CB
 !define teste blue

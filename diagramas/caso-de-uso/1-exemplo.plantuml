@@ -1,0 +1,27 @@
+@startuml
+
+left to right direction
+skin rose
+
+actor "cliente" as cliente
+
+rectangle E-Commerce {
+  usecase "Efetuar Compra" as efetuarCompra
+  usecase "Emitir Comprovante" as emitirComprovante
+  usecase "Efetuar Pagamento" as efetuarPagamento
+  usecase "Efetuar Autenticação" as efetuarAutenticacao
+  usecase "Consultar Compra" as consultarCompra
+}
+
+cliente -- efetuarCompra
+efetuarCompra -r[hidden]- consultarCompra : \n\n
+emitirComprovante -r[hidden]- efetuarPagamento : \n\n
+efetuarAutenticacao -l[hidden]- emitirComprovante : \n\n
+cliente -- consultarCompra
+efetuarCompra ..> emitirComprovante : <<include>>
+efetuarCompra ..> efetuarPagamento : <<include>>
+efetuarCompra ..> efetuarAutenticacao : <<include>>
+consultarCompra ..> efetuarAutenticacao : <<include>>
+
+
+@enduml

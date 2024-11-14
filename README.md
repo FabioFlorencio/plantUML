@@ -55,7 +55,7 @@ O site [Real World PlantUML](https://real-world-plantuml.com/) dedicado a fornec
 
 Nesse diretório possui diagramas de alguns estudos.
 
-- [Exemplos](https://github.com/FabioFlorencio/plantUML/tree/master/exemplos)
+- [Exemplos](https://github.com/FabioFlorencio/plantUML/tree/master/diagramas)
 
 
 ## 📑 Documentação PlantUML

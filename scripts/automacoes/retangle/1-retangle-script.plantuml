@@ -1,19 +1,17 @@
 @startuml
 
-!include <tupadr3/devicons/python.puml>
-!include <tupadr3/devicons/php.puml>
-!include <tupadr3/devicons/mysql.puml>
-!include <logos/java.puml>
-!include <logos/arduino.puml>
-!include <logos/bun.puml>
+'!include <tupadr3/devicons/python.puml>'
+
+!$iconPaths = [
+    "<tupadr3/devicons/python>", "<tupadr3/devicons/php>", "<tupadr3/devicons/mysql>",
+    "<logos/java>", "<logos/arduino>", "<logos/bun>"
+  ]
 
 !$logoPy = $python
 !$logoPhp = $php
 !$logoMySql = $mysql
 !$logoJava = $java
 !$logoArduino = $arduino
-
-
 
 !$apelidos = ["py", "php", "MySql", "java", "arduino", "bun"]
 !$textos = ["Python", "PHP", "MySql", "Java \\n Incrível", "\\nArduino", "Bun"]
@@ -24,6 +22,7 @@
 
 !procedure $createRectangle($i, $logos, $textos, $apelidos, $estilos)
   !while ($i < %size($apelidos))
+    !include $iconPaths[$i]
     rectangle "<$logos[$i]>\n $textos[$i]" as $apelidos[$i] <<$estilos[$i]>> 
     !$i = $i + 1
   !endwhile  
@@ -33,16 +32,16 @@
 $createRectangle($cont,$logos, $textos, $apelidos,$estilos)
 
 
-skinparam rectangle<<estilo1>> {
-  borderColor Red
-  backgroundColor LightSalmon
-  FontColor black
+skinparam rectangle {
+  backgroundColor<<estilo1>> LightSalmon
+  borderColor<<estilo1>> Red
+  FontColor<<estilo1>> black
+  
+  borderColor<<estilo2>> Red
+  backgroundColor<<estilo2>> teal
+  FontColor<<estilo2>> white
 }
-skinparam rectangle<<estilo2>> {
-  borderColor Red
-  backgroundColor teal
-  FontColor white
-}
+
 
 hide stereotype
 
