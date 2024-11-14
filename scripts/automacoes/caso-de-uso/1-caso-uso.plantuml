@@ -1,0 +1,41 @@
+@startuml
+
+left to right direction
+skin rose
+
+!$objActor = "actor"
+!$objRect = "rectangle"
+!$useCase = "usecase"
+
+!$listCasoUso = ["Efetuar Compra", "Emitir Comprovante", "Efetuar Pagamento", "Efetuar Autenticação", "Consultar Compra"]
+!$listCasoUsoAlias = ["efetuarCompra", "emitirComprovante", "efetuarPagamento", "efetuarAutenticação", "consultarCompra"]
+
+
+!$i = 0
+
+!procedure $criarCasoDeUso($i,$listCasoUso, $listCasoUsoAlias)
+  $objRect "E-Commerce" {
+  !while ($i < %size($listCasoUso))
+    $useCase "$listCasoUso[$i]" as $listCasoUsoAlias[$i]
+    !$i = $i + 1
+  !endwhile
+  }
+!endprocedure
+
+$objActor "Cliente" as cliente
+
+$criarCasoDeUso($i, $listCasoUso, $listCasoUsoAlias)
+
+
+''=========================  RELACOES  ==================================
+cliente -- efetuarCompra
+efetuarCompra ..> emitirComprovante : <<include>>
+consultarCompra -r[hidden]- efetuarCompra : \n
+emitirComprovante -r[hidden]- efetuarPagamento 
+efetuarCompra ..> efetuarPagamento : <<include>> 
+consultarCompra ..> efetuarAutenticação : <<include>> 
+efetuarCompra ..> efetuarAutenticação : <<include>> 
+cliente -- consultarCompra
+
+
+@enduml

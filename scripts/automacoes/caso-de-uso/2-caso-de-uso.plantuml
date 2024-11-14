@@ -1,0 +1,59 @@
+@startuml
+
+left to right direction
+skinparam handwritten true
+caption Exemplo de treino usando skinparam handwritten true
+
+!$objActor = "actor"
+!$objRect = "rectangle"
+!$useCase = "usecase"
+
+!$listCasoUso = ["Efetuar Compra", "Emitir Comprovante", "Efetuar Pagamento", "Efetuar Autenticação", "Consultar Compra"]
+!$listCasoUsoAlias = ["efetuarCompra", "emitirComprovante", "efetuarPagamento", "efetuarAutenticação", "consultarCompra"]
+!$listStyles = ["style2", "style1", "style1", "style1", "style2"]
+
+
+!$i = 0
+
+!procedure $criarCasoDeUso($i,$listCasoUso, $listCasoUsoAlias)
+  $objRect "E-Commerce" #lightblue{
+  !while ($i < %size($listCasoUso))
+    $useCase "$listCasoUso[$i]" as $listCasoUsoAlias[$i] <<$listStyles[$i]>>
+    !$i = $i + 1
+  !endwhile
+  }
+!endprocedure
+
+$objActor "Cliente" as cliente
+
+$criarCasoDeUso($i, $listCasoUso, $listCasoUsoAlias)
+
+'============ ESTILOS
+skinparam usecase {
+  FontStyle italic
+  backgroundColor<<style1>> white
+  backgroundColor<<style2>> pink
+  borderColor<<style1>> red
+  borderColor<<style2>> white
+}
+
+skinparam actor{
+  backgroundColor red/yellow
+}
+
+'Esconde o stereotype
+hide stereotype
+
+''=========================  RELACOES  ==================================
+
+cliente -- efetuarCompra
+efetuarCompra ..> emitirComprovante : <<include>>
+consultarCompra -r[hidden]- efetuarCompra : \n
+emitirComprovante -r[hidden]- efetuarPagamento 
+efetuarCompra ..> efetuarPagamento : <<include>> 
+consultarCompra ..> efetuarAutenticação : <<include>> 
+efetuarCompra ..> efetuarAutenticação : <<include>> 
+cliente -- consultarCompra
+
+
+@enduml
