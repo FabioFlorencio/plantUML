@@ -1,0 +1,46 @@
+@startuml
+
+left to right direction
+skin rose
+caption Diário de classe
+
+!$casoUse = [
+    "Editar Diário", "Imprimir\\nDocumentos", "Editar\\nNotas", "Editar\\nAvaliações", "Cadastrar\\nConteúdos",
+    "Cadastrar Plano\\nde Ensino", "Fechar\\nDiário", "Registrar\\nFrequência"]
+!$aliasCaso = [
+    "editDiario", "imprimirDoc", "editNotas", "editAvaliacoes", "cadastrarConteudos",
+    "cadastrarPlanoDeEnsino", "fecharDiario", "registrarFrequencia"]
+    
+!$cenario = ["Diário de Classe"]
+
+!$person = ["Professor"]
+!$aliasPerson = ["prof"]
+
+!$actObj = "actor"
+!$rectgObjt = "rectangle"
+
+
+!procedure $createCase($actObj, $i, $person, $aliasPerson, $casoUse, $aliasCaso)
+    $actObj $person[$i] as $aliasPerson[$i]
+    $rectgObjt "$cenario[$i]" {
+      !while ($i < %size($casoUse))
+        ($casoUse[$i]) as ($aliasCaso[$i])  
+      !$i = $i + 1
+      !endwhile
+    }  
+!endprocedure
+
+!$i = 0
+$createCase($actObj, $i, $person, $aliasPerson, $casoUse, $aliasCaso)
+
+prof --- editDiario
+editDiario <.r. imprimirDoc : \t\t\t <<extend>> 
+editDiario <.. editNotas : <<extend>>
+editDiario <.. editAvaliacoes : <<extend>>
+editDiario <.u. cadastrarConteudos : <<extend>> 
+editDiario <.u. cadastrarPlanoDeEnsino : <<extend>> 
+editDiario <.l. fecharDiario : <<extend>> \t\t
+editDiario <.. registrarFrequencia : <<extend>> 
+
+
+@enduml

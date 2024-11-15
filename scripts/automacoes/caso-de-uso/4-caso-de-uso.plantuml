@@ -1,0 +1,59 @@
+@startuml
+
+!$listCasoDeUso = [
+  "Efetuar\\nCompra", "Buscar\\nProduto", "Emitir\\nComprovante", "Efetuar\\nAutenticação", "Recuperar\\nAcesso",
+  "Efetuar\\nPagamento", "Efetuar\\nPagamento\\nà Prazo", "Efetuar Pagamento\\nà Vista", "Cadastrar\\nCliente",
+  "Alterar\\nCliente", "Regularizar\\nPendência"
+  ]
+!$listAliasCasoDeUso = [
+  "efetuarCompra", "buscarProduto", "emitirComprovante", "efetuarAutenticacao", "recuperarAcesso",
+  "efetuarPag", "efetuarPagPrazo", "efetuarPagVista", "cadastrarCliente",
+  "alterarCliente", "regularizarPendencia"
+  ]
+
+!$actObj = "actor"
+!$actCliente = "Cliente"
+!$actAliasCliente = "cliente"
+
+!$rectObj = "rectangle"
+!$rectTitulo = "Exemplo"
+!$rectAlias = "tiulo"
+
+
+!procedure $criarCasoDeUso($actObj, $actCliente, $actAliasCliente)
+    !$i = 0
+    $actObj $actCliente as $actAliasCliente
+    $rectObj $rectTitulo as $rectTitulo {
+    !while ($i < %size($listCasoDeUso))
+      ($listCasoDeUso[$i]) as $listAliasCasoDeUso[$i]
+    !$i = $i + 1  
+    !endwhile  
+    }
+!endprocedure
+
+skin rose
+left to right direction
+
+$criarCasoDeUso($actObj, $actCliente, $actAliasCliente)
+
+
+''=========================  RELACOES  ================================== 
+cliente --- efetuarCompra 
+cliente --- buscarProduto 
+cliente --- cadastrarCliente
+efetuarCompra ..> emitirComprovante : <<include>>
+efetuarCompra ..> efetuarAutenticacao : <<include>>
+efetuarAutenticacao <.. recuperarAcesso : <<extend>>
+efetuarCompra <.l... cadastrarCliente : <<extend>> \t\t
+efetuarCompra <.. alterarCliente : <<extend>>
+efetuarCompra <.. regularizarPendencia : <<extend>>
+efetuarCompra <.r. buscarProduto : <<extend>> \t\t
+efetuarCompra ..> efetuarPag : <<include>>
+efetuarPag <|-- efetuarPagPrazo 
+efetuarPag <|-- efetuarPagVista
+
+
+
+
+
+@enduml
