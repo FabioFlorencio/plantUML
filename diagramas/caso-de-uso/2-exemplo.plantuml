@@ -1,0 +1,40 @@
+@startuml
+
+
+skin rose
+left to right direction
+
+actor Cliente as cliente
+
+rectangle Exemplo {
+  usecase "Buscar\nProduto" as buscarProd
+  usecase "Emitir\nComprovante" as emitirComprovante
+  usecase "Efetuar\nAutenticação" as efetuarAutenticacao
+  usecase "Recuperar\nAcesso" as recuperarAcesso
+  usecase "Efetuar\nCompra" as efetuarCompra
+  usecase "Efetuar\nPagamento" as efetuarPagamento
+  usecase "Efetuar Pagamento\nà Prazo" as efetuarPagamentoPrazo
+  usecase "Efetuar Pagamento\nà Vista" as efetuarPagamentoVista
+  usecase "Cadastrar\nCliente" as cadastrarCliente
+  usecase "Alterar Cliente" as alterarCliente
+  usecase "Regularizar\nPendência" as regularizarPendencia
+}
+
+''=========================  RELACOES  ==================================
+
+cliente -- efetuarCompra
+cliente -- buscarProd
+cliente -r- cadastrarCliente
+efetuarCompra <.r. buscarProd : <<extend>>
+efetuarCompra <.l. cadastrarCliente : <<extend>>
+efetuarCompra ..> efetuarPagamento : <<include>>
+efetuarPagamento <|-- efetuarPagamentoVista
+efetuarPagamento <|-- efetuarPagamentoPrazo
+efetuarCompra ..> emitirComprovante : <<include>>
+efetuarCompra ..> efetuarAutenticacao : <<include>>
+efetuarAutenticacao <.. recuperarAcesso : <<extend>>
+efetuarCompra ..> alterarCliente : <<include>>
+efetuarCompra ..> regularizarPendencia : <<include>>
+
+
+@enduml

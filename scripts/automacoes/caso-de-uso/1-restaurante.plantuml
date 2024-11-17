@@ -1,0 +1,57 @@
+@startuml
+
+
+'============ Caso de uso gerente
+!$ltCasoUsoGerente = [
+    "ManterCardápio", "Listar Cardápios", "Inativar Cardápio", "Obter Cardápio", "Login", "Logout", "Cadastrar Funcionário",
+    "Manter item\\ndo cardápio", "Inativar item\\ndo cardápio", "Inativar Funcionário", "Manter Categoria", "Inativar Categoria",
+    "Listar Itens\\ndo Cardápio", "Manter Mesa", "Inativar Mesa", "Listar Categorias", "Obter Categoria", "Obter Item\\ndo Cardápio",
+    "Listar Mesas", "Obter Mesa"
+    ]
+!$ltaliasCaseUsoGerente = [
+    "manterCardapio", "listarCardapios", "inativarCardapio", "obterCardapio", "login", "logout", "cadastrarFuncionario",
+    "manterItemCardapio", "inativarItemCardapio", "inativarFuncionario", "manterCategoria", "inativarCategoria",
+    "listarItensCardapio", "manterMesa", "inativarMesa", "listarCategorias", "obterCategoria", "obterItemCardapio",
+    "listarMesas", "obterMesa"
+    ]
+
+!$ltSentido = [
+    "left", "up", "down", "down", "left",
+    "up", "down", "down", "up", "up",
+    "right", "down", "left", "up", "right",
+    "down", "up", "up", "right", "down"
+    ]    
+
+!$actGerente = "Gerente"
+!$actAliasGerente = "gerente"
+
+!$actObj = "actor"
+
+
+
+!procedure $criarCasoDeUso($actObj, $actGeneric, $actAliasGeneric, $ltGeneric, $ltAlGeneric)
+    !$j = 0     
+    $actObj $actGeneric as $actAliasGeneric
+    !while ($j < %size($ltGeneric))
+        !$left = "left"
+        ($ltGeneric[$j]) as $ltAlGeneric[$j]
+        $actAliasGeneric --$ltSentido[$j]-> $ltAlGeneric[$j]
+        !$j = $j + 1
+    !endwhile      
+!endprocedure
+
+scale 0.8
+skin rose
+left to right direction
+
+
+$criarCasoDeUso($actObj, $actGerente, $actAliasGerente, $ltCasoUsoGerente, $ltaliasCaseUsoGerente)
+
+
+
+
+
+
+
+
+@enduml

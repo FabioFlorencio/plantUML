@@ -1,0 +1,97 @@
+@startuml
+  
+/'
+  Observações. 
+  1 -Quando aumentar a lista tem que replicar nas outras
+  2 - Para deixar o texto taxado utilize a tag<s> dentro da lista  
+'/
+
+
+'============ Caso de uso gerente
+!$actGerente = "Gerente"
+!$actAliasGerente = "gerente"
+!$ltCasoUsoGerente = [
+    "<s>Manter Cardápio</s>", "<s>Listar Cardápios</s>", "<s>Inativar Cardápio</s>", "Obter Cardápio",
+    "Realizar Login", "Realizar Logout", "Cadastrar Funcionário", "<s>Manter item</s>\\n<s>do cardápio</s>",
+    "Inativar item\\n do cardápio", "<s>Inativar Funcionário</s>", "Manter Categoria", "Inativar Categoria",
+    "Listar Itens\\n do Cardápio", "Manter Mesa", "Inativar Mesa", "Listar Categorias", "Obter Categoria",
+    "Obter Item\\n do Cardápio", "Listar Mesas", "<s>Obter Mesa</s>", "Fechar Conta", "Tomar pedido gratuito",
+    "Excluir Pedido", "Modificar Pedido", "Manter Produto\\n do Estoque", "Listar Estoque", "Obter produto\\n do Estoque"
+    ]
+!$ltaliasCaseUsoGerente = [
+    "manterCardapio", "listarCardapios", "inativarCardapio", "obterCardapio", "realizarLogin", "realizarLogout", "cadastrarFuncionario",
+    "manterItemCardapio", "inativarItemCardapio", "inativarFuncionario", "manterCategoria", "inativarCategoria",
+    "listarItensCardapio", "manterMesa", "inativarMesa", "listarCategorias", "obterCategoria", "obterItemCardapio",
+    "listarMesas", "obterMesa" , "fecharConta", "tomarPedidoGratuito", "excluirPedido", "modificarPedido", "manterProdutoEstoque",
+    "listarEstoque", "obterProdutoEstoque"
+    ]
+!$ltSentido = [
+    "left", "up", "down", "down", "right", "down",
+    "up", "down", "down", "up", "up", "right", "left",
+    "right", "down", "left", "up", "left", "down", "up",
+    "down", "up", "up", "right", "down", "up", "up"
+    ]    
+
+!$actObj = "actor"
+
+!procedure $criarCasoDeUso($actObj, $actGeneric, $actAliasGeneric, $ltGeneric, $ltAlGeneric)
+    !$j = 0     
+    $actObj $actGeneric as $actAliasGeneric
+    !while ($j < %size($ltGeneric))
+        !$left = "left"
+        ($ltGeneric[$j]) as $ltAlGeneric[$j]
+        $actAliasGeneric --$ltSentido[$j]-> $ltAlGeneric[$j]
+        !$j = $j + 1
+    !endwhile      
+!endprocedure
+
+!procedure $mostrarEspecifsFeitas($ltGeneric)
+    !$j = 0     
+    !$k = 0
+    legend left
+      Especificação Caso de uso Gerente
+      ----
+      <:sunglasses:> Realizada(s):
+      !while ($j < %size($ltGeneric))
+        !if ("<s>" == %substr($ltCasoUsoGerente[$j], 0, 3))
+          !$k = $k + 1
+          $k $ltCasoUsoGerente[$j]
+        !endif
+          !$j = $j + 1
+      !endwhile
+      'Zerar indices'
+      !$l = 0
+      !$j = 0
+      ----
+      <:rotating_light:> Não Realizada(s): 
+      
+      !while ($j < %size($ltGeneric))
+        !if ("<s>" != %substr($ltCasoUsoGerente[$j], 0, 3))
+          !$l = $l + 1
+          $l $ltCasoUsoGerente[$j]
+        !endif
+          !$j = $j + 1
+      !endwhile 
+      !$restEspecifs = 0
+      !$restEspecifs = %size($ltGeneric) - $k
+      ----
+      Falta: $restEspecifs
+    end legend
+!endprocedure    
+
+scale 0.8
+skin rose
+left to right direction
+
+!if (%size($ltCasoUsoGerente) == %size($ltaliasCaseUsoGerente)) && (%size($ltSentido) == %size($ltCasoUsoGerente))
+  $criarCasoDeUso($actObj, $actGerente, $actAliasGerente, $ltCasoUsoGerente, $ltaliasCaseUsoGerente)
+  $mostrarEspecifsFeitas($ltCasoUsoGerente)
+!else  
+  !$resultLtCasoUso = %size($ltCasoUsoGerente)
+  !$resultLtAliasCasoUso = %size($ltaliasCaseUsoGerente)
+  !$resultLtSentido = %size($ltSentido)
+  note left : Valores diferentes:\nlista Gerente:$resultLtCasoUso\nlista alias:$resultLtAliasCasoUso\nlista sentido:$resultLtSentido
+!endif  
+
+
+@enduml 

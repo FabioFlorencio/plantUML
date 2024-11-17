@@ -16,14 +16,14 @@
 !$actAliasCliente = "cliente"
 
 !$rectObj = "rectangle"
-!$rectTitulo = "Exemplo"
-!$rectAlias = "tiulo"
+!$rectTitulo = "Exemplo_Sistema"
+!$rectAlias = "rectgTitulo"
 
 
 !procedure $criarCasoDeUso($actObj, $actCliente, $actAliasCliente)
     !$i = 0
     $actObj $actCliente as $actAliasCliente
-    $rectObj $rectTitulo as $rectTitulo {
+    $rectObj $rectTitulo as $rectAlias {
     !while ($i < %size($listCasoDeUso))
       ($listCasoDeUso[$i]) as $listAliasCasoDeUso[$i]
     !$i = $i + 1  
@@ -38,6 +38,7 @@ $criarCasoDeUso($actObj, $actCliente, $actAliasCliente)
 
 
 ''=========================  RELACOES  ================================== 
+
 cliente --- efetuarCompra 
 cliente --- buscarProduto 
 cliente --- cadastrarCliente

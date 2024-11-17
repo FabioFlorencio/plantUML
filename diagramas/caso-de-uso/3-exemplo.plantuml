@@ -1,0 +1,28 @@
+@startuml
+
+
+actor "Clientes" as clientes
+actor "Atendente" as atendente
+actor "Entregador" as entregador
+
+rectangle "Sistema de Pizzaria" as sistemaPizza {
+  usecase "Fazer Pedido" as fazerPedido
+  usecase "Cancelar Pedido" as cancelarPedido
+  usecase "Registrar Pedido" as registrarPedido
+  usecase "Fazer Entrega" as fazerEntrega
+}
+
+
+skin rose
+left to right direction
+
+clientes -- fazerPedido
+fazerPedido <.d. cancelarPedido : <<extend>>
+registrarPedido -r[hidden]- cancelarPedido
+fazerEntrega <.r. registrarPedido : <<include>> \t
+cancelarPedido -- atendente
+registrarPedido -- atendente 
+fazerEntrega -- entregador 
+
+
+@enduml
