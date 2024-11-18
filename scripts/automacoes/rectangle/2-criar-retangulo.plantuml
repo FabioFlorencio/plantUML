@@ -1,0 +1,29 @@
+@startuml
+
+
+!$cor1 = "3674A8"
+!$cor2 = "00f"
+!$cor3 = "b0b0b0"
+!$textoCor = "white"
+!$textoCorPython = "FFD858"
+!$logoPy = $python
+!$logoPhp = $php
+!$logoMySql = $mysql
+
+!include <tupadr3/devicons/python.puml>
+!include <tupadr3/devicons/php.puml>
+!include <tupadr3/devicons/mysql.puml>
+
+!procedure $createClasses($nome, $arg, $c, $apelido, $textoCor)
+  rectangle "<$nome>\n$arg" as $apelido #$c;text:$textoCor
+!endprocedure 
+      
+  
+$createClasses($logoPy,"Python" ,$cor1, "ap1", $textoCorPython)
+$createClasses($logoPhp,"PHP" ,$cor2, "ap2", $textoCor)
+$createClasses($logoMySql,"MySql" ,$cor3, "ap3", $textoCor)
+
+ap1 -- ap2
+ap1 -- ap3
+
+@enduml

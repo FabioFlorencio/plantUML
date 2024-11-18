@@ -36,7 +36,7 @@
 
 !procedure $criarCasoDeUso($actObj, $actGeneric, $actAliasGeneric, $ltGeneric, $ltAlGeneric)
     !$j = 0     
-    $actObj $actGeneric as $actAliasGeneric
+    $actObj/ $actGeneric as $actAliasGeneric
     !while ($j < %size($ltGeneric))
         !$left = "left"
         ($ltGeneric[$j]) as $ltAlGeneric[$j]
@@ -52,6 +52,7 @@
       Especificação Caso de uso Gerente
       ----
       <:sunglasses:> Realizada(s):
+      
       !while ($j < %size($ltGeneric))
         !if ("<s>" == %substr($ltCasoUsoGerente[$j], 0, 3))
           !$k = $k + 1

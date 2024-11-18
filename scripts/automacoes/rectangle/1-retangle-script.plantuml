@@ -1,7 +1,5 @@
 @startuml
 
-'!include <tupadr3/devicons/python.puml>'
-
 !$iconPaths = [
     "<tupadr3/devicons/python>", "<tupadr3/devicons/php>", "<tupadr3/devicons/mysql>",
     "<logos/java>", "<logos/arduino>", "<logos/bun>"
@@ -13,9 +11,9 @@
 !$logoJava = $java
 !$logoArduino = $arduino
 
-!$apelidos = ["py", "php", "MySql", "java", "arduino", "bun"]
-!$textos = ["Python", "PHP", "MySql", "Java \\n Incrível", "\\nArduino", "Bun"]
 !$logos = ["$python", "$php", "$mysql", "$java", "$arduino","$bun"]
+!$textos = ["Python", "PHP", "MySql", "Java \\n Incrível", "\\nArduino", "Bun"]
+!$apelidos = ["py", "php", "MySql", "java", "arduino", "bun"]
 !$estilos = ["estilo1", "estilo2", "estilo1", "estilo2", "estilo1", "estilo2"]
 !$cores = ["white", "black", "blue", "orange", "gold"]
 
@@ -29,7 +27,7 @@
 !endprocedure 
       
 !$cont = 0      
-$createRectangle($cont,$logos, $textos, $apelidos,$estilos)
+$createRectangle($cont, $logos, $textos, $apelidos, $estilos)
 
 
 skinparam rectangle {
