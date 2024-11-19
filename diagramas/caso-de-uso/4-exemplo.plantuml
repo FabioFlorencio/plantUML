@@ -1,0 +1,70 @@
+@startuml
+
+' Estilo
+skin rose
+
+actor Vendedor
+(Emitir Pedido) as emitirPedido
+(Consultar Preço) as consultarPreco
+(Selecionar Produto) as selecionarProduto
+
+note left of selecionarProduto {
+  Caso de Uso: **Selecionar Produtos**
+  ----
+  Ator: Vendedor
+  ----
+  
+  # O Ator Seleciona um grupo de produtos
+  # O sistema lista os subgrupos do grupo selecionado
+  # O Ator seleciona um subgrupo de produtos
+  # O Sistema apresenta os produtos do subgrupo selecionado
+  # O Ator seleciona os produtos
+}
+note left of emitirPedido {
+  Caso de Uso: **Emitir Pedido**
+  ----
+  Ator: Sistema
+  ----
+  
+  # O Ator inicia o caso de uso selecionando "Emitir pedido" 
+  # O sistema oferece a interface para emissão de pedidios
+  # O Ator seleciona um cliente para o pedido
+  # O Sistema exibe as informações do cliente
+  # O Ator seleciona produtos; Usa "Selecionar Produtos"
+  # O sistema calcula os preços de impostos dos produtos
+  # O Ator informa que deseja finalizar o pedido
+  # O sistema questiona sobre a forma de pagamento e entrega
+  # O Ator seleciona a forma de pagamento e entrega
+  # O Sistema informa o adicional de juros, o frete e solicita uma
+  confirmação de todos os dados do pedido
+  # O Ator confirma o pedido
+  # O Sistema informa que o pedido foi emitido com sucesso
+}
+note right of consultarPreco {
+  Caso de Uso: **Consultar Preço**
+  ----
+  Ator: Vendedor
+  ----
+  
+  # O Ator inicia o caso de uso selecionando "Consultar Preço"
+  # O sistema oferece a interface para consulta de preços
+  # O Ator seleciona produtos: **Usa "Selecionar Produtos"**
+  # O Sistema calcula os preços
+}
+
+' Estilo
+skinparam note {
+  backgroundColor e1e1e1
+}
+
+left to right direction 
+
+''=========================  RELACOES  ==================================
+
+Vendedor -- emitirPedido
+emitirPedido -r[hidden]- consultarPreco : \n\n
+Vendedor -- consultarPreco
+emitirPedido -- selecionarProduto : <<include>>
+consultarPreco -- selecionarProduto : <<include>>
+
+@enduml
