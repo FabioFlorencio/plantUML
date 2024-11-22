@@ -1,0 +1,79 @@
+@startuml
+
+scale 0.9
+skin rose 
+hide footbox
+
+'============ CLIENTE
+actor ":Cliente" as cliente
+activate cliente
+actor ":Funcionário" as funcionario
+cliente -> funcionario : 1: Solicitar Abertura de conta()
+activate funcionario  
+
+boundary ":interface_banco" as interfaceBanco
+funcionario -> interfaceBanco : 1.1: Consultar Cliente()
+activate interfaceBanco
+
+control ":Controlador_Banco" as controlBanco
+interfaceBanco -> controlBanco : 1.1.1: Consultar Cliente()
+activate controlBanco
+
+controlBanco -> "Pessoa_Física" : 1.1.1.1: con_Cpf(long)()
+activate "Pessoa_Física"
+controlBanco <<-- "Pessoa_Física" :\tdados cliente 
+deactivate "Pessoa_Física"
+
+interfaceBanco <- controlBanco : 1.1.1.2: dados cliente()
+
+activate interfaceBanco #FFBBBB
+deactivate controlBanco
+deactivate interfaceBanco
+deactivate interfaceBanco
+deactivate funcionario
+
+opt #FEFECE \n\nSe necessário\n\n 
+  ref over funcionario, "Pessoa_Física" : \nManter Cliente\n\n 
+end
+  
+deactivate cliente
+activate cliente
+
+'============ ESCOLHER SENHA
+cliente -> funcionario : \t2:Escolher senha()
+activate cliente
+
+activate funcionario
+funcionario -> interfaceBanco : \t2.1: Abrir conta()
+activate interfaceBanco
+
+interfaceBanco -> controlBanco : \t2.1.1: Abrir conta()
+activate controlBanco
+controlBanco --> "Conta_comum"** : \t<<create>>\t2.1.1.1:abrir_Contat(int)()
+
+activate "Conta_comum"
+controlBanco <<-- "Conta_comum" : \tverdadeiro:int
+deactivate "Conta_comum"
+
+interfaceBanco <- controlBanco : 2.1.1.2: Emitir cartao conta()
+activate interfaceBanco #FFBBBB
+deactivate controlBanco
+deactivate interfaceBanco
+deactivate interfaceBanco
+deactivate funcionario
+deactivate cliente
+
+'============ FORNECER VALOR
+cliente -> funcionario : 3:Fornecer valor deposito()
+activate cliente
+
+activate funcionario
+funcionario -> interfaceBanco : 3.1: Informar valor deposito()
+activate interfaceBanco 
+deactivate interfaceBanco
+deactivate funcionario
+
+
+ref over interfaceBanco, Conta_comum : Realizar Depósito\n
+
+@enduml
