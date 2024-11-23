@@ -1,0 +1,45 @@
+@startuml
+
+skin rose
+
+/'Exemplo de especificação de caso de uso usando file'/
+
+file f2 as "
+Caso de uso: **Realizar Logout no sistema**
+
+|<#white> Nome do Caso de Uso        |<#white> Realizar Logout no Sistema      |
+| Caso de Uso Geral                  | Realizar Logout                         |
+|<#white> Ator Pricnipal             |<#white> Garçom                          |
+| Ator Secundário                    |                                         |
+|<#white>\n Resumo |<#white> Como funcionáro do restaurante, após realizar minhas atividades no sistema e\n encerrado meu expediente, desejo realizar logout na plataforma,\n impedindo assim que ações indevidas sejam realizadas por meu usuário.|
+| Pré-Condições                      |1. O Ator precisa estar cadastrado e ativo no sistema.\n2. O Ator precisa ter uma sessão válida no sistema.                         |
+|<#white> Pós-Condições               |<#white>1. O usuário deverá ser redirecionado para a tela de login|
+|                                    |                                         |
+|<#white> Fluxo Principal            |<#white>                                 |
+|                                    |                                         |
+|<#white> Ações do Ator              |<#white> Ações do sistema                        |
+| 1. Na tela do sistema ator clica no\n botão 'Sair do sistema'                |                                       |
+|<#white>                            |<#white> 2. O sistema encerra a sessão do usuário e o encaminha para a tela do login     |
+|                                    | 3. O sistema não localiza a sessão do usuário [FE01] |
+|<#white>                            |<#white>                                         |
+| Restrições / Validações            |                                                 |
+|<#white>                            |<#white>                                         |
+|                                    |                                                 |
+|<#white>                            |<#white>                                         |
+| Fluxo Alternativo                  |                                                 |
+|                                    |                                                 |
+|<#white> Ações do Ator              |<#white> Ações do sistema                        |
+|                                    |                                                 |
+|<#white>                            |<#white>                                         |
+|                                    |                                                 |
+|<#white> Fluxo de Exceção           |<#white>                                         |
+|                                    |                                                 |
+|<#white>[FE01] Fluxo de Exceção1 - O sistema não localizou a sessão do usuário |<#white>                                              |
+| Ações do Ator                      | Ações do sistema                        |
+|<#white>                            |<#white> 1. O sistema redireciona o usuário para a tela de login com a mensagem de erro\n'Houve erro ao realizar o logout do usuário' |
+
+
+"
+
+
+@enduml

@@ -1,13 +1,19 @@
 @startuml
 
+'if encadeado
+
 !$a = 42
-!$b = 10
+!$b = 8
 !$result?= ""
 
-!if ($a > 10)
+!if (0)
+  !if ($a > $b)
     !$result = $a
+  !else
+    !$result = $b
+  !endif  
 !elseif ($b > $a)
-    !$result = $a
+    !$result = $b
 !else
     !$result = "nenhum"
 !endif
