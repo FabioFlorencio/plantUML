@@ -1,0 +1,20 @@
+@startuml
+
+  
+!function usarIcon($text)
+  !return "<&key> " + "<u>" + $text + "</u>"
+!endfunction
+
+entity pessoa { 
+  %call_user_func("usarIcon", "cpf") : numeric
+  nome : String
+}
+entity endereco {
+  rua : String
+  cep : numeric
+}
+
+
+
+
+@enduml 
