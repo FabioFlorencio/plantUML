@@ -1,0 +1,61 @@
+@startuml
+
+hide footbox
+skin rose
+skinparam sequenceMessageAlign center
+
+'============ FUNCIONARIO
+actor ":Funcionário" as funcionario
+activate funcionario
+'============ INTERFACE
+boundary ":Interface_cinema" as interfaceCinema
+funcionario -> interfaceCinema : 1:Selecionar venda d ingresso()
+activate interfaceCinema
+'============ CONTROLADOR CINEMA
+control ":Controlador_Cinema" as controladorCinema
+interfaceCinema -> controladorCinema : 1.1:venda  ingresso()
+activate controladorCinema
+
+'============ LOOP
+loop #FEFECE :para cada sessao |guard|
+  controladorCinema -> "Sessao" : 1.1.1: SelSessao()
+  '============ SESSAO'
+  activate "Sessao"
+  '============ SALA'
+  "Sessao" -> "Sala" : 1.1.1.1:ConSala()
+  ||10||
+  activate "Sala" 
+  "Sessao" <<-- "Sala" : Sala:int
+  ||10||
+  deactivate "Sala"
+  '============ FILME'
+  "Sessao" -> "Filme" : \t1.1.1.2:ConFilme()\t\t\t
+  ||10||
+  activate "Filme"
+  "Sessao" <<-- "Filme" : filme: String
+  deactivate "Filme"
+  deactivate "Sessao"
+  controladorCinema <<-- "Sessao" : Sessoes:String 
+end
+  
+interfaceCinema <- controladorCinema : 1.1.2: Apresentar sessoes()
+activate interfaceCinema #FFBBBB
+deactivate controladorCinema
+deactivate interfaceCinema
+deactivate interfaceCinema
+
+funcionario -> interfaceCinema : 2:Informa sessao desejada()
+activate interfaceCinema
+interfaceCinema -> controladorCinema : 2.1 Sessao()
+activate controladorCinema  
+controladorCinema -> "Ingresso" : 2.1.1: Gerling()
+activate "Ingresso"
+controladorCinema <-- Ingresso : verdaeiro:int
+deactivate "Ingresso"
+interfaceCinema <- controladorCinema : 2.1.1:emitir Ingresso()
+activate interfaceCinema #FFBBBB
+deactivate interfaceCinema
+deactivate controladorCinema
+deactivate funcionario
+
+@enduml
