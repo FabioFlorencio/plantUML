@@ -1,0 +1,19 @@
+@startuml
+
+skin rose
+hide footbox
+
+actor Secretaria as Secretaria
+participant Paciente as Paciente
+
+Secretaria -> Paciente : criar novo Paciente()
+activate Paciente
+Secretaria -> Paciente : setCpf("123456789")
+Secretaria -> Paciente : setNome("José")
+Secretaria -> Paciente : setPeso(85)
+Secretaria -> Paciente : setAltura(1.68)
+Secretaria -> Paciente : calcularIMC()
+Paciente --> Secretaria : IMC calculado
+deactivate Paciente
+
+@enduml
