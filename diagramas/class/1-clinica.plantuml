@@ -1,0 +1,119 @@
+@startuml
+
+scale 0.85
+
+
+class "Clinica" as clinica
+    clinica : - cnpj : String    
+    clinica : - nome : String    
+
+    clinica : + setCnpj(cnpj:String): void
+    clinica : + setNome(nome:String): void
+    clinica : + getCnpj(): String
+    clinica : + getNome(): String
+
+class "Medico" as medico
+    medico : - cpf : String    
+    medico : - nome : String    
+    medico : - clinica : Clinica    
+
+    medico : + setCpf(cpf:String): void
+    medico : + setNome(nome:String): void
+    medico : + getCpf(): String
+    medico : + getNome(): String
+
+class "ConsultaMedicamento" as consultaMedicamento
+    consultaMedicamento : - consulta : Consulta    
+    consultaMedicamento : - medicamento : Medicamento
+    consultaMedicamento : - posologia : String
+
+    consultaMedicamento : + setConsulta(consulta:Consulta): void
+    consultaMedicamento : + setMedicamento(medicamento:Medicamento): void
+    consultaMedicamento : + setPosologia(posologia:String): void
+    consultaMedicamento : + getConsulta(): Consulta
+    consultaMedicamento : + getMedicamento(): Medicamento
+    consultaMedicamento : + getPosologia(posologia): String
+
+class "Medicamento" as medicamento
+    medicamento : - sigla : String
+    medicamento : - nome : String
+    medicamento : - dose : String
+
+    medicamento : + setSigla(sigla:String): void
+    medicamento : + setNome(nome:String): void
+    medicamento : + getSigla(): String
+    medicamento : + getNome(): String    
+
+class "Consulta" as consulta
+    consulta : - codigo : Integer
+    consulta : - dataHora : Date
+    consulta : - paciente : Paciente
+    consulta : - medico : Medico
+
+    consulta : + setCodigo(codigo:integer): void
+    consulta : + setDataHora(dataHora:Date): void
+    consulta : + getCodigo(): Integer
+    consulta : + getDataHora(): Date
+    consulta : + setPaciente(paciente:Paciente): void
+    consulta : + getPaciente(): Paciente
+
+class "Paciente" as paciente
+    paciente : - cpf : String
+    paciente : - nome : String
+    paciente : - dataNasc : Date
+    paciente : - peso : Double
+    paciente : - altura : Double
+    paciente : - consultas: list<Consulta>
+
+    paciente : + calculatIdade() : int
+    paciente : + calculatIMC() : Double
+    paciente : + pesquisarPorNome(nome:String): list
+    paciente : + setCpf(cpf:String): void
+    paciente : + setNome(nome:String): void
+    paciente : + setDataNasc(dataNasc:Date): void
+    paciente : + setPeso(peso:Double): void
+    paciente : + setAltura(altura:Double): void
+    paciente : + getCpf(): String
+    paciente : + getNome(): String
+    paciente : + getDataNasc(): Date
+    paciente : + getPeso(): Double
+    paciente : + getAltura(): Double
+    paciente : + addConsultar(consulta:Consulta): void
+    paciente : + getConsultas(): list<Consulta>
+    
+class "ConsultaExame" as consultaExame
+    consultaExame : - consulta : Consulta
+    consultaExame : - exame : Exame
+    consultaExame : - laudo : String
+    consultaExame : - resultado : String
+
+    consultaExame : + setConsulta(consulta:Consulta): void
+    consultaExame : + setExame(exame:Exame): void
+    consultaExame : + setLaudo(laudo:string): void
+    consultaExame : + setResultado(resultado:String): void
+    consultaExame : + getConsulta(): Consulta
+    consultaExame : + getExame(): Exame
+    consultaExame : + getLaudo(): String
+    consultaExame : + getResultado(): String
+
+class "Exame" as exame
+    exame : - sigla : String
+    exame : - nome : String
+    
+    exame : + setSigla(sigla:String): void
+    exame : + setNome(nome:String): void
+    exame : + getSigla(): String
+    exame : + getNome(): String
+    
+    
+''=========================  RELACOES  ==================================
+
+
+consulta <.l.. medico : \t\t\t\t
+medico o-u- clinica
+consulta .u.> paciente : \t\t\t\t
+consulta -r- exame :\t\t\t\t\t\t\t\t\t\t\t\t\t  
+consulta -u- medicamento : \t\t\t\t
+(consulta, exame) . consultaExame : \t\t\t
+(consulta, medicamento) . consultaMedicamento 
+@enduml
