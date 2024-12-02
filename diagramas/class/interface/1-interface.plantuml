@@ -1,0 +1,33 @@
+@startuml
+
+class "ContaBancaria" as contaBancaria
+  contaBancaria : - numero
+  contaBancaria : - saldo
+  
+  contaBancaria : + criar()
+  contaBancaria : + bloquear()
+  contaBancaria : + desbloquear()
+  contaBancaria : + creditar()
+  contaBancaria : + debitar()
+  
+  
+interface "Manipulável" as manipulavel <<interface>>
+  manipulavel : + criar()
+  manipulavel : + bloquear()
+  manipulavel : + desbloquear()
+  
+interface "Administrável" as administravel <<interface>>
+  administravel : + creditar()
+  administravel : + debitar()
+  
+
+''=========================  RELACOES  ==================================
+
+contaBancaria ..l.|> manipulavel : \t\t
+contaBancaria ..r.|> administravel : \t\t
+
+manipulavel <.d. cliente
+administravel <.d. gerente
+
+  
+@enduml

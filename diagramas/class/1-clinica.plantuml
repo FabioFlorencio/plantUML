@@ -108,12 +108,14 @@ class "Exame" as exame
     
 ''=========================  RELACOES  ==================================
 
+consulta -u- exame
+(consulta, exame) . consultaExame
 
-consulta <.l.. medico : \t\t\t\t
-medico o-u- clinica
-consulta .u.> paciente : \t\t\t\t
-consulta -r- exame :\t\t\t\t\t\t\t\t\t\t\t\t\t  
-consulta -u- medicamento : \t\t\t\t
-(consulta, exame) . consultaExame : \t\t\t
-(consulta, medicamento) . consultaMedicamento 
-@enduml
+medicamento -d- consulta
+(consulta, medicamento) . consultaMedicamento
+
+consulta -l- paciente
+consulta -r- medico
+medico -o clinica
+
+@enduml 
