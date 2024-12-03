@@ -1,0 +1,78 @@
+@startuml
+
+title Herança
+caption Figura 7.8 - Diagrama de classes de acordo com a UML
+
+skinparam groupInheritance 2  
+
+
+class Pessoa {
+    - nome : String
+    + setNome(nome : String) : void
+    + getNome() String
+}
+
+class PessoaFisica {
+    - rg : String
+    + setRg(rg : String) : void
+    + getRg() String
+}
+class PessoaJuridica {
+    - cnpj : String
+    + setCnpj(cnpj : String) : void
+    + getCnpj() : String
+}
+class Funcionario {
+    - cartao : String
+    + setCartao(cartao : String) : void
+    + getCartao() : String
+}
+class UsarFuncionario 
+
+note right of UsarFuncionario
+<code>
+public class UsarFuncionario
+ public static void main(String args[]){
+    Funcionario funcionario = new Funcionario();
+    
+    funcionario.setNome("Lucas");
+    funcionario.setRg("25.654.678-x");
+    funcionario.setCartao("RH845");
+    System.out.println(funcionario.getNome();
+    System.out.println(funcionario.getRg();
+    System.out.println(funcionario.getCartao();
+ }
+</code>
+endnote
+
+note left of UsarFuncionario
+"Para concretizar o exemplo de herança, o Exemplo 7.16 apresenta 
+a classe UsarFuncionario. Apesar de a classe Funcionario declarar
+apenas a variável "Cartão" e seus métodos set e get, todas as 
+variáveis e método de suas classes ancestrais podem ser usados."
+
+endnote
+    
+
+note left of Pessoa
+
+"Qualquer alteração realizada numa classe de nivel superior vai refletir
+nas classes de níveis inferiores. O Mecanismo da herança possiilita que 
+classes sejam criadas e adicionadas á hierarquia sem necessidade de
+alteração no código das classes, pois cada uma define exatamente suas 
+funcionalidades. São como engrenagens que se encaixam umas nas outras. 
+As classes adicionadas a uma hierarquia podem especializar ou restringir
+o comportamento das classes superiores."
+---
+
+Livro: Java 7 Ensino Didático
+Autor: Sérgio Furgeri
+
+endnote
+
+Pessoa <|-- PessoaFisica
+PessoaFisica <|-- Funcionario
+Pessoa <|-- PessoaJuridica
+Funcionario -[hidden]- UsarFuncionario
+@enduml
+ 
