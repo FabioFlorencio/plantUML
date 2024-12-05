@@ -184,31 +184,31 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 ##### UML 1 E 2
 
-| Temas                           |  Sintaxe                       |
-|:--------------------------------|:-------------------------------|
-|`skinparam componentStyle uml1`  | `xxx`                          |
-|`skinparam componentStyle uml2`  | `xxx`                          |
+| Temas                           |
+|:--------------------------------|
+|`skinparam componentStyle uml1`  |
+|`skinparam componentStyle uml2`  |
 
 ####  Skinparam nativo
 
-| Temas                           |  Sintaxe                       |
-|:--------------------------------|:-------------------------------|
-|`skin rose`                      | `rose`                         |
-|`skinparam handwritten true`     | `handwritten true`             |
-|`skinparam shadowing true`       | `sombra`                       |
-|`skinparam shadowing false`      | `sombra`                       |
+| Temas                           |
+|:--------------------------------|
+|`skin rose`                      |
+|`skinparam handwritten true`     |
+|`skinparam shadowing true`       |
+|`skinparam shadowing false`      |
 
 ####  Themes
 
 - [Temas](https://the-lum.github.io/puml-themes-gallery/)
 
 
-| Temas                           |  Sintaxe                       |
-|:--------------------------------|:-------------------------------|
-|`!theme crt-amber`               | `-[#red,dashed]-`              |
-|`!theme sketchy`                 | `-[#blue,dotted]-`             |
-|`!theme crt-green`               | `<-[#blue,bold]->`             |
-|`!theme cyborg-outline`          | `<|-[#blue,bold]-|>`           |
+| Temas                           |
+|:--------------------------------|
+|`!theme crt-amber`               |
+|`!theme sketchy`                 |
+|`!theme crt-green`               |
+|`!theme cyborg-outline`          |
 
 ####  Icons 
 

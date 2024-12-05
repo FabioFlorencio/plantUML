@@ -38,10 +38,10 @@
     !$j = 0     
     $actObj/ $actGeneric as $actAliasGeneric
     !while ($j < %size($ltGeneric))
-        !$left = "left"
-        ($ltGeneric[$j]) as $ltAlGeneric[$j]
-        $actAliasGeneric --$ltSentido[$j]-> $ltAlGeneric[$j]
-        !$j = $j + 1
+      !$left = "left"
+      ($ltGeneric[$j]) as $ltAlGeneric[$j]
+      $actAliasGeneric --$ltSentido[$j]-> $ltAlGeneric[$j]
+      !$j = $j + 1
     !endwhile      
 !endprocedure
 
