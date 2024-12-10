@@ -93,10 +93,10 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
 
 ### Funções
 
-| Funções                         |  Sintaxe                       |
-|:--------------------------------|:-------------------------------|
-|`Formato de data`                | %date("dd/mm/yyyy HH:mm")      |
-|`Aumenta o tamanho do diagrama`  | scale 1.5                      |
+| Funções                                  |  Sintaxe                       |
+|:-----------------------------------------|:-------------------------------|
+|`Formato de data`                         | %date("dd/mm/yyyy HH:mm")      |
+|`Defini o tamanho da imagem do diagrama`  | scale 1.5                      |
 
 ### Tipos de Linhas\Setas gerais
 
@@ -220,13 +220,13 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 | Include                                 |  Sintaxe                       |     Sugestão de Cor       |
 |:----------------------------------------|:-------------------------------|:--------------------------|
 |`!include <logos/django.puml>`           | `<$django>`                    | #0C4B33;text:PaleGreen    |                   
-|`!include <logos/android-vertical.puml>` | `<$android-vertical>`          |                           |
-|`!include <logos/java.puml>`             | `<$java>`                      |                           |
+|`!include <logos/android-vertical.puml>` | `<$android-vertical>`          | #50AF55;text:white        |
+|`!include <logos/java.puml>`             | `<$java>`                      | #0F94D2;text:white        |
 |`!include <logos/archlinux.puml>`        | `<$archlinux>`                 |                           |
-|`!include <logos/adobe-photoshop.puml>`  | `<$adobe-photoshop>`           |                           |
+|`!include <logos/adobe-photoshop.puml>`  | `<$adobe-photoshop>`           | #001E36;text:31A8FF       |
 |`!include <logos/angular.puml>`          | `<$angular>`                   |                           |
 |`!include <logos/apache.puml>`           | `<$apache>`                    |                           |
-|`!include <logos/apple.puml>`            | `<$apple>`                     |                           |
+|`!include <logos/apple.puml>`            | `<$apple>`                     | #fff;text:black           |
 |`!include <logos/arduino.puml>`          | `<$arduino>`                   |                           |
 |`!include <logos/aws-ec2.puml>`          | `<$aws-ec2>`                   |                           |
 |`!include <logos/aws-route53.puml>`      | `<$aws-route53>`               |                           |

@@ -1,23 +1,17 @@
 # 📋 Exemplos de diagramas ⚡
 
-Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
+## Sobre o Repositório
 
+Este repositório foi criado com o objetivo de organizar e compartilhar diagramas que ajudam a ilustrar e documentar diferentes conceitos, processos ou arquiteturas. 
 
-- [📋 Exemplos de diagramas ⚡](#-exemplos-de-diagramas-)
-  - [🌐 Comandos gerais](#-comandos-gerais)
-    - [HTML](#html)
-    
+## Estrutura do Repositório
 
+Os diagramas estão organizados em pastas com base em seus contextos ou finalidades.
 
-
-## 🌐 Comandos gerais
-### HTML
-
-| Estilo de texto |  Tags                        |
-|:----------------|:-----------------------------|
-|`Negrito`        | `<b>texto</b>`               |
-|`Sublinhado`     | `<u>texto sublinhado</u>`    |
-|`Tachado`        | `<s>texto tachado</s>`       |
+- **Diagramas de Classe** 
+- **Diagramas de Sequência**
+- **Diagramas de Casos de Uso**
+- **Diagramas de Componentes** 
 
 
 

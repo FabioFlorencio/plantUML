@@ -1,0 +1,210 @@
+@startuml
+
+skinparam linetype ortho
+caption Fonte: Weber, Januário (2010)
+
+class Login {
+    usuario: String
+    senha: String
+    + autenticar()
+    + sair()
+    + consultarLogin()
+    + recuperarSenha()
+}
+
+class Pessoa {
+    email: String
+    telefone1: String
+    telefone2: String
+    numero: Integer
+    celular: String
+    complemento: String
+    cep: Cep
+    + cadastrar()
+    + consultar()
+    + alterar()
+    + excluir()
+}
+
+class Cep {
+    cep: Integer
+    estado: String
+    cidade: String
+    rua: String
+    + consultar()
+}
+
+class Fisica {
+    nome: String
+    cpf: String
+    login: Login
+}
+
+class Juridica {
+    cnpj: String
+    inscEstadual: String
+    razaoSocial: String
+    telefone2: String
+    ramoDeAtividade: String
+}
+
+class Classificacao {
+    tipoDeAtendimento: String
+    cor: Color
+    + cadastrar()
+    + consultar()
+    + alterar()
+}
+
+class Cargo {
+    descricao: String
+    departamento: Departamento
+    + cadastrar()
+    + consultar()
+    + excluir()
+    + alterar()
+}
+
+class Departamento {
+    descricao: String
+    + cadastrar()
+    + consultar()
+    + excluir()
+    + alterar()
+    + consultarCargos()
+}
+
+class Cliente {
+    classificacao: Classificacao
+    juridica: Juridica
+    cargo: Cargo
+}
+
+
+class SubCategoria {
+    descricao: String
+    categoria: Categoria
+    + cadastrar()
+    + consultar()
+    + excluir()
+    + alterar()
+    + verificarTempoDeResolucao()
+    + consultarTemposDeResolucao()
+}
+
+class TempoDeResolucao {
+    classificacao: String
+    tempo: String
+    subCategoria: SubCategoria
+    + cadastrar()
+    + consultar()
+    + alterar()
+    + excluir()
+}
+
+
+class Atendente {
+    nivel: Integer
+}
+
+class Cliente {
+    classificacao: Classificacao
+    juridica: Juridica
+    cargo: Cargo
+}
+
+
+class Categoria {
+    descricao: String
+    + cadastrar()
+    + consultar()
+    + excluir()
+    + alterar()
+    + mostrarSubCategorias()
+}
+
+class Email {
+    remetente: String
+    destino: String
+    assunto: String
+    texto: String
+    data: Date
+    hora: Time
+    + enviar()
+}
+
+class Ticket {
+    titulo: String
+    dtInicio: Date
+    hrInicio: Time
+    criador: Fisica
+    responsavel: Fisica
+    status: String
+    dtConclusao: Date
+    hrConclusao: Time
+    subCategoria: SubCategoria
+    atendente: Atendente
+    cliente: Cliente
+    + finalizarTicket(cliente: Fisica)
+    + abrirTicket()
+    + atribuirResponsabilidade()
+    + mostrarTicket()
+    + visualizarTicket()
+    + visualizarAcompanhamento()
+    + alterarResponsabilidade(cliente: Fisica)
+    + consultarRelatados()
+    + calcularTempoDoTicket()
+}
+
+class Acompanhamento {
+    data: Date
+    hora: Time
+    mensagem: String
+    usuario: Fisica
+    ticket: Ticket
+    email: Email
+    + gravar()
+}
+
+class Solucao {
+    titulo: String
+    descricao: String
+    dtCriacao: Date
+    hrCriacao: Time
+    subCategoria: SubCategoria
+    + cadastrar()
+    + alterar()
+    + consultar()
+    + excluir()
+    + consultarSolucao(palavra: String)
+}
+
+class PalavraChave {
+    palavra: String
+    solucao: Solucao
+    + inserir()
+    + excluir()
+}
+
+''=========================  RELACOES  ==================================
+
+Fisica -l-> Login
+Pessoa <|-- Juridica
+Pessoa <|-- Fisica
+Pessoa -u-> Cep
+Atendente "0..1" -- Ticket
+Cliente "0..1" -- Ticket
+Cliente "0..1" -- Classificacao
+Cliente "0..1" -d- Juridica
+Cliente "0..1" -u- Cargo
+Cargo -u-* "1..*" Departamento
+SubCategoria "1..*" -- Categoria
+Solucao -d- SubCategoria
+Categoria "0..1" -- SubCategoria
+SubCategoria -- TempoDeResolucao
+Ticket "0..*" -- Acompanhamento
+Ticket "0..*" -d- Solucao
+Acompanhamento "0..1" -l- Email
+Solucao -r- PalavraChave
+
+@enduml
