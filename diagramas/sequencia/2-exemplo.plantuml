@@ -34,8 +34,8 @@ loop #FEFECE :para cada sessao |guard|
   activate "Filme"
   "Sessao" <<-- "Filme" : filme: String
   deactivate "Filme"
-  deactivate "Sessao"
   controladorCinema <<-- "Sessao" : Sessoes:String 
+  deactivate "Sessao"
 end
   
 interfaceCinema <- controladorCinema : 1.1.2: Apresentar sessoes()
@@ -54,6 +54,7 @@ controladorCinema <-- Ingresso : verdaeiro:int
 deactivate "Ingresso"
 interfaceCinema <- controladorCinema : 2.1.1:emitir Ingresso()
 activate interfaceCinema #FFBBBB
+deactivate interfaceCinema
 deactivate interfaceCinema
 deactivate controladorCinema
 deactivate funcionario

@@ -1,6 +1,8 @@
 @startuml
 
-skinparam linetype ortho
+
+scale 0.8
+
 caption Fonte: Weber, Januário (2010)
 
 class Login {
@@ -27,7 +29,7 @@ class Pessoa {
 }
 
 class Cep {
-    cep: Integer
+    cep: Integer                            
     estado: String
     cidade: String
     rua: String
@@ -188,23 +190,28 @@ class PalavraChave {
 
 ''=========================  RELACOES  ==================================
 
-Fisica -l-> Login
 Pessoa <|-- Juridica
 Pessoa <|-- Fisica
-Pessoa -u-> Cep
-Atendente "0..1" -- Ticket
-Cliente "0..1" -- Ticket
-Cliente "0..1" -- Classificacao
-Cliente "0..1" -d- Juridica
-Cliente "0..1" -u- Cargo
-Cargo -u-* "1..*" Departamento
-SubCategoria "1..*" -- Categoria
-Solucao -d- SubCategoria
-Categoria "0..1" -- SubCategoria
-SubCategoria -- TempoDeResolucao
-Ticket "0..*" -- Acompanhamento
-Ticket "0..*" -d- Solucao
-Acompanhamento "0..1" -l- Email
-Solucao -r- PalavraChave
+Fisica <|-- Cliente
+Fisica <|-- Atendente
+Fisica -u-> Login
+Fisica --> Acompanhamento
+Pessoa "0..*" -r-> Cep : \t\t
+Juridica "0..1" <-- "0..*" Cliente
+Classificacao <-- "0..*" Cliente
+Cargo "0..1" <-- "0..*" Cliente
+Cargo "0..*" --* Departamento
+Atendente <-- "0..*" Ticket
+Cliente <-- "0..*" Ticket
+Fisica <-- "0..*" Ticket
+Ticket "0..*" -r- SubCategoria
+Ticket "0..*" <-r-  "0..*" Solucao :\t\t
+Ticket <-l-  "0..*" Acompanhamento
+Solucao --> SubCategoria
+SubCategoria o-- "1..*" TempoDeResolucao
+Solucao o-r- "1..*" PalavraChave :\t\t
+SubCategoria "0..*" --* Categoria
+Acompanhamento -l-> Email
+
 
 @enduml

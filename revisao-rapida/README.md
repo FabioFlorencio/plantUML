@@ -472,5 +472,7 @@ Figure 1 - Retangle
 
 - Crie primeiramente os objetos e depois faça as relações.
 - Deixe a estilização por úlitmo ou utilize Skinparam que tem opções prontas a sua escolha.
+- Em diagrama de classes, de preferência para iniciar os relacionamentos das classes que possui mais elos, 
+para facilitar a manunipulação dos elementos.
 
 

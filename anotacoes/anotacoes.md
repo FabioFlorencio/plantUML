@@ -18,3 +18,8 @@
 
 - [ ] Incluir videos de demonstração das dicas de produtividade
 - [ ] Fazer exemplos com (class, rectangle)
+
+
+## README diagramas
+
+- [ ] Incluir videos de demonstração dos disgramas
