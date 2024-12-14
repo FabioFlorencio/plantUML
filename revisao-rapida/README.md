@@ -46,6 +46,7 @@ Aqui está uma tabela de revisão sobre as principais sintaxes do plantUML.
           - [Container image](#container-image)
   - [🗂️ Diagramas](#️-diagramas)
     - [📚 Class](#-class)
+      - [Class: Principais sintaxes](#class-principais-sintaxes)
     - [🔲 Retângulo](#-retângulo)
       - [Retângulo: Principais sintaxes](#retângulo-principais-sintaxes)
     - [📦 Component](#-component)
@@ -271,7 +272,7 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 |`!include <logos/json.puml>`             | `<$json>`                      |                           |
 |`!include <logos/kotlin.puml>`           | `<$kotlin>`                    |                           |
 |`!include <logos/laravel.puml>`          | `<$laravel>`                   |                           |
-         
+       
 ---
 
 #####  Tupadr3/devicons
@@ -408,6 +409,42 @@ As cores podem ser aplicadas usando nomes predefinidos (como Red, Blue, Green) o
 
 ## 🗂️ Diagramas
 ### 📚 Class
+
+#### Class: Principais sintaxes
+
+```
+@startuml
+
+class "Veiculo" as veiculo {
+  - tipoDeVeiculo : String
+  - velocidadeMaxima : int
+  + mover()
+}
+
+class "Carro" as carro 
+  carro : - nome : String
+  carro : - cor : String
+  carro : + abrirPorta()
+
+
+class "Moto" as moto {
+  - cilindradas : int
+  + empinar()
+}
+
+class "Proprietario" as proprietario 
+  proprietario : - nome : String
+
+
+''=========================  RELACOES  ==================================
+
+veiculo <|-- carro
+veiculo <|-- moto
+moto ..> proprietario
+
+@enduml
+
+```
 ### 🔲 Retângulo
 
 #### Retângulo: Principais sintaxes
@@ -473,6 +510,8 @@ Figure 1 - Retangle
 - Crie primeiramente os objetos e depois faça as relações.
 - Deixe a estilização por úlitmo ou utilize Skinparam que tem opções prontas a sua escolha.
 - Em diagrama de classes, de preferência para iniciar os relacionamentos das classes que possui mais elos, 
-para facilitar a manunipulação dos elementos.
+para facilitar a manipulação dos elementos.
+
+
 
 
