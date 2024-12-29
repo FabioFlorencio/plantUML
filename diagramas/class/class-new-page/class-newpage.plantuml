@@ -1,0 +1,47 @@
+@startuml
+
+title página 1
+caption Exemplo de diagrama class página 1
+
+class Usuario {
+    + nome: String
+    + email: String
+    + realizarLogin(): void
+    + realizarLogout(): void
+}
+
+class Produto {
+    + id: int
+    + nome: String
+    + preco: float
+    + exibirDetalhes(): void
+}
+
+Usuario "1" *-- "n" Produto : possui
+
+newpage
+title página 2
+caption Exemplo de diagrama class página 2
+
+class Pedido {
+    + idPedido: int
+    + data: Date
+    + valorTotal: float
+    + calcularTotal(): float
+}
+
+Pedido "1" *-- "1..n" Produto : contém
+
+newpage
+title página 3
+caption Exemplo de diagrama class página 3
+
+class Pagamento {
+    + idPagamento: int
+    + valor: float
+    + processarPagamento(): void
+}
+
+Pedido "1" *-- "1" Pagamento : inclui
+Pedido "1" *-- "1" Produto : inclui
+@enduml
