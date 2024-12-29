@@ -1,0 +1,19 @@
+@startuml
+
+left to right direction
+
+caption \n\n\n**Compilação**
+
+rectangle "Código\nfonte" as codigoFonte #lightblue\white
+rectangle "Código\nobjeto" as codigoObjeto #lightblue\white
+rectangle "Código\nexecutável" as codigoExecutavel #lightblue\white
+(Execução) as executavel #orange
+
+''=========================  RELACOES  ==================================
+
+codigoFonte --> codigoObjeto : **Compilador**
+codigoObjeto --> codigoExecutavel : **Gerador**\n**de**\n**código**
+codigoExecutavel -r-> executavel : \n\n
+
+@enduml
+

@@ -1,0 +1,45 @@
+@startuml
+
+c
+caption \n\n\n **Linguagens Compiladas e interpretadas**
+
+rectangle "c/c++" as c #white
+rectangle "PHP, Python, JavaScript" as lingInterpretada #white
+rectangle "Java, C#" as lingcompilada #white
+
+rectangle "Código\nfonte" as codigoFonte1 #gold
+rectangle "Código\nfonte" as codigoFonte2 #gold
+rectangle "Código\nfonte" as codigoFonte3 #gold
+rectangle "Código\nexecutável" as codigoExecutavel #Yellowgreen
+rectangle "Bytecode" as byteCode #Yellowgreen
+rectangle "Interpretador" as interpretador #orange
+rectangle "Máquina Virtual" as maqVirtual #orange
+rectangle "Sistema Operacional" as sistemaOperacional1 #lightskyblue
+rectangle "Sistema Operacional" as sistemaOperacional2 #lightskyblue
+rectangle "Sistema Operacional" as sistemaOperacional3 #lightskyblue
+rectangle "Hardware" as hardware1 #silver
+rectangle "Hardware" as hardware2 #silver
+rectangle "Hardware" as hardware3 #silver
+
+
+''=========================  RELACOES  ==================================
+
+codigoFonte1 --> codigoExecutavel 
+codigoExecutavel --> sistemaOperacional1 
+sistemaOperacional1 --> hardware1
+hardware1 -[hidden]- c 
+
+codigoFonte2 --> interpretador
+interpretador --> sistemaOperacional2
+sistemaOperacional2 --> hardware2
+hardware2 -[hidden]- lingInterpretada
+
+codigoFonte3 --> byteCode
+byteCode --> maqVirtual
+maqVirtual --> sistemaOperacional3
+sistemaOperacional3 --> hardware3
+hardware3 -[hidden]- lingcompilada
+
+
+
+@enduml
