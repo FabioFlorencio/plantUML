@@ -6,10 +6,10 @@ Aqui está alguns modelos de diagramas que foi criado com o objetivo de organiza
 
 Os diagramas estão organizados em pastas com base em seus contextos ou finalidades.
 
-- **Diagramas de Classe** 
-- **Diagramas de Sequência**
-- **Diagramas de Casos de Uso**
-- **Diagramas de Componentes** 
+- [Diagramas de Classe](https://github.com/FabioFlorencio/plantUML/tree/master/diagramas/class)
+- [Diagramas de Sequência](https://github.com/FabioFlorencio/plantUML/tree/master/diagramas/sequencia)
+- [Diagramas de Casos de Uso](https://github.com/FabioFlorencio/plantUML/tree/master/diagramas/caso-de-uso)
+- [Diagramas de Componentes](https://github.com/FabioFlorencio/plantUML/tree/master/diagramas/component)
 
 
 
