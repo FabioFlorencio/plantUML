@@ -1,6 +1,5 @@
 @startuml
 
-c
 caption \n\n\n **Linguagens Compiladas e interpretadas**
 
 rectangle "c/c++" as c #white
@@ -39,7 +38,5 @@ byteCode --> maqVirtual
 maqVirtual --> sistemaOperacional3
 sistemaOperacional3 --> hardware3
 hardware3 -[hidden]- lingcompilada
-
-
 
 @enduml
