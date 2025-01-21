@@ -2,10 +2,9 @@
 
 Aqui está alguns modelos de diagramas que foi criado com o objetivo de organizar e compartilhar diagramas que ajudam a ilustrar e documentar diferentes conceitos, processos ou arquiteturas. 
 
-## 📂 Principais diagramas
+## 🗂️ Principais diagramas
 
 ![diagrama](../img-geral/img-readme-diagramas/gif-teste.gif)
-
 
 ### 📂 Estrutura do Repositório
 
