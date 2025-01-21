@@ -27,7 +27,7 @@ note left of emitirPedido {
   ----
   
   # O Ator inicia o caso de uso selecionando "Emitir pedido" 
-  # O sistema oferece a interface para emissão de pedidios
+  # O sistema oferece a interface para emissão de pedidos
   # O Ator seleciona um cliente para o pedido
   # O Sistema exibe as informações do cliente
   # O Ator seleciona produtos; Usa "Selecionar Produtos"
