@@ -4,7 +4,7 @@ Aqui está alguns modelos de diagramas que foi criado com o objetivo de organiza
 
 ## 🗂️ Principais diagramas
 
-![diagrama](../img-geral/img-readme-diagramas/gif-teste.gif)
+![diagrama](../img-geral/img-readme-diagramas/gif-diagramas.gif)
 
 ### 📂 Estrutura do Repositório
 
