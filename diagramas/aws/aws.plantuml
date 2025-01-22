@@ -1,0 +1,38 @@
+
+@startuml
+
+' link https://github.com/awslabs/aws-icons-for-plantuml/tree/main/dist
+
+!include <awslib/AWSCommon>
+!include <awslib/Groups/AWSCloud>
+!include <awslib/Groups/VPC>
+!include <awslib/Groups/Generic>
+!include <awslib/General/Users>
+!include <awslib/SecurityIdentityCompliance/Cognito>
+!include <awslib/NetworkingContentDelivery/ElasticLoadBalancing>
+!include <awslib/Compute/EC2>
+!include <awslib/Database/RDS>
+!include <awslib/Compute/Lambda>
+!include <awslib/Storage/SimpleStorageService>
+
+AWSCloudGroup(cloud) {
+
+  Cognito(userAuth, "User Auth", "JWT")
+
+  VPCGroup(vpc) {
+    
+    ElasticLoadBalancing(elb, "ELB", "ALB")
+    
+    GenericGroup(target, "Target Group") {
+      EC2(ec21, "EC2", "2")
+      EC2(ec22, "EC2", "1")
+    }
+    
+    RDS(rds, "RDS", "Postgresql")
+  }
+  
+  Lambda(lambda, "AWS Lambda", "C#")
+  SimpleStorageService(s3, "Amazon S3", "aws-bucket")
+}
+
+@enduml
