@@ -1,0 +1,59 @@
+@startuml
+
+@startuml
+
+caption Estatística - Variável
+
+
+rectangle {
+
+rectangle "Qualitativa" as qualitativa <<design2>>
+rectangle "Palavra" as palavra <<design1>>
+rectangle "Categoria" as categoria <<design1>>
+rectangle "Ordinal" as ordinal <<design3>>
+rectangle "Nominal" as nominal <<design3>>
+}
+
+skinparam groupInheritance 2
+
+skinparam rectangle<<design1>> {
+  backgroundcolor transparent
+  borderColor white
+}
+skinparam rectangle<<design2>> {
+  backgroundcolor lightskyblue
+  borderColor black
+}
+skinparam rectangle<<design3>> {
+  backgroundcolor transparent
+  borderColor black
+}
+skinparam file<<design4>> {
+  backgroundcolor orange
+  borderColor black
+}
+
+hide stereotype
+
+file f <<design4>> as"
+
+O que é Variável <:question:>
+
+Variável é uma condicão ou caracteríıstica dos elementos. Pode ser
+classificada em qualitatica ou quantitativa
+
+"
+
+
+''=========================  RELACOES  ==================================
+
+f -[hidden]-- categoria
+qualitativa -u-> palavra
+qualitativa -u-> categoria
+qualitativa <|-- ordinal
+qualitativa <|-- nominal
+
+
+@enduml
+
+@enduml
