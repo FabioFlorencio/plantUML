@@ -1,0 +1,39 @@
+@startuml
+
+caption \n\nExemplos de categorias de variáveis qualitativas
+
+
+rectangle "Variável: Sexo" as variavel <<design1>>
+rectangle "Qualitativa" as qualitativa <<design1>>
+rectangle "Tipo" as tipo <<design5>>
+rectangle "Categoria" as categoria <<design2>>
+rectangle "Masculino" as masculino <<design3>>
+rectangle "Feminino" as feminino <<design4>>
+
+
+skinparam groupInheritance 2
+
+skinparam rectangle {
+  backgroundcolor<<design1>> transparent
+  borderColor<<design1>> white
+  backgroundcolor<<design2>> yellow
+  backgroundcolor<<design3>> lightskyblue
+  backgroundcolor<<design4>> plum
+  backgroundcolor<<design5>> lightgreen
+  
+}
+
+
+hide stereotype
+
+
+''=========================  RELACOES  ==================================
+
+variavel -r- tipo
+tipo -r- qualitativa
+qualitativa -- categoria
+categoria -- masculino
+categoria -- feminino
+
+
+@enduml
